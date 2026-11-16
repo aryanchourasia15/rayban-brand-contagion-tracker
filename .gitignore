@@ -50,6 +50,8 @@ uploads/
 !templates/*.csv
 !tests/fixtures/*.json
 !demo/benchmark_summary.json
+!demo/research_timeline.json
+!demo/case_study_results.json
 
 # Test coverage & caches
 .pytest_cache/

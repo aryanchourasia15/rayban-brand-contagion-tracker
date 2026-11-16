@@ -1,0 +1,511 @@
+{
+  "is_synthetic": true,
+  "purpose": "Authored illustrative case study; not customer data, not a held-out benchmark; references frozen before inference.",
+  "sha256": "1c4f63531da055f189a604ceee361e49275728479dee3f5f662e8dd0a316f2b7",
+  "examples": [
+    {
+      "case": "case24_product_camera",
+      "category": "Product-only criticism",
+      "text": "The Ray-Ban Meta camera makes the glasses too heavy for my daily walk.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "technology",
+          "convenience"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Only the weight of the smart-glasses product is criticised.",
+        "evidence_quotes": [
+          "The Ray-Ban Meta camera makes the glasses too heavy for my daily walk."
+        ]
+      }
+    },
+    {
+      "case": "case24_product_led",
+      "category": "Product-only criticism",
+      "text": "I dislike the recording indicator on Ray-Ban Meta because strangers may miss it.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "recording",
+          "privacy"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Concern concerns the recording feature, with no wider-brand judgement.",
+        "evidence_quotes": [
+          "I dislike the recording indicator on Ray-Ban Meta because strangers may miss it."
+        ]
+      }
+    },
+    {
+      "case": "case24_product_battery",
+      "category": "Product-only criticism",
+      "text": "I will not buy Ray-Ban Meta glasses: the battery life is too short for my commute.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "technology",
+          "convenience"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "confidence": 0.9,
+        "rationale": "Purchase rejection concerns the smart-glasses product alone.",
+        "evidence_quotes": [
+          "I will not buy Ray-Ban Meta glasses: the battery life is too short for my commute."
+        ]
+      }
+    },
+    {
+      "case": "case24_product_rayban_accountability",
+      "category": "Product-only criticism",
+      "text": "Ray-Ban is responsible for the uncomfortable fit of these Meta smart glasses.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "fashion",
+          "convenience"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "Ray-Ban",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Explicit manufacturer responsibility for product fit does not reject traditional eyewear.",
+        "evidence_quotes": [
+          "Ray-Ban is responsible for the uncomfortable fit of these Meta smart glasses."
+        ]
+      }
+    },
+    {
+      "case": "case24_meta_data",
+      "category": "Meta-only criticism",
+      "text": "Meta is responsible for how my voice requests are handled, and I distrust Meta with those recordings.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "The named target and responsible actor are Meta only.",
+        "evidence_quotes": [
+          "Meta is responsible for how my voice requests are handled, and I distrust Meta with those recordings."
+        ]
+      }
+    },
+    {
+      "case": "case24_meta_not_rayban",
+      "category": "Meta-only criticism",
+      "text": "I blame Meta, not Ray-Ban, for the unclear explanation of human review of AI recordings.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Negation explicitly excludes Ray-Ban from responsibility.",
+        "evidence_quotes": [
+          "I blame Meta, not Ray-Ban, for the unclear explanation of human review of AI recordings."
+        ]
+      }
+    },
+    {
+      "case": "case24_meta_controls",
+      "category": "Meta-only criticism",
+      "text": "Meta should fix its confusing AI privacy controls; Meta is responsible for explaining them.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "technology"
+        ],
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Criticism and responsibility focus on Meta controls, not the wider eyewear brand.",
+        "evidence_quotes": [
+          "Meta should fix its confusing AI privacy controls; Meta is responsible for explaining them."
+        ]
+      }
+    },
+    {
+      "case": "case24_brand_because",
+      "category": "Explicit wider-brand spillover",
+      "text": "Because of the smart-glasses privacy controversy, I won't buy any Ray-Ban sunglasses again.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "fashion"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "confidence": 0.9,
+        "rationale": "Direct causal rejection of traditional Ray-Ban purchases follows the controversy.",
+        "evidence_quotes": [
+          "Because of the smart-glasses privacy controversy, I won't buy any Ray-Ban sunglasses again."
+        ]
+      }
+    },
+    {
+      "case": "case24_brand_distrust",
+      "category": "Explicit wider-brand spillover",
+      "text": "After the Meta recording controversy, I distrust Ray-Ban's entire brand.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Wider-brand distrust is expressly connected to the recording controversy.",
+        "evidence_quotes": [
+          "After the Meta recording controversy, I distrust Ray-Ban's entire brand."
+        ]
+      }
+    },
+    {
+      "case": "case24_brand_frames",
+      "category": "Explicit wider-brand spillover",
+      "text": "I will avoid traditional Ray-Ban frames because the smart-glasses privacy scandal destroyed my confidence.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "fashion"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "confidence": 0.9,
+        "rationale": "The speaker directly links avoiding traditional frames to privacy controversy.",
+        "evidence_quotes": [
+          "I will avoid traditional Ray-Ban frames because the smart-glasses privacy scandal destroyed my confidence."
+        ]
+      }
+    },
+    {
+      "case": "case24_brand_boycott_all",
+      "category": "Explicit wider-brand spillover",
+      "text": "I will boycott Ray-Ban, including its ordinary sunglasses, due to the smart-glasses surveillance controversy.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "fashion"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "confidence": 0.9,
+        "rationale": "An explicit wider-brand boycott is causally connected to surveillance concerns.",
+        "evidence_quotes": [
+          "I will boycott Ray-Ban, including its ordinary sunglasses, due to the smart-glasses surveillance controversy."
+        ]
+      }
+    },
+    {
+      "case": "case24_brand_stop_buying",
+      "category": "Explicit wider-brand spillover",
+      "text": "Since the camera privacy controversy, I will stop buying Ray-Ban sunglasses.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "fashion"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "confidence": 0.9,
+        "rationale": "An explicit rejection of ordinary sunglasses is linked to the camera controversy.",
+        "evidence_quotes": [
+          "Since the camera privacy controversy, I will stop buying Ray-Ban sunglasses."
+        ]
+      }
+    },
+    {
+      "case": "case24_implicit_appeal",
+      "category": "Implicit spillover",
+      "text": "The smart-glasses privacy debate bothers me. The wider Ray-Ban brand seems less attractive lately.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "fashion"
+        ],
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "confidence": 0.55,
+        "rationale": "Product concern and diminished wider-brand appeal coexist without an explicit causal rejection.",
+        "evidence_quotes": [
+          "The smart-glasses privacy debate bothers me. The wider Ray-Ban brand seems less attractive lately."
+        ]
+      }
+    },
+    {
+      "case": "case24_implicit_window",
+      "category": "Implicit spillover",
+      "text": "I worry about recording by smart glasses. Looking at traditional Ray-Ban displays feels less pleasant now.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "recording",
+          "fashion"
+        ],
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "confidence": 0.55,
+        "rationale": "A negative traditional-brand association accompanies recording concerns without a direct causal assertion.",
+        "evidence_quotes": [
+          "I worry about recording by smart glasses. Looking at traditional Ray-Ban displays feels less pleasant now."
+        ]
+      }
+    },
+    {
+      "case": "case24_implicit_image",
+      "category": "Implicit spillover",
+      "text": "The Meta glasses controversy is unsettling. Ray-Ban's overall image feels colder to me lately.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "fashion"
+        ],
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "confidence": 0.55,
+        "rationale": "The wider-brand image is negative alongside controversy, without an express causal claim.",
+        "evidence_quotes": [
+          "The Meta glasses controversy is unsettling. Ray-Ban's overall image feels colder to me lately."
+        ]
+      }
+    },
+    {
+      "case": "case24_core_style",
+      "category": "Positive traditional Ray-Ban perception",
+      "text": "My traditional Ray-Ban aviators still look elegant after years of use.",
+      "labels": {
+        "sentiment": "positive",
+        "topic": [
+          "fashion"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "The speaker praises ordinary eyewear without a purchase intention.",
+        "evidence_quotes": [
+          "My traditional Ray-Ban aviators still look elegant after years of use."
+        ]
+      }
+    },
+    {
+      "case": "case24_core_buy",
+      "category": "Positive traditional Ray-Ban perception",
+      "text": "I plan to buy ordinary Ray-Ban sunglasses for their classic styling.",
+      "labels": {
+        "sentiment": "positive",
+        "topic": [
+          "fashion"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "positive",
+        "confidence": 0.9,
+        "rationale": "A positive purchase intention concerns traditional eyewear.",
+        "evidence_quotes": [
+          "I plan to buy ordinary Ray-Ban sunglasses for their classic styling."
+        ]
+      }
+    },
+    {
+      "case": "case24_core_defence",
+      "category": "Positive traditional Ray-Ban perception",
+      "text": "Traditional Ray-Ban frames remain excellent; I do not distrust the wider Ray-Ban brand because of smart glasses.",
+      "labels": {
+        "sentiment": "positive",
+        "topic": [
+          "fashion",
+          "privacy"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "The speaker explicitly negates wider-brand distrust.",
+        "evidence_quotes": [
+          "Traditional Ray-Ban frames remain excellent; I do not distrust the wider Ray-Ban brand because of smart glasses."
+        ]
+      }
+    },
+    {
+      "case": "case24_mixed_audio",
+      "category": "Mixed or ambiguous sentiment",
+      "text": "I love the Ray-Ban Meta speakers but dislike the camera pointing at people on the train.",
+      "labels": {
+        "sentiment": "mixed",
+        "topic": [
+          "technology",
+          "recording",
+          "privacy"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Mixed product sentiment contains no wider-brand rejection.",
+        "evidence_quotes": [
+          "I love the Ray-Ban Meta speakers but dislike the camera pointing at people on the train."
+        ]
+      }
+    },
+    {
+      "case": "case24_mixed_core_defence",
+      "category": "Mixed or ambiguous sentiment",
+      "text": "Ray-Ban Meta recording makes me nervous, but my ordinary Ray-Ban sunglasses are still wonderful.",
+      "labels": {
+        "sentiment": "mixed",
+        "topic": [
+          "privacy",
+          "recording",
+          "fashion"
+        ],
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Traditional-brand praise is preserved alongside product criticism.",
+        "evidence_quotes": [
+          "Ray-Ban Meta recording makes me nervous, but my ordinary Ray-Ban sunglasses are still wonderful."
+        ]
+      }
+    },
+    {
+      "case": "case24_unclear_pronouns",
+      "category": "Mixed or ambiguous sentiment",
+      "text": "After reading that story, I am disappointed in them, whoever is actually responsible.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "other"
+        ],
+        "target": "unclear",
+        "responsibility": "unclear",
+        "spillover": "unclear",
+        "purchase_intent": "unclear",
+        "confidence": 0.55,
+        "rationale": "Neither the story nor the actor is specified.",
+        "evidence_quotes": [
+          "After reading that story, I am disappointed in them, whoever is actually responsible."
+        ]
+      }
+    },
+    {
+      "case": "case24_sarcasm_unspecified",
+      "category": "Mixed or ambiguous sentiment",
+      "text": "Wonderful, another camera following everyone. Exactly what we all needed, obviously.",
+      "labels": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "target": "unclear",
+        "responsibility": "unclear",
+        "spillover": "unclear",
+        "purchase_intent": "unclear",
+        "confidence": 0.55,
+        "rationale": "Sarcasm suggests criticism but identifies no particular brand.",
+        "evidence_quotes": [
+          "Wonderful, another camera following everyone. Exactly what we all needed, obviously."
+        ]
+      }
+    },
+    {
+      "case": "case24_neutral_question",
+      "category": "Mixed or ambiguous sentiment",
+      "text": "Do Ray-Ban Meta glasses notify people before recording, and where can I read the instructions?",
+      "labels": {
+        "sentiment": "neutral",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "An information request does not assert negative sentiment or brand spillover.",
+        "evidence_quotes": [
+          "Do Ray-Ban Meta glasses notify people before recording, and where can I read the instructions?"
+        ]
+      }
+    },
+    {
+      "case": "case24_shared_product_responsibility",
+      "category": "Mixed or ambiguous sentiment",
+      "text": "Meta and Ray-Ban are both responsible for explaining this recording feature clearly; I like the glasses but find the instructions confusing.",
+      "labels": {
+        "sentiment": "mixed",
+        "topic": [
+          "recording",
+          "technology"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "both",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Shared responsibility is explicitly stated for product instructions, not wider-brand damage.",
+        "evidence_quotes": [
+          "Meta and Ray-Ban are both responsible for explaining this recording feature clearly; I like the glasses but find the instructions confusing."
+        ]
+      }
+    }
+  ]
+}

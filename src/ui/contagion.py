@@ -75,12 +75,16 @@ def analytics_panel(rows, demo):
     else:
         rows = select_label_basis(rows)
         st.caption('SIMULATED COUNTS · Curated fixture references, with no claim of AI accuracy or empirical findings.')
+    if not rows:
+        st.info('No human-reviewed research records are available. See the sourced timeline, synthetic AI case study and benchmark for context.')
+        return
     available_sources = sorted({row['source'] for row in rows})
     selected_sources = st.multiselect('Analytics sources', available_sources, key=f'analytics_sources_{demo}')
     if selected_sources:
         rows = [row for row in rows if row['source'] in selected_sources]
     available_years = sorted(spillover_trends(rows)['year'].unique().tolist())
-    selected_years = st.multiselect('Analytics publication years', available_years, key=f'analytics_years_{demo}')
+    selected_years = (st.multiselect('Analytics publication years', available_years, key=f'analytics_years_{demo}')
+                      if available_years else [])
     if selected_years:
         rows = [row for row in rows if row.get('published_at') and
                 str(pd.to_datetime(row['published_at'], utc=True, errors='coerce').year) in selected_years]
@@ -157,10 +161,16 @@ def prediction_detail(row, demo):
 
 def explorer_panel(rows, demo):
     st.subheader('Every conclusion has a source')
+    if not rows:
+        st.info('No classified customer discussions are available. No empty search or label filters are shown.')
+        return
     basis = st.radio('Explorer label basis', ['AI predictions', 'Human-reviewed labels'], horizontal=True,
                      format_func=lambda value: 'Fixture references (not AI)' if demo and value == 'AI predictions' else value,
                      key=f'voice_basis_{demo}')
     selected = select_label_basis(rows, basis)
+    if not selected:
+        st.info('No records are available for this label basis. Human-reviewed labels require a separate saved review.')
+        return
     search = st.text_input('Search original discussion text', key=f'voice_search_{demo}')
     cols = st.columns(4)
     sentiments = cols[0].multiselect('Sentiment', LABELS['sentiment'], key=f'voice_sentiment_{demo}')
@@ -185,6 +195,9 @@ def explorer_panel(rows, demo):
 
 def evaluation_panel(rows, demo):
     st.markdown('#### Explicit spillover validation')
+    if not rows or not any(row['human_labels'] is not None for row in rows):
+        st.info('No reviewed predictions are available for validation metrics or a confusion matrix.')
+        return
     if demo:
         pairs = [(row['prediction'], row['human_labels']) for row in rows if row['human_labels'] is not None]
         metrics = evaluate_pairs(pairs)
@@ -292,7 +305,8 @@ def render_contagion(*, force_demo=False):
     st.title('Brand Contagion Analysis')
     st.write('Distinguish criticism of smart glasses from distrust of the wider Ray-Ban brand.')
     if demo:
-        st.warning('SYNTHETIC DEMONSTRATION · Invented test examples and simulated labels. No research findings. '
+        st.warning('SYNTHETIC DEMONSTRATION · Customer scenarios are invented; the timeline uses sourced real-world events. '
+                   'Fixture labels and actual recorded local AI outputs are shown separately. No customer research findings. '
                    'Demo reviews are session-only and never enter SQLite.')
         rows = demo_discussions()
         from src.ui.demo_benchmark import render_benchmark
@@ -310,7 +324,8 @@ def render_contagion(*, force_demo=False):
     result = st.session_state.pop('contagion_result', None)
     if result:
         st.dataframe(pd.DataFrame(result).drop(columns=['labels'], errors='ignore'), hide_index=True)
-    tabs = st.tabs(['Contagion analytics', 'Customer voice', 'Local classification', 'Human validation'])
+    tabs = st.tabs(['Contagion analytics', 'Customer voice', 'Local classification', 'Human validation',
+                    'Verified timeline', 'Synthetic AI case study', 'Strategic implications'])
     with tabs[0]:
         analytics_panel(rows, demo)
     with tabs[1]:
@@ -319,3 +334,10 @@ def render_contagion(*, force_demo=False):
         classification_panel(demo)
     with tabs[3]:
         validation_panel(rows, demo)
+    from src.ui.research_evidence import render_timeline, render_case_study, render_strategy
+    with tabs[4]:
+        render_timeline()
+    with tabs[5]:
+        render_case_study()
+    with tabs[6]:
+        render_strategy()

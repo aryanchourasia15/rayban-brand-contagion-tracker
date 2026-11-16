@@ -58,7 +58,7 @@ run these commands from the RayBan directory. Replace the remote placeholders.
 
 ```powershell
 git init -b main
-git add .gitignore .streamlit/config.toml requirements.txt app.py cloud_app.py README.md PROJECT_CONTEXT.md PHASE2_SPEC.md src pages templates tests scripts demo/benchmark_summary.json docs/RESEARCH_COLLECTION_GUIDE.md
+git add .gitignore .streamlit/config.toml requirements.txt app.py cloud_app.py README.md PROJECT_CONTEXT.md PHASE2_SPEC.md src pages templates tests scripts demo/benchmark_summary.json demo/research_timeline.json demo/case_study_results.json docs/RESEARCH_COLLECTION_GUIDE.md docs/CONTROVERSY_TIMELINE.md docs/AI_EVALUATION_SUMMARY.md docs/STRATEGIC_IMPLICATIONS.md docs/PUBLICATION_REVIEW.md
 git diff --cached --name-only
 git diff --cached
 # STOP and review the staged files before the following publication commands.
@@ -67,8 +67,8 @@ git remote add origin https://github.com/YOUR_ACCOUNT/YOUR_REPOSITORY.git
 git push -u origin main
 ```
 
-Publish application code, blank templates, labelled synthetic fixtures and the
-reviewed `demo/benchmark_summary.json` only. The ignore rules exclude environments,
+Publish application code, blank templates, labelled synthetic fixtures, reviewed
+public demo JSON assets and original sourced paraphrases only. The ignore rules exclude environments,
 secrets, databases, raw benchmarks, data, exports, uploads and common consent/private
 folders. Arbitrary CSV/JSON files are ignored except approved fixture/template paths.
 Do not use force-add. Ignore rules do not remove previously tracked files or Git
@@ -97,7 +97,43 @@ and [dependency handling](https://docs.streamlit.io/deploy/streamlit-community-c
 Cloud Linux startup/build remains to be verified on deployment; current checks run
 on Windows/Python 3.11. No repository, remote or deployment was created by this work.
 
-## Workflow
+## Evidence and analysis deliverables
+
+The existing Brand Contagion Analysis page now includes **Verified timeline**,
+**Synthetic AI case study** and **Strategic implications** tabs. Research panels
+hide empty filters, charts and validation matrices when their underlying records
+or human labels do not exist. The original synthetic-reference demonstration
+remains separate from actual recorded AI predictions.
+
+- `docs/CONTROVERSY_TIMELINE.md` and `demo/research_timeline.json`: 15 dated,
+  sourced context entries from 2023 through 16 November 2026. Company statements,
+  reported allegations and official inquiries are distinguished; no full articles
+  or customer comments are stored or imported into the research database.
+- `tests/fixtures/contagion_case_study_24.json`: 24 distinct authored synthetic
+  scenarios, with reference labels frozen before inference.
+- `demo/case_study_results.json`: actual local Qwen2.5:3b responses, including
+  rejected predictions, errors, references, timing and provenance. These are the
+  only newly allowlisted raw outputs and contain synthetic material only. Raw
+  historical benchmark logs and research data remain ignored.
+- `docs/AI_EVALUATION_SUMMARY.md`: existing v1/v2 scores, raw versus accepted
+  interpretations, rejection rates, false positives and the new case-study scores.
+- `docs/STRATEGIC_IMPLICATIONS.md`: values-based discussion and proposed actions
+  through 2030; interpretations and hypotheses are not empirical brand findings.
+
+All evidence and recorded outputs render offline in cloud demo mode without
+Ollama, network requests or research SQLite access. Launch locally using the
+existing `cloud_app.py` command above. No changes are published automatically.
+For a new, explicitly requested synthetic inference run with an already installed
+model, use a new filename to preserve the existing run:
+
+```powershell
+.venv\Scripts\python scripts/run_case_study.py --output benchmarks/case_study_repeat.json
+```
+
+The runner uses an isolated temporary database, never the research database. It
+does not change the prompt, download models, or automatically overwrite results.
+
+## Collection workflow
 
 1. Download the CSV template, or upload a CSV/JSON dataset.
 2. Review detected mappings, source defaults, numeric date order, and the fixed

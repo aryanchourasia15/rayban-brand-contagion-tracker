@@ -1,0 +1,2095 @@
+{
+  "synthetic_only": true,
+  "completed": true,
+  "model": {
+    "model_name": "qwen2.5:3b",
+    "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+    "runtime_version": "0.40.16"
+  },
+  "created_at": "2026-11-16T16:12:26.966949+00:00",
+  "prompt_version": "brand-contagion-2.0.0",
+  "prompt_sha256": "bc3d69e588928e0c580c00d8099beb02c58a61c12735d160d811225f00f1c5b3",
+  "fixture_sha256": "1c4f63531da055f189a604ceee361e49275728479dee3f5f662e8dd0a316f2b7",
+  "protocol": "Authored illustrative case study; not customer data, not a held-out benchmark; references frozen before inference.",
+  "results": [
+    {
+      "case": "case24_product_camera",
+      "category": "Product-only criticism",
+      "text": "The Ray-Ban Meta camera makes the glasses too heavy for my daily walk.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "technology",
+          "convenience"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Only the weight of the smart-glasses product is criticised.",
+        "evidence_quotes": [
+          "The Ray-Ban Meta camera makes the glasses too heavy for my daily walk."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"Ray-Ban Meta\",\n    \"responsibility\": \"unclear\",\n    \"spillover\": \"none\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"technology\", \"convenience\"],\n    \"confidence\": 0.8,\n    \"rationale\": \"The text criticizes the weight of the Ray-Ban Meta camera, which makes it unsuitable for daily use. This indicates a negative sentiment towards the product, which is the Ray-Ban Meta camera. The text does not specify responsibility or mention traditional Ray-Ban eyewear, so there is no spillover to the core Ray-Ban brand or traditional eyewear. The speaker does not express a clear intention to buy or avoid the product, so purchase intent is unclear.\",\n    \"evidence_quotes\": [\n        \"The Ray-Ban Meta camera makes the glasses too heavy for my daily walk.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 54.93147930002306,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "technology",
+          "convenience"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text criticizes the weight of the Ray-Ban Meta camera, which makes it unsuitable for daily use. This indicates a negative sentiment towards the product, which is the Ray-Ban Meta camera. The text does not specify responsibility or mention traditional Ray-Ban eyewear, so there is no spillover to the core Ray-Ban brand or traditional eyewear. The speaker does not express a clear intention to buy or avoid the product, so purchase intent is unclear.",
+        "evidence_quotes": [
+          "The Ray-Ban Meta camera makes the glasses too heavy for my daily walk."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_product_led",
+      "category": "Product-only criticism",
+      "text": "I dislike the recording indicator on Ray-Ban Meta because strangers may miss it.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "recording",
+          "privacy"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Concern concerns the recording feature, with no wider-brand judgement.",
+        "evidence_quotes": [
+          "I dislike the recording indicator on Ray-Ban Meta because strangers may miss it."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"Ray-Ban Meta\",\n    \"responsibility\": \"unclear\",\n    \"spillover\": \"none\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"recording\"],\n    \"confidence\": 0.8,\n    \"rationale\": \"The text expresses dislike for the recording indicator on Ray-Ban Meta, indicating a negative sentiment towards the product. The speaker does not attribute blame to either Ray-Ban Meta or the wider Ray-Ban brand, making responsibility unclear. There is no mention of negative perceptions of traditional Ray-Ban eyewear, so spillover is not applicable.\",\n    \"evidence_quotes\": [\n        \"I dislike the recording indicator on Ray-Ban Meta because strangers may miss it.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 13.68077269999776,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses dislike for the recording indicator on Ray-Ban Meta, indicating a negative sentiment towards the product. The speaker does not attribute blame to either Ray-Ban Meta or the wider Ray-Ban brand, making responsibility unclear. There is no mention of negative perceptions of traditional Ray-Ban eyewear, so spillover is not applicable.",
+        "evidence_quotes": [
+          "I dislike the recording indicator on Ray-Ban Meta because strangers may miss it."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_product_battery",
+      "category": "Product-only criticism",
+      "text": "I will not buy Ray-Ban Meta glasses: the battery life is too short for my commute.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "technology",
+          "convenience"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "confidence": 0.9,
+        "rationale": "Purchase rejection concerns the smart-glasses product alone.",
+        "evidence_quotes": [
+          "I will not buy Ray-Ban Meta glasses: the battery life is too short for my commute."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"Ray-Ban Meta\",\n    \"responsibility\": \"unclear\",\n    \"spillover\": \"none\",\n    \"purchase_intent\": \"negative\",\n    \"topic\": [\"technology\", \"convenience\"],\n    \"confidence\": 0.9,\n    \"rationale\": \"The speaker explicitly states they will not buy Ray-Ban Meta glasses due to the battery life being too short for their commute, indicating a negative sentiment towards the product. There is no mention of traditional Ray-Ban glasses or any broader negative perception of the Ray-Ban brand. The responsibility attribution is unclear as the speaker does not blame either Meta or Ray-Ban for the issue. There is no evidence of spillover to traditional Ray-Ban glasses or the wider Ray-Ban brand.\",\n    \"evidence_quotes\": [\n        \"I will not buy Ray-Ban Meta glasses: the battery life is too short for my commute.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 16.53469409997342,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "technology",
+          "convenience"
+        ],
+        "confidence": 0.9,
+        "rationale": "The speaker explicitly states they will not buy Ray-Ban Meta glasses due to the battery life being too short for their commute, indicating a negative sentiment towards the product. There is no mention of traditional Ray-Ban glasses or any broader negative perception of the Ray-Ban brand. The responsibility attribution is unclear as the speaker does not blame either Meta or Ray-Ban for the issue. There is no evidence of spillover to traditional Ray-Ban glasses or the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "I will not buy Ray-Ban Meta glasses: the battery life is too short for my commute."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_product_rayban_accountability",
+      "category": "Product-only criticism",
+      "text": "Ray-Ban is responsible for the uncomfortable fit of these Meta smart glasses.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "fashion",
+          "convenience"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "Ray-Ban",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Explicit manufacturer responsibility for product fit does not reject traditional eyewear.",
+        "evidence_quotes": [
+          "Ray-Ban is responsible for the uncomfortable fit of these Meta smart glasses."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"Ray-Ban Meta\",\n    \"responsibility\": \"Ray-Ban\",\n    \"spillover\": \"none\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"convenience\"],\n    \"confidence\": 0.8,\n    \"rationale\": \"The text blames Ray-Ban for the uncomfortable fit of the smart glasses, indicating a negative perception of the product. The text does not mention any negative views of traditional Ray-Ban eyewear or the wider Ray-Ban brand.\",\n    \"evidence_quotes\": [\n        \"Ray-Ban is responsible for the uncomfortable fit of these Meta smart glasses.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 11.856344999978319,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "Ray-Ban",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "convenience"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text blames Ray-Ban for the uncomfortable fit of the smart glasses, indicating a negative perception of the product. The text does not mention any negative views of traditional Ray-Ban eyewear or the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "Ray-Ban is responsible for the uncomfortable fit of these Meta smart glasses."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_meta_data",
+      "category": "Meta-only criticism",
+      "text": "Meta is responsible for how my voice requests are handled, and I distrust Meta with those recordings.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "The named target and responsible actor are Meta only.",
+        "evidence_quotes": [
+          "Meta is responsible for how my voice requests are handled, and I distrust Meta with those recordings."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"Meta\",\n    \"responsibility\": \"Meta\",\n    \"spillover\": \"implicit\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"privacy\"],\n    \"confidence\": 0.9,\n    \"rationale\": \"The speaker holds Meta responsible for how their voice requests are handled and distrusts Meta with those recordings. This distrust extends to the wider Ray-Ban brand, as the speaker expresses a negative perception of the traditional Ray-Ban brand due to the privacy concerns.\",\n    \"evidence_quotes\": [\n        \"Meta is responsible for how my voice requests are handled, and I distrust Meta with those recordings.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 12.456667900027242,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.9,
+        "rationale": "The speaker holds Meta responsible for how their voice requests are handled and distrusts Meta with those recordings. This distrust extends to the wider Ray-Ban brand, as the speaker expresses a negative perception of the traditional Ray-Ban brand due to the privacy concerns.",
+        "evidence_quotes": [
+          "Meta is responsible for how my voice requests are handled, and I distrust Meta with those recordings."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_meta_not_rayban",
+      "category": "Meta-only criticism",
+      "text": "I blame Meta, not Ray-Ban, for the unclear explanation of human review of AI recordings.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Negation explicitly excludes Ray-Ban from responsibility.",
+        "evidence_quotes": [
+          "I blame Meta, not Ray-Ban, for the unclear explanation of human review of AI recordings."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"Meta\",\n    \"responsibility\": \"Meta\",\n    \"spillover\": \"none\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"recording\"],\n    \"confidence\": 0.9,\n    \"rationale\": \"The speaker blames Meta for the unclear explanation of human review of AI recordings, indicating a negative sentiment towards Meta. There is no mention of traditional Ray-Ban products or the wider Ray-Ban brand, so there is no spillover to the core Ray-Ban target. The speaker does not express a clear intention to purchase or avoid traditional Ray-Ban products.\",\n    \"evidence_quotes\": [\n        \"I blame Meta, not Ray-Ban, for the unclear explanation of human review of AI recordings.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 14.197962900041603,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "recording"
+        ],
+        "confidence": 0.9,
+        "rationale": "The speaker blames Meta for the unclear explanation of human review of AI recordings, indicating a negative sentiment towards Meta. There is no mention of traditional Ray-Ban products or the wider Ray-Ban brand, so there is no spillover to the core Ray-Ban target. The speaker does not express a clear intention to purchase or avoid traditional Ray-Ban products.",
+        "evidence_quotes": [
+          "I blame Meta, not Ray-Ban, for the unclear explanation of human review of AI recordings."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_meta_controls",
+      "category": "Meta-only criticism",
+      "text": "Meta should fix its confusing AI privacy controls; Meta is responsible for explaining them.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "technology"
+        ],
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Criticism and responsibility focus on Meta controls, not the wider eyewear brand.",
+        "evidence_quotes": [
+          "Meta should fix its confusing AI privacy controls; Meta is responsible for explaining them."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"Meta\",\n    \"responsibility\": \"Meta\",\n    \"spillover\": \"none\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"privacy\"],\n    \"confidence\": 0.9,\n    \"rationale\": \"The text criticizes Meta's AI privacy controls and holds them responsible for explaining them, indicating a negative sentiment towards Meta. There is no mention of traditional Ray-Ban or any spillover effects.\",\n    \"evidence_quotes\": [\n        \"Meta should fix its confusing AI privacy controls; Meta is responsible for explaining them.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 11.014013600011822,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.9,
+        "rationale": "The text criticizes Meta's AI privacy controls and holds them responsible for explaining them, indicating a negative sentiment towards Meta. There is no mention of traditional Ray-Ban or any spillover effects.",
+        "evidence_quotes": [
+          "Meta should fix its confusing AI privacy controls; Meta is responsible for explaining them."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_brand_because",
+      "category": "Explicit wider-brand spillover",
+      "text": "Because of the smart-glasses privacy controversy, I won't buy any Ray-Ban sunglasses again.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "fashion"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "confidence": 0.9,
+        "rationale": "Direct causal rejection of traditional Ray-Ban purchases follows the controversy.",
+        "evidence_quotes": [
+          "Because of the smart-glasses privacy controversy, I won't buy any Ray-Ban sunglasses again."
+        ]
+      },
+      "raw_output": "{\n  \"sentiment\": \"negative\",\n  \"target\": \"both\",\n  \"responsibility\": \"Meta\",\n  \"spillover\": \"explicit\",\n  \"purchase_intent\": \"negative\",\n  \"topic\": [\"privacy\", \"recording\"],\n  \"confidence\": 0.95,\n  \"rationale\": \"The speaker explicitly states they will not buy any Ray-Ban sunglasses again due to the privacy controversy involving the smart-glasses product.\",\n  \"evidence_quotes\": [\n    \"Because of the smart-glasses privacy controversy, I won't buy any Ray-Ban sunglasses again.\"\n  ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 12.382621700002346,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.95,
+        "rationale": "The speaker explicitly states they will not buy any Ray-Ban sunglasses again due to the privacy controversy involving the smart-glasses product.",
+        "evidence_quotes": [
+          "Because of the smart-glasses privacy controversy, I won't buy any Ray-Ban sunglasses again."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_brand_distrust",
+      "category": "Explicit wider-brand spillover",
+      "text": "After the Meta recording controversy, I distrust Ray-Ban's entire brand.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Wider-brand distrust is expressly connected to the recording controversy.",
+        "evidence_quotes": [
+          "After the Meta recording controversy, I distrust Ray-Ban's entire brand."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"both\",\n    \"responsibility\": \"Meta\",\n    \"spillover\": \"explicit\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"privacy\"],\n    \"confidence\": 0.9,\n    \"rationale\": \"The speaker explicitly links the Meta recording controversy to distrust of the entire Ray-Ban brand, indicating a negative spillover effect.\",\n    \"evidence_quotes\": [\n        \"After the Meta recording controversy, I distrust Ray-Ban's entire brand.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 10.135839900001884,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.9,
+        "rationale": "The speaker explicitly links the Meta recording controversy to distrust of the entire Ray-Ban brand, indicating a negative spillover effect.",
+        "evidence_quotes": [
+          "After the Meta recording controversy, I distrust Ray-Ban's entire brand."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_brand_frames",
+      "category": "Explicit wider-brand spillover",
+      "text": "I will avoid traditional Ray-Ban frames because the smart-glasses privacy scandal destroyed my confidence.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "fashion"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "confidence": 0.9,
+        "rationale": "The speaker directly links avoiding traditional frames to privacy controversy.",
+        "evidence_quotes": [
+          "I will avoid traditional Ray-Ban frames because the smart-glasses privacy scandal destroyed my confidence."
+        ]
+      },
+      "raw_output": "{\n  \"sentiment\": \"negative\",\n  \"target\": \"core Ray-Ban\",\n  \"responsibility\": \"Meta\",\n  \"spillover\": \"explicit\",\n  \"purchase_intent\": \"negative\",\n  \"topic\": [\"privacy\"],\n  \"confidence\": 0.9,\n  \"rationale\": \"The speaker explicitly states they will avoid traditional Ray-Ban frames due to the privacy scandal, indicating a negative perception of the wider Ray-Ban brand.\",\n  \"evidence_quotes\": [\n    \"I will avoid traditional Ray-Ban frames because the smart-glasses privacy scandal destroyed my confidence.\"\n  ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 10.791986600030214,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.9,
+        "rationale": "The speaker explicitly states they will avoid traditional Ray-Ban frames due to the privacy scandal, indicating a negative perception of the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "I will avoid traditional Ray-Ban frames because the smart-glasses privacy scandal destroyed my confidence."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_brand_boycott_all",
+      "category": "Explicit wider-brand spillover",
+      "text": "I will boycott Ray-Ban, including its ordinary sunglasses, due to the smart-glasses surveillance controversy.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "fashion"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "confidence": 0.9,
+        "rationale": "An explicit wider-brand boycott is causally connected to surveillance concerns.",
+        "evidence_quotes": [
+          "I will boycott Ray-Ban, including its ordinary sunglasses, due to the smart-glasses surveillance controversy."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"both\",\n    \"responsibility\": \"Meta\",\n    \"spillover\": \"explicit\",\n    \"purchase_intent\": \"negative\",\n    \"topic\": [\"privacy\", \"recording\"],\n    \"confidence\": 0.9,\n    \"rationale\": \"The speaker explicitly states they will boycott Ray-Ban, including its traditional sunglasses, due to the smart-glasses surveillance controversy.\",\n    \"evidence_quotes\": [\n        \"I will boycott Ray-Ban, including its ordinary sunglasses, due to the smart-glasses surveillance controversy.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 10.64643890003208,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.9,
+        "rationale": "The speaker explicitly states they will boycott Ray-Ban, including its traditional sunglasses, due to the smart-glasses surveillance controversy.",
+        "evidence_quotes": [
+          "I will boycott Ray-Ban, including its ordinary sunglasses, due to the smart-glasses surveillance controversy."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_brand_stop_buying",
+      "category": "Explicit wider-brand spillover",
+      "text": "Since the camera privacy controversy, I will stop buying Ray-Ban sunglasses.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "fashion"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "confidence": 0.9,
+        "rationale": "An explicit rejection of ordinary sunglasses is linked to the camera controversy.",
+        "evidence_quotes": [
+          "Since the camera privacy controversy, I will stop buying Ray-Ban sunglasses."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"both\",\n    \"responsibility\": \"Meta\",\n    \"spillover\": \"explicit\",\n    \"purchase_intent\": \"negative\",\n    \"topic\": [\"privacy\", \"recording\"],\n    \"confidence\": 0.95,\n    \"rationale\": \"The speaker explicitly states they will stop buying Ray-Ban sunglasses due to the camera privacy controversy, indicating a negative perception of the wider Ray-Ban brand.\",\n    \"evidence_quotes\": [\n        \"Since the camera privacy controversy, I will stop buying Ray-Ban sunglasses.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 10.624421799962875,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.95,
+        "rationale": "The speaker explicitly states they will stop buying Ray-Ban sunglasses due to the camera privacy controversy, indicating a negative perception of the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "Since the camera privacy controversy, I will stop buying Ray-Ban sunglasses."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_implicit_appeal",
+      "category": "Implicit spillover",
+      "text": "The smart-glasses privacy debate bothers me. The wider Ray-Ban brand seems less attractive lately.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "fashion"
+        ],
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "confidence": 0.55,
+        "rationale": "Product concern and diminished wider-brand appeal coexist without an explicit causal rejection.",
+        "evidence_quotes": [
+          "The smart-glasses privacy debate bothers me. The wider Ray-Ban brand seems less attractive lately."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"core Ray-Ban\",\n    \"responsibility\": \"unclear\",\n    \"spillover\": \"implicit\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"privacy\"],\n    \"confidence\": 0.8,\n    \"rationale\": \"The speaker expresses concern about the privacy issues related to the smart-glasses product, which they perceive as affecting the wider Ray-Ban brand. This is considered implicit spillover, as the speaker does not explicitly state a negative view of the traditional Ray-Ban brand but implies a decline in attractiveness.\",\n    \"evidence_quotes\": [\n        \"The wider Ray-Ban brand seems less attractive lately.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 12.757949899998493,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses concern about the privacy issues related to the smart-glasses product, which they perceive as affecting the wider Ray-Ban brand. This is considered implicit spillover, as the speaker does not explicitly state a negative view of the traditional Ray-Ban brand but implies a decline in attractiveness.",
+        "evidence_quotes": [
+          "The wider Ray-Ban brand seems less attractive lately."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_implicit_window",
+      "category": "Implicit spillover",
+      "text": "I worry about recording by smart glasses. Looking at traditional Ray-Ban displays feels less pleasant now.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "recording",
+          "fashion"
+        ],
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "confidence": 0.55,
+        "rationale": "A negative traditional-brand association accompanies recording concerns without a direct causal assertion.",
+        "evidence_quotes": [
+          "I worry about recording by smart glasses. Looking at traditional Ray-Ban displays feels less pleasant now."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"core Ray-Ban\",\n    \"responsibility\": \"unclear\",\n    \"spillover\": \"implicit\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"privacy\", \"recording\"],\n    \"confidence\": 0.8,\n    \"rationale\": \"The speaker expresses worry about smart glasses recording, which makes traditional Ray-Ban displays feel less pleasant. This indicates a negative perception of the wider Ray-Ban brand due to privacy concerns, which is an implicit spillover effect.\",\n    \"evidence_quotes\": [\n        \"Looking at traditional Ray-Ban displays feels less pleasant now.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 12.082669800030999,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses worry about smart glasses recording, which makes traditional Ray-Ban displays feel less pleasant. This indicates a negative perception of the wider Ray-Ban brand due to privacy concerns, which is an implicit spillover effect.",
+        "evidence_quotes": [
+          "Looking at traditional Ray-Ban displays feels less pleasant now."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_implicit_image",
+      "category": "Implicit spillover",
+      "text": "The Meta glasses controversy is unsettling. Ray-Ban's overall image feels colder to me lately.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "fashion"
+        ],
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "confidence": 0.55,
+        "rationale": "The wider-brand image is negative alongside controversy, without an express causal claim.",
+        "evidence_quotes": [
+          "The Meta glasses controversy is unsettling. Ray-Ban's overall image feels colder to me lately."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"core Ray-Ban\",\n    \"responsibility\": \"unclear\",\n    \"spillover\": \"implicit\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"privacy\", \"recording\"],\n    \"confidence\": 0.8,\n    \"rationale\": \"The text expresses a negative sentiment towards the overall image of the Ray-Ban brand, which is inferred from the mention of the 'Ray-Ban's overall image feels colder to me lately'. This negative sentiment towards the wider Ray-Ban brand is considered implicit spillover from the controversy involving Meta glasses.\",\n    \"evidence_quotes\": [\n        \"The Meta glasses controversy is unsettling.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 12.76061060000211,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses a negative sentiment towards the overall image of the Ray-Ban brand, which is inferred from the mention of the 'Ray-Ban's overall image feels colder to me lately'. This negative sentiment towards the wider Ray-Ban brand is considered implicit spillover from the controversy involving Meta glasses.",
+        "evidence_quotes": [
+          "The Meta glasses controversy is unsettling."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_core_style",
+      "category": "Positive traditional Ray-Ban perception",
+      "text": "My traditional Ray-Ban aviators still look elegant after years of use.",
+      "reference": {
+        "sentiment": "positive",
+        "topic": [
+          "fashion"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "The speaker praises ordinary eyewear without a purchase intention.",
+        "evidence_quotes": [
+          "My traditional Ray-Ban aviators still look elegant after years of use."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"positive\",\n    \"target\": \"core Ray-Ban\",\n    \"responsibility\": \"unclear\",\n    \"spillover\": \"none\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"fashion\"],\n    \"confidence\": 1,\n    \"rationale\": \"The text expresses positive sentiment towards traditional Ray-Ban aviators, indicating they still look elegant after years of use. There is no criticism of the traditional Ray-Ban brand or the smart-glasses product (Ray-Ban Meta). The speaker does not make any statements linking the smart-glasses/Meta privacy or recording controversy to distrust of the traditional Ray-Ban brand.\",\n    \"evidence_quotes\": [\n        \"My traditional Ray-Ban aviators still look elegant after years of use.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 13.6938819999923,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "positive",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "fashion"
+        ],
+        "confidence": 1,
+        "rationale": "The text expresses positive sentiment towards traditional Ray-Ban aviators, indicating they still look elegant after years of use. There is no criticism of the traditional Ray-Ban brand or the smart-glasses product (Ray-Ban Meta). The speaker does not make any statements linking the smart-glasses/Meta privacy or recording controversy to distrust of the traditional Ray-Ban brand.",
+        "evidence_quotes": [
+          "My traditional Ray-Ban aviators still look elegant after years of use."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_core_buy",
+      "category": "Positive traditional Ray-Ban perception",
+      "text": "I plan to buy ordinary Ray-Ban sunglasses for their classic styling.",
+      "reference": {
+        "sentiment": "positive",
+        "topic": [
+          "fashion"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "positive",
+        "confidence": 0.9,
+        "rationale": "A positive purchase intention concerns traditional eyewear.",
+        "evidence_quotes": [
+          "I plan to buy ordinary Ray-Ban sunglasses for their classic styling."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"positive\",\n    \"target\": \"core Ray-Ban\",\n    \"responsibility\": \"unclear\",\n    \"spillover\": \"none\",\n    \"purchase_intent\": \"positive\",\n    \"topic\": [\"fashion\"],\n    \"confidence\": 0.9,\n    \"rationale\": \"The user expresses a plan to buy ordinary Ray-Ban sunglasses, indicating a positive sentiment towards the traditional Ray-Ban brand.\",\n    \"evidence_quotes\": [\n        \"I plan to buy ordinary Ray-Ban sunglasses for their classic styling.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 10.047349000000395,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "positive",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "positive",
+        "topic": [
+          "fashion"
+        ],
+        "confidence": 0.9,
+        "rationale": "The user expresses a plan to buy ordinary Ray-Ban sunglasses, indicating a positive sentiment towards the traditional Ray-Ban brand.",
+        "evidence_quotes": [
+          "I plan to buy ordinary Ray-Ban sunglasses for their classic styling."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_core_defence",
+      "category": "Positive traditional Ray-Ban perception",
+      "text": "Traditional Ray-Ban frames remain excellent; I do not distrust the wider Ray-Ban brand because of smart glasses.",
+      "reference": {
+        "sentiment": "positive",
+        "topic": [
+          "fashion",
+          "privacy"
+        ],
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "The speaker explicitly negates wider-brand distrust.",
+        "evidence_quotes": [
+          "Traditional Ray-Ban frames remain excellent; I do not distrust the wider Ray-Ban brand because of smart glasses."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"positive\",\n    \"target\": \"core Ray-Ban\",\n    \"responsibility\": \"unclear\",\n    \"spillover\": \"none\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"technology\"],\n    \"confidence\": 0.9,\n    \"rationale\": \"The speaker praises traditional Ray-Ban frames and explicitly states they do not distrust the wider Ray-Ban brand due to the smart glasses.\",\n    \"evidence_quotes\": [\n        \"Traditional Ray-Ban frames remain excellent;\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 9.98563919996377,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "positive",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "technology"
+        ],
+        "confidence": 0.9,
+        "rationale": "The speaker praises traditional Ray-Ban frames and explicitly states they do not distrust the wider Ray-Ban brand due to the smart glasses.",
+        "evidence_quotes": [
+          "Traditional Ray-Ban frames remain excellent;"
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_mixed_audio",
+      "category": "Mixed or ambiguous sentiment",
+      "text": "I love the Ray-Ban Meta speakers but dislike the camera pointing at people on the train.",
+      "reference": {
+        "sentiment": "mixed",
+        "topic": [
+          "technology",
+          "recording",
+          "privacy"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Mixed product sentiment contains no wider-brand rejection.",
+        "evidence_quotes": [
+          "I love the Ray-Ban Meta speakers but dislike the camera pointing at people on the train."
+        ]
+      },
+      "raw_output": "{\n  \"sentiment\": \"negative\",\n  \"target\": \"Ray-Ban Meta\",\n  \"responsibility\": \"unclear\",\n  \"spillover\": \"none\",\n  \"purchase_intent\": \"unclear\",\n  \"topic\": [\"recording\"],\n  \"confidence\": 0.8,\n  \"rationale\": \"The text expresses a dislike for the camera feature on Ray-Ban Meta speakers, which is a negative sentiment towards the product. There is no mention of traditional Ray-Ban eyewear or the wider Ray-Ban brand, so there is no evidence of spillover to the core Ray-Ban brand. The speaker does not explicitly state who is responsible for the camera feature, making the responsibility unclear. There is no indication of a purchase intention, as the speaker only expresses a dislike for the feature.\",\n  \"evidence_quotes\": [\n    \"I love the Ray-Ban Meta speakers but dislike the camera pointing at people on the train.\"\n  ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 16.50194600003306,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses a dislike for the camera feature on Ray-Ban Meta speakers, which is a negative sentiment towards the product. There is no mention of traditional Ray-Ban eyewear or the wider Ray-Ban brand, so there is no evidence of spillover to the core Ray-Ban brand. The speaker does not explicitly state who is responsible for the camera feature, making the responsibility unclear. There is no indication of a purchase intention, as the speaker only expresses a dislike for the feature.",
+        "evidence_quotes": [
+          "I love the Ray-Ban Meta speakers but dislike the camera pointing at people on the train."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_mixed_core_defence",
+      "category": "Mixed or ambiguous sentiment",
+      "text": "Ray-Ban Meta recording makes me nervous, but my ordinary Ray-Ban sunglasses are still wonderful.",
+      "reference": {
+        "sentiment": "mixed",
+        "topic": [
+          "privacy",
+          "recording",
+          "fashion"
+        ],
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Traditional-brand praise is preserved alongside product criticism.",
+        "evidence_quotes": [
+          "Ray-Ban Meta recording makes me nervous, but my ordinary Ray-Ban sunglasses are still wonderful."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"core Ray-Ban\",\n    \"responsibility\": \"unclear\",\n    \"spillover\": \"none\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"privacy\"],\n    \"confidence\": 0.8,\n    \"rationale\": \"The text expresses concern about Ray-Ban Meta's recording feature, which is a privacy issue. The speaker still likes their ordinary Ray-Ban sunglasses, indicating a negative perception of the wider Ray-Ban brand due to the controversy.\",\n    \"evidence_quotes\": [\n        \"Ray-Ban Meta recording makes me nervous\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 11.880716000043321,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses concern about Ray-Ban Meta's recording feature, which is a privacy issue. The speaker still likes their ordinary Ray-Ban sunglasses, indicating a negative perception of the wider Ray-Ban brand due to the controversy.",
+        "evidence_quotes": [
+          "Ray-Ban Meta recording makes me nervous"
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_unclear_pronouns",
+      "category": "Mixed or ambiguous sentiment",
+      "text": "After reading that story, I am disappointed in them, whoever is actually responsible.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "other"
+        ],
+        "target": "unclear",
+        "responsibility": "unclear",
+        "spillover": "unclear",
+        "purchase_intent": "unclear",
+        "confidence": 0.55,
+        "rationale": "Neither the story nor the actor is specified.",
+        "evidence_quotes": [
+          "After reading that story, I am disappointed in them, whoever is actually responsible."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"unclear\",\n    \"responsibility\": \"unclear\",\n    \"spillover\": \"unclear\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"privacy\"],\n    \"confidence\": 0.8,\n    \"rationale\": \"The text expresses disappointment without specifying who is responsible or how it affects traditional Ray-Ban products, leaving the target and spillover unclear.\",\n    \"evidence_quotes\": [\"After reading that story, I am disappointed in them, whoever is actually responsible.\"]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 10.440930899989326,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "unclear",
+        "responsibility": "unclear",
+        "spillover": "unclear",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses disappointment without specifying who is responsible or how it affects traditional Ray-Ban products, leaving the target and spillover unclear.",
+        "evidence_quotes": [
+          "After reading that story, I am disappointed in them, whoever is actually responsible."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    },
+    {
+      "case": "case24_sarcasm_unspecified",
+      "category": "Mixed or ambiguous sentiment",
+      "text": "Wonderful, another camera following everyone. Exactly what we all needed, obviously.",
+      "reference": {
+        "sentiment": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "target": "unclear",
+        "responsibility": "unclear",
+        "spillover": "unclear",
+        "purchase_intent": "unclear",
+        "confidence": 0.55,
+        "rationale": "Sarcasm suggests criticism but identifies no particular brand.",
+        "evidence_quotes": [
+          "Wonderful, another camera following everyone. Exactly what we all needed, obviously."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"negative\",\n    \"target\": \"both\",\n    \"responsibility\": \"Meta\",\n    \"spillover\": \"explicit\",\n    \"purchase_intent\": \"negative\",\n    \"topic\": [\"recording\"],\n    \"confidence\": 0.95,\n    \"rationale\": \"The text expresses a negative sentiment towards the camera's ability to follow everyone, which is seen as a privacy issue. The speaker implies that this is due to Meta's actions, leading to a distrust of the wider Ray-Ban brand. The speaker explicitly states they will never buy Ray-Ban sunglasses, indicating a negative purchase intention.\",\n    \"evidence_quotes\": [\n        \"Wonderful, another camera following everyone. Exactly what we all needed, obviously.\"\n    ]\n}",
+      "status": "failed",
+      "error": "Local inference or schema/evidence validation failed.",
+      "seconds": 13.133703599974979,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "recording"
+        ],
+        "confidence": 0.95,
+        "rationale": "The text expresses a negative sentiment towards the camera's ability to follow everyone, which is seen as a privacy issue. The speaker implies that this is due to Meta's actions, leading to a distrust of the wider Ray-Ban brand. The speaker explicitly states they will never buy Ray-Ban sunglasses, indicating a negative purchase intention.",
+        "evidence_quotes": [
+          "Wonderful, another camera following everyone. Exactly what we all needed, obviously."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit."
+    },
+    {
+      "case": "case24_neutral_question",
+      "category": "Mixed or ambiguous sentiment",
+      "text": "Do Ray-Ban Meta glasses notify people before recording, and where can I read the instructions?",
+      "reference": {
+        "sentiment": "neutral",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "An information request does not assert negative sentiment or brand spillover.",
+        "evidence_quotes": [
+          "Do Ray-Ban Meta glasses notify people before recording, and where can I read the instructions?"
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"neutral\",\n    \"target\": \"unclear\",\n    \"responsibility\": \"unclear\",\n    \"spillover\": \"none\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"technology\", \"recording\"],\n    \"confidence\": 0.8,\n    \"rationale\": \"The text does not contain any explicit praise, criticism, or doubt about traditional Ray-Ban eyewear or the wider Ray-Ban brand. It only asks about the notification feature and instructions for Ray-Ban Meta glasses, which is neutral in sentiment.\",\n    \"evidence_quotes\": [\n        \"Do Ray-Ban Meta glasses notify people before recording?\"\n    ]\n}",
+      "status": "failed",
+      "error": "Local inference or schema/evidence validation failed.",
+      "seconds": 11.83455640001921,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "neutral",
+        "target": "unclear",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "technology",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text does not contain any explicit praise, criticism, or doubt about traditional Ray-Ban eyewear or the wider Ray-Ban brand. It only asks about the notification feature and instructions for Ray-Ban Meta glasses, which is neutral in sentiment.",
+        "evidence_quotes": [
+          "Do Ray-Ban Meta glasses notify people before recording?"
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "Evidence quotations must be exact nonempty substrings of the original text."
+    },
+    {
+      "case": "case24_shared_product_responsibility",
+      "category": "Mixed or ambiguous sentiment",
+      "text": "Meta and Ray-Ban are both responsible for explaining this recording feature clearly; I like the glasses but find the instructions confusing.",
+      "reference": {
+        "sentiment": "mixed",
+        "topic": [
+          "recording",
+          "technology"
+        ],
+        "target": "Ray-Ban Meta",
+        "responsibility": "both",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "confidence": 0.9,
+        "rationale": "Shared responsibility is explicitly stated for product instructions, not wider-brand damage.",
+        "evidence_quotes": [
+          "Meta and Ray-Ban are both responsible for explaining this recording feature clearly; I like the glasses but find the instructions confusing."
+        ]
+      },
+      "raw_output": "{\n    \"sentiment\": \"mixed\",\n    \"target\": \"both\",\n    \"responsibility\": \"both\",\n    \"spillover\": \"none\",\n    \"purchase_intent\": \"unclear\",\n    \"topic\": [\"technology\", \"recording\", \"convenience\"],\n    \"confidence\": 0.8,\n    \"rationale\": \"The text expresses a mixed sentiment with a like for the glasses but confusion with the instructions. The speaker attributes responsibility to both Meta and Ray-Ban, but does not explicitly link the confusion to a negative perception of the wider Ray-Ban brand or traditional eyewear. The speaker does not make a clear statement about purchasing intentions.\",\n    \"evidence_quotes\": [\n        \"I like the glasses but find the instructions confusing.\"\n    ]\n}",
+      "status": "success",
+      "error": null,
+      "seconds": 13.683620300027542,
+      "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "runtime_version": "0.40.16",
+      "parsed_output": {
+        "sentiment": "mixed",
+        "target": "both",
+        "responsibility": "both",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "technology",
+          "recording",
+          "convenience"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses a mixed sentiment with a like for the glasses but confusion with the instructions. The speaker attributes responsibility to both Meta and Ray-Ban, but does not explicitly link the confusion to a negative perception of the wider Ray-Ban brand or traditional eyewear. The speaker does not make a clear statement about purchasing intentions.",
+        "evidence_quotes": [
+          "I like the glasses but find the instructions confusing."
+        ]
+      },
+      "label_fields_evaluable": true,
+      "validation": "passed"
+    }
+  ],
+  "summary": {
+    "n": 24,
+    "evaluable": 24,
+    "accepted": 22,
+    "raw_metrics": {
+      "n": 24,
+      "fields": {
+        "sentiment": {
+          "accuracy": 0.9166666666666666,
+          "per_class": {
+            "positive": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "tn": 21,
+              "support": 3,
+              "n": 24,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "negative": {
+              "tp": 17,
+              "fp": 2,
+              "fn": 0,
+              "tn": 5,
+              "support": 17,
+              "n": 24,
+              "accuracy": 0.9166666666666666,
+              "precision": 0.8947368421052632,
+              "recall": 1.0,
+              "f1": 0.9444444444444444
+            },
+            "neutral": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "tn": 23,
+              "support": 1,
+              "n": 24,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "mixed": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 2,
+              "tn": 21,
+              "support": 3,
+              "n": 24,
+              "accuracy": 0.9166666666666666,
+              "precision": 1.0,
+              "recall": 0.3333333333333333,
+              "f1": 0.5
+            }
+          },
+          "confusion": {
+            "positive": {
+              "positive": 3,
+              "negative": 0,
+              "neutral": 0,
+              "mixed": 0
+            },
+            "negative": {
+              "positive": 0,
+              "negative": 17,
+              "neutral": 0,
+              "mixed": 0
+            },
+            "neutral": {
+              "positive": 0,
+              "negative": 0,
+              "neutral": 1,
+              "mixed": 0
+            },
+            "mixed": {
+              "positive": 0,
+              "negative": 2,
+              "neutral": 0,
+              "mixed": 1
+            }
+          }
+        },
+        "target": {
+          "accuracy": 0.5416666666666666,
+          "per_class": {
+            "Ray-Ban Meta": {
+              "tp": 5,
+              "fp": 0,
+              "fn": 2,
+              "tn": 17,
+              "support": 7,
+              "n": 24,
+              "accuracy": 0.9166666666666666,
+              "precision": 1.0,
+              "recall": 0.7142857142857143,
+              "f1": 0.8333333333333334
+            },
+            "core Ray-Ban": {
+              "tp": 4,
+              "fp": 4,
+              "fn": 4,
+              "tn": 12,
+              "support": 8,
+              "n": 24,
+              "accuracy": 0.6666666666666666,
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5
+            },
+            "Meta": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "tn": 21,
+              "support": 3,
+              "n": 24,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "both": {
+              "tp": 0,
+              "fp": 6,
+              "fn": 4,
+              "tn": 14,
+              "support": 4,
+              "n": 24,
+              "accuracy": 0.5833333333333334,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "unclear": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 1,
+              "tn": 21,
+              "support": 2,
+              "n": 24,
+              "accuracy": 0.9166666666666666,
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5
+            }
+          },
+          "confusion": {
+            "Ray-Ban Meta": {
+              "Ray-Ban Meta": 5,
+              "core Ray-Ban": 0,
+              "Meta": 0,
+              "both": 1,
+              "unclear": 1
+            },
+            "core Ray-Ban": {
+              "Ray-Ban Meta": 0,
+              "core Ray-Ban": 4,
+              "Meta": 0,
+              "both": 4,
+              "unclear": 0
+            },
+            "Meta": {
+              "Ray-Ban Meta": 0,
+              "core Ray-Ban": 0,
+              "Meta": 3,
+              "both": 0,
+              "unclear": 0
+            },
+            "both": {
+              "Ray-Ban Meta": 0,
+              "core Ray-Ban": 4,
+              "Meta": 0,
+              "both": 0,
+              "unclear": 0
+            },
+            "unclear": {
+              "Ray-Ban Meta": 0,
+              "core Ray-Ban": 0,
+              "Meta": 0,
+              "both": 1,
+              "unclear": 1
+            }
+          }
+        },
+        "responsibility": {
+          "accuracy": 0.75,
+          "per_class": {
+            "Ray-Ban": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "tn": 23,
+              "support": 1,
+              "n": 24,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "Meta": {
+              "tp": 3,
+              "fp": 6,
+              "fn": 0,
+              "tn": 15,
+              "support": 3,
+              "n": 24,
+              "accuracy": 0.75,
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "f1": 0.5
+            },
+            "both": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "tn": 23,
+              "support": 1,
+              "n": 24,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unclear": {
+              "tp": 13,
+              "fp": 0,
+              "fn": 6,
+              "tn": 5,
+              "support": 19,
+              "n": 24,
+              "accuracy": 0.75,
+              "precision": 1.0,
+              "recall": 0.6842105263157895,
+              "f1": 0.8125
+            }
+          },
+          "confusion": {
+            "Ray-Ban": {
+              "Ray-Ban": 1,
+              "Meta": 0,
+              "both": 0,
+              "unclear": 0
+            },
+            "Meta": {
+              "Ray-Ban": 0,
+              "Meta": 3,
+              "both": 0,
+              "unclear": 0
+            },
+            "both": {
+              "Ray-Ban": 0,
+              "Meta": 0,
+              "both": 1,
+              "unclear": 0
+            },
+            "unclear": {
+              "Ray-Ban": 0,
+              "Meta": 6,
+              "both": 0,
+              "unclear": 13
+            }
+          }
+        },
+        "spillover": {
+          "accuracy": 0.9166666666666666,
+          "per_class": {
+            "explicit": {
+              "tp": 5,
+              "fp": 1,
+              "fn": 0,
+              "tn": 18,
+              "support": 5,
+              "n": 24,
+              "accuracy": 0.9583333333333334,
+              "precision": 0.8333333333333334,
+              "recall": 1.0,
+              "f1": 0.9090909090909091
+            },
+            "implicit": {
+              "tp": 3,
+              "fp": 1,
+              "fn": 0,
+              "tn": 20,
+              "support": 3,
+              "n": 24,
+              "accuracy": 0.9583333333333334,
+              "precision": 0.75,
+              "recall": 1.0,
+              "f1": 0.8571428571428571
+            },
+            "none": {
+              "tp": 13,
+              "fp": 0,
+              "fn": 1,
+              "tn": 10,
+              "support": 14,
+              "n": 24,
+              "accuracy": 0.9583333333333334,
+              "precision": 1.0,
+              "recall": 0.9285714285714286,
+              "f1": 0.9629629629629629
+            },
+            "unclear": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 1,
+              "tn": 22,
+              "support": 2,
+              "n": 24,
+              "accuracy": 0.9583333333333334,
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6666666666666666
+            }
+          },
+          "confusion": {
+            "explicit": {
+              "explicit": 5,
+              "implicit": 0,
+              "none": 0,
+              "unclear": 0
+            },
+            "implicit": {
+              "explicit": 0,
+              "implicit": 3,
+              "none": 0,
+              "unclear": 0
+            },
+            "none": {
+              "explicit": 0,
+              "implicit": 1,
+              "none": 13,
+              "unclear": 0
+            },
+            "unclear": {
+              "explicit": 1,
+              "implicit": 0,
+              "none": 0,
+              "unclear": 1
+            }
+          }
+        },
+        "purchase_intent": {
+          "accuracy": 0.9583333333333334,
+          "per_class": {
+            "positive": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "tn": 23,
+              "support": 1,
+              "n": 24,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "negative": {
+              "tp": 5,
+              "fp": 1,
+              "fn": 0,
+              "tn": 18,
+              "support": 5,
+              "n": 24,
+              "accuracy": 0.9583333333333334,
+              "precision": 0.8333333333333334,
+              "recall": 1.0,
+              "f1": 0.9090909090909091
+            },
+            "unclear": {
+              "tp": 17,
+              "fp": 0,
+              "fn": 1,
+              "tn": 6,
+              "support": 18,
+              "n": 24,
+              "accuracy": 0.9583333333333334,
+              "precision": 1.0,
+              "recall": 0.9444444444444444,
+              "f1": 0.9714285714285714
+            }
+          },
+          "confusion": {
+            "positive": {
+              "positive": 1,
+              "negative": 0,
+              "unclear": 0
+            },
+            "negative": {
+              "positive": 0,
+              "negative": 5,
+              "unclear": 0
+            },
+            "unclear": {
+              "positive": 0,
+              "negative": 1,
+              "unclear": 17
+            }
+          }
+        }
+      },
+      "topics": {
+        "privacy": {
+          "tp": 11,
+          "fp": 1,
+          "fn": 6,
+          "tn": 6,
+          "support": 17,
+          "n": 24,
+          "accuracy": 0.7083333333333334,
+          "precision": 0.9166666666666666,
+          "recall": 0.6470588235294118,
+          "f1": 0.7586206896551724
+        },
+        "recording": {
+          "tp": 7,
+          "fp": 4,
+          "fn": 3,
+          "tn": 10,
+          "support": 10,
+          "n": 24,
+          "accuracy": 0.7083333333333334,
+          "precision": 0.6363636363636364,
+          "recall": 0.7,
+          "f1": 0.6666666666666666
+        },
+        "fashion": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 10,
+          "tn": 12,
+          "support": 12,
+          "n": 24,
+          "accuracy": 0.5833333333333334,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "f1": 0.2857142857142857
+        },
+        "technology": {
+          "tp": 3,
+          "fp": 2,
+          "fn": 2,
+          "tn": 17,
+          "support": 5,
+          "n": 24,
+          "accuracy": 0.8333333333333334,
+          "precision": 0.6,
+          "recall": 0.6,
+          "f1": 0.6
+        },
+        "convenience": {
+          "tp": 3,
+          "fp": 1,
+          "fn": 0,
+          "tn": 20,
+          "support": 3,
+          "n": 24,
+          "accuracy": 0.9583333333333334,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571
+        },
+        "safety": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 24,
+          "support": 0,
+          "n": 24,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "other": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "tn": 23,
+          "support": 1,
+          "n": 24,
+          "accuracy": 0.9583333333333334,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "explicit_spillover": {
+        "tp": 5,
+        "fp": 1,
+        "fn": 0,
+        "tn": 18,
+        "support": 5,
+        "n": 24,
+        "accuracy": 0.9583333333333334,
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1": 0.9090909090909091
+      }
+    },
+    "accepted_metrics": {
+      "n": 22,
+      "fields": {
+        "sentiment": {
+          "accuracy": 0.9090909090909091,
+          "per_class": {
+            "positive": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "tn": 19,
+              "support": 3,
+              "n": 22,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "negative": {
+              "tp": 16,
+              "fp": 2,
+              "fn": 0,
+              "tn": 4,
+              "support": 16,
+              "n": 22,
+              "accuracy": 0.9090909090909091,
+              "precision": 0.8888888888888888,
+              "recall": 1.0,
+              "f1": 0.9411764705882353
+            },
+            "neutral": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 22,
+              "support": 0,
+              "n": 22,
+              "accuracy": 1.0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "mixed": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 2,
+              "tn": 19,
+              "support": 3,
+              "n": 22,
+              "accuracy": 0.9090909090909091,
+              "precision": 1.0,
+              "recall": 0.3333333333333333,
+              "f1": 0.5
+            }
+          },
+          "confusion": {
+            "positive": {
+              "positive": 3,
+              "negative": 0,
+              "neutral": 0,
+              "mixed": 0
+            },
+            "negative": {
+              "positive": 0,
+              "negative": 16,
+              "neutral": 0,
+              "mixed": 0
+            },
+            "neutral": {
+              "positive": 0,
+              "negative": 0,
+              "neutral": 0,
+              "mixed": 0
+            },
+            "mixed": {
+              "positive": 0,
+              "negative": 2,
+              "neutral": 0,
+              "mixed": 1
+            }
+          }
+        },
+        "target": {
+          "accuracy": 0.5909090909090909,
+          "per_class": {
+            "Ray-Ban Meta": {
+              "tp": 5,
+              "fp": 0,
+              "fn": 1,
+              "tn": 16,
+              "support": 6,
+              "n": 22,
+              "accuracy": 0.9545454545454546,
+              "precision": 1.0,
+              "recall": 0.8333333333333334,
+              "f1": 0.9090909090909091
+            },
+            "core Ray-Ban": {
+              "tp": 4,
+              "fp": 4,
+              "fn": 4,
+              "tn": 10,
+              "support": 8,
+              "n": 22,
+              "accuracy": 0.6363636363636364,
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5
+            },
+            "Meta": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "tn": 19,
+              "support": 3,
+              "n": 22,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "both": {
+              "tp": 0,
+              "fp": 5,
+              "fn": 4,
+              "tn": 13,
+              "support": 4,
+              "n": 22,
+              "accuracy": 0.5909090909090909,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "unclear": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "tn": 21,
+              "support": 1,
+              "n": 22,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "confusion": {
+            "Ray-Ban Meta": {
+              "Ray-Ban Meta": 5,
+              "core Ray-Ban": 0,
+              "Meta": 0,
+              "both": 1,
+              "unclear": 0
+            },
+            "core Ray-Ban": {
+              "Ray-Ban Meta": 0,
+              "core Ray-Ban": 4,
+              "Meta": 0,
+              "both": 4,
+              "unclear": 0
+            },
+            "Meta": {
+              "Ray-Ban Meta": 0,
+              "core Ray-Ban": 0,
+              "Meta": 3,
+              "both": 0,
+              "unclear": 0
+            },
+            "both": {
+              "Ray-Ban Meta": 0,
+              "core Ray-Ban": 4,
+              "Meta": 0,
+              "both": 0,
+              "unclear": 0
+            },
+            "unclear": {
+              "Ray-Ban Meta": 0,
+              "core Ray-Ban": 0,
+              "Meta": 0,
+              "both": 0,
+              "unclear": 1
+            }
+          }
+        },
+        "responsibility": {
+          "accuracy": 0.7727272727272727,
+          "per_class": {
+            "Ray-Ban": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "tn": 21,
+              "support": 1,
+              "n": 22,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "Meta": {
+              "tp": 3,
+              "fp": 5,
+              "fn": 0,
+              "tn": 14,
+              "support": 3,
+              "n": 22,
+              "accuracy": 0.7727272727272727,
+              "precision": 0.375,
+              "recall": 1.0,
+              "f1": 0.5454545454545454
+            },
+            "both": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "tn": 21,
+              "support": 1,
+              "n": 22,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unclear": {
+              "tp": 12,
+              "fp": 0,
+              "fn": 5,
+              "tn": 5,
+              "support": 17,
+              "n": 22,
+              "accuracy": 0.7727272727272727,
+              "precision": 1.0,
+              "recall": 0.7058823529411765,
+              "f1": 0.8275862068965517
+            }
+          },
+          "confusion": {
+            "Ray-Ban": {
+              "Ray-Ban": 1,
+              "Meta": 0,
+              "both": 0,
+              "unclear": 0
+            },
+            "Meta": {
+              "Ray-Ban": 0,
+              "Meta": 3,
+              "both": 0,
+              "unclear": 0
+            },
+            "both": {
+              "Ray-Ban": 0,
+              "Meta": 0,
+              "both": 1,
+              "unclear": 0
+            },
+            "unclear": {
+              "Ray-Ban": 0,
+              "Meta": 5,
+              "both": 0,
+              "unclear": 12
+            }
+          }
+        },
+        "spillover": {
+          "accuracy": 0.9545454545454546,
+          "per_class": {
+            "explicit": {
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "tn": 17,
+              "support": 5,
+              "n": 22,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "implicit": {
+              "tp": 3,
+              "fp": 1,
+              "fn": 0,
+              "tn": 18,
+              "support": 3,
+              "n": 22,
+              "accuracy": 0.9545454545454546,
+              "precision": 0.75,
+              "recall": 1.0,
+              "f1": 0.8571428571428571
+            },
+            "none": {
+              "tp": 12,
+              "fp": 0,
+              "fn": 1,
+              "tn": 9,
+              "support": 13,
+              "n": 22,
+              "accuracy": 0.9545454545454546,
+              "precision": 1.0,
+              "recall": 0.9230769230769231,
+              "f1": 0.96
+            },
+            "unclear": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "tn": 21,
+              "support": 1,
+              "n": 22,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "confusion": {
+            "explicit": {
+              "explicit": 5,
+              "implicit": 0,
+              "none": 0,
+              "unclear": 0
+            },
+            "implicit": {
+              "explicit": 0,
+              "implicit": 3,
+              "none": 0,
+              "unclear": 0
+            },
+            "none": {
+              "explicit": 0,
+              "implicit": 1,
+              "none": 12,
+              "unclear": 0
+            },
+            "unclear": {
+              "explicit": 0,
+              "implicit": 0,
+              "none": 0,
+              "unclear": 1
+            }
+          }
+        },
+        "purchase_intent": {
+          "accuracy": 1.0,
+          "per_class": {
+            "positive": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "tn": 21,
+              "support": 1,
+              "n": 22,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "negative": {
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "tn": 17,
+              "support": 5,
+              "n": 22,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unclear": {
+              "tp": 16,
+              "fp": 0,
+              "fn": 0,
+              "tn": 6,
+              "support": 16,
+              "n": 22,
+              "accuracy": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "confusion": {
+            "positive": {
+              "positive": 1,
+              "negative": 0,
+              "unclear": 0
+            },
+            "negative": {
+              "positive": 0,
+              "negative": 5,
+              "unclear": 0
+            },
+            "unclear": {
+              "positive": 0,
+              "negative": 0,
+              "unclear": 16
+            }
+          }
+        }
+      },
+      "topics": {
+        "privacy": {
+          "tp": 11,
+          "fp": 1,
+          "fn": 4,
+          "tn": 6,
+          "support": 15,
+          "n": 22,
+          "accuracy": 0.7727272727272727,
+          "precision": 0.9166666666666666,
+          "recall": 0.7333333333333333,
+          "f1": 0.8148148148148148
+        },
+        "recording": {
+          "tp": 5,
+          "fp": 4,
+          "fn": 3,
+          "tn": 10,
+          "support": 8,
+          "n": 22,
+          "accuracy": 0.6818181818181818,
+          "precision": 0.5555555555555556,
+          "recall": 0.625,
+          "f1": 0.5882352941176471
+        },
+        "fashion": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 10,
+          "tn": 10,
+          "support": 12,
+          "n": 22,
+          "accuracy": 0.5454545454545454,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "f1": 0.2857142857142857
+        },
+        "technology": {
+          "tp": 3,
+          "fp": 1,
+          "fn": 2,
+          "tn": 16,
+          "support": 5,
+          "n": 22,
+          "accuracy": 0.8636363636363636,
+          "precision": 0.75,
+          "recall": 0.6,
+          "f1": 0.6666666666666666
+        },
+        "convenience": {
+          "tp": 3,
+          "fp": 1,
+          "fn": 0,
+          "tn": 18,
+          "support": 3,
+          "n": 22,
+          "accuracy": 0.9545454545454546,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571
+        },
+        "safety": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 22,
+          "support": 0,
+          "n": 22,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "other": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "tn": 21,
+          "support": 1,
+          "n": 22,
+          "accuracy": 0.9545454545454546,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "explicit_spillover": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "tn": 17,
+        "support": 5,
+        "n": 22,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "false_positives": [
+      "case24_sarcasm_unspecified"
+    ],
+    "false_negatives": [],
+    "rejected_reference_positives": [],
+    "mean_seconds": 14.085700754173255,
+    "median_seconds": 12.232645750016673,
+    "topic_exact_match": 0.16666666666666666
+  }
+}
