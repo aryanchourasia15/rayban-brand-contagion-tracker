@@ -1,0 +1,519 @@
+{
+  "prompt_version": "brand-contagion-1.0.0",
+  "model": "qwen2.5:3b",
+  "model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+  "runtime_version": "0.40.16",
+  "input_sha256": "0c7a0e8ee49ad6f2fa89cb58d12230ae3b3acee41d4f63d142e8797b7b5788c4",
+  "metrics": {
+    "n": 20,
+    "fields": {
+      "sentiment": {
+        "accuracy": 0.9,
+        "per_class": {
+          "positive": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "tn": 17,
+            "support": 3,
+            "n": 20,
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "negative": {
+            "tp": 12,
+            "fp": 1,
+            "fn": 0,
+            "tn": 7,
+            "support": 12,
+            "n": 20,
+            "accuracy": 0.95,
+            "precision": 0.9230769230769231,
+            "recall": 1.0,
+            "f1": 0.96
+          },
+          "neutral": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 1,
+            "tn": 18,
+            "support": 2,
+            "n": 20,
+            "accuracy": 0.95,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666
+          },
+          "mixed": {
+            "tp": 2,
+            "fp": 1,
+            "fn": 1,
+            "tn": 16,
+            "support": 3,
+            "n": 20,
+            "accuracy": 0.9,
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1": 0.6666666666666666
+          }
+        },
+        "confusion": {
+          "positive": {
+            "positive": 3,
+            "negative": 0,
+            "neutral": 0,
+            "mixed": 0
+          },
+          "negative": {
+            "positive": 0,
+            "negative": 12,
+            "neutral": 0,
+            "mixed": 0
+          },
+          "neutral": {
+            "positive": 0,
+            "negative": 0,
+            "neutral": 1,
+            "mixed": 1
+          },
+          "mixed": {
+            "positive": 0,
+            "negative": 1,
+            "neutral": 0,
+            "mixed": 2
+          }
+        }
+      },
+      "target": {
+        "accuracy": 0.45,
+        "per_class": {
+          "Ray-Ban Meta": {
+            "tp": 6,
+            "fp": 6,
+            "fn": 0,
+            "tn": 8,
+            "support": 6,
+            "n": 20,
+            "accuracy": 0.7,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          "core Ray-Ban": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "tn": 16,
+            "support": 3,
+            "n": 20,
+            "accuracy": 0.85,
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1": 0.4
+          },
+          "Meta": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "tn": 19,
+            "support": 1,
+            "n": 20,
+            "accuracy": 0.95,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "both": {
+            "tp": 1,
+            "fp": 4,
+            "fn": 6,
+            "tn": 9,
+            "support": 7,
+            "n": 20,
+            "accuracy": 0.5,
+            "precision": 0.2,
+            "recall": 0.14285714285714285,
+            "f1": 0.16666666666666666
+          },
+          "unclear": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 2,
+            "tn": 17,
+            "support": 3,
+            "n": 20,
+            "accuracy": 0.9,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1": 0.5
+          }
+        },
+        "confusion": {
+          "Ray-Ban Meta": {
+            "Ray-Ban Meta": 6,
+            "core Ray-Ban": 0,
+            "Meta": 0,
+            "both": 0,
+            "unclear": 0
+          },
+          "core Ray-Ban": {
+            "Ray-Ban Meta": 1,
+            "core Ray-Ban": 1,
+            "Meta": 0,
+            "both": 1,
+            "unclear": 0
+          },
+          "Meta": {
+            "Ray-Ban Meta": 0,
+            "core Ray-Ban": 0,
+            "Meta": 0,
+            "both": 1,
+            "unclear": 0
+          },
+          "both": {
+            "Ray-Ban Meta": 5,
+            "core Ray-Ban": 1,
+            "Meta": 0,
+            "both": 1,
+            "unclear": 0
+          },
+          "unclear": {
+            "Ray-Ban Meta": 0,
+            "core Ray-Ban": 0,
+            "Meta": 0,
+            "both": 2,
+            "unclear": 1
+          }
+        }
+      },
+      "responsibility": {
+        "accuracy": 0.15,
+        "per_class": {
+          "Ray-Ban": {
+            "tp": 1,
+            "fp": 12,
+            "fn": 0,
+            "tn": 7,
+            "support": 1,
+            "n": 20,
+            "accuracy": 0.4,
+            "precision": 0.07692307692307693,
+            "recall": 1.0,
+            "f1": 0.14285714285714285
+          },
+          "Meta": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 5,
+            "tn": 14,
+            "support": 6,
+            "n": 20,
+            "accuracy": 0.75,
+            "precision": 1.0,
+            "recall": 0.16666666666666666,
+            "f1": 0.2857142857142857
+          },
+          "both": {
+            "tp": 0,
+            "fp": 5,
+            "fn": 1,
+            "tn": 14,
+            "support": 1,
+            "n": 20,
+            "accuracy": 0.7,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "unclear": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 11,
+            "tn": 8,
+            "support": 12,
+            "n": 20,
+            "accuracy": 0.45,
+            "precision": 1.0,
+            "recall": 0.08333333333333333,
+            "f1": 0.15384615384615385
+          }
+        },
+        "confusion": {
+          "Ray-Ban": {
+            "Ray-Ban": 1,
+            "Meta": 0,
+            "both": 0,
+            "unclear": 0
+          },
+          "Meta": {
+            "Ray-Ban": 4,
+            "Meta": 1,
+            "both": 1,
+            "unclear": 0
+          },
+          "both": {
+            "Ray-Ban": 1,
+            "Meta": 0,
+            "both": 0,
+            "unclear": 0
+          },
+          "unclear": {
+            "Ray-Ban": 7,
+            "Meta": 0,
+            "both": 4,
+            "unclear": 1
+          }
+        }
+      },
+      "spillover": {
+        "accuracy": 0.6,
+        "per_class": {
+          "explicit": {
+            "tp": 4,
+            "fp": 7,
+            "fn": 0,
+            "tn": 9,
+            "support": 4,
+            "n": 20,
+            "accuracy": 0.65,
+            "precision": 0.36363636363636365,
+            "recall": 1.0,
+            "f1": 0.5333333333333333
+          },
+          "implicit": {
+            "tp": 2,
+            "fp": 1,
+            "fn": 0,
+            "tn": 17,
+            "support": 2,
+            "n": 20,
+            "accuracy": 0.95,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "none": {
+            "tp": 4,
+            "fp": 0,
+            "fn": 6,
+            "tn": 10,
+            "support": 10,
+            "n": 20,
+            "accuracy": 0.7,
+            "precision": 1.0,
+            "recall": 0.4,
+            "f1": 0.5714285714285714
+          },
+          "unclear": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 2,
+            "tn": 16,
+            "support": 4,
+            "n": 20,
+            "accuracy": 0.9,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666
+          }
+        },
+        "confusion": {
+          "explicit": {
+            "explicit": 4,
+            "implicit": 0,
+            "none": 0,
+            "unclear": 0
+          },
+          "implicit": {
+            "explicit": 0,
+            "implicit": 2,
+            "none": 0,
+            "unclear": 0
+          },
+          "none": {
+            "explicit": 5,
+            "implicit": 1,
+            "none": 4,
+            "unclear": 0
+          },
+          "unclear": {
+            "explicit": 2,
+            "implicit": 0,
+            "none": 0,
+            "unclear": 2
+          }
+        }
+      },
+      "purchase_intent": {
+        "accuracy": 0.95,
+        "per_class": {
+          "positive": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "tn": 17,
+            "support": 3,
+            "n": 20,
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "negative": {
+            "tp": 6,
+            "fp": 1,
+            "fn": 0,
+            "tn": 13,
+            "support": 6,
+            "n": 20,
+            "accuracy": 0.95,
+            "precision": 0.8571428571428571,
+            "recall": 1.0,
+            "f1": 0.9230769230769231
+          },
+          "unclear": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 1,
+            "tn": 9,
+            "support": 11,
+            "n": 20,
+            "accuracy": 0.95,
+            "precision": 1.0,
+            "recall": 0.9090909090909091,
+            "f1": 0.9523809523809523
+          }
+        },
+        "confusion": {
+          "positive": {
+            "positive": 3,
+            "negative": 0,
+            "unclear": 0
+          },
+          "negative": {
+            "positive": 0,
+            "negative": 6,
+            "unclear": 0
+          },
+          "unclear": {
+            "positive": 0,
+            "negative": 1,
+            "unclear": 10
+          }
+        }
+      }
+    },
+    "topics": {
+      "privacy": {
+        "tp": 13,
+        "fp": 4,
+        "fn": 1,
+        "tn": 2,
+        "support": 14,
+        "n": 20,
+        "accuracy": 0.75,
+        "precision": 0.7647058823529411,
+        "recall": 0.9285714285714286,
+        "f1": 0.8387096774193549
+      },
+      "recording": {
+        "tp": 7,
+        "fp": 1,
+        "fn": 2,
+        "tn": 10,
+        "support": 9,
+        "n": 20,
+        "accuracy": 0.85,
+        "precision": 0.875,
+        "recall": 0.7777777777777778,
+        "f1": 0.8235294117647058
+      },
+      "fashion": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 8,
+        "tn": 10,
+        "support": 10,
+        "n": 20,
+        "accuracy": 0.6,
+        "precision": 1.0,
+        "recall": 0.2,
+        "f1": 0.3333333333333333
+      },
+      "technology": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 3,
+        "tn": 16,
+        "support": 3,
+        "n": 20,
+        "accuracy": 0.8,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "convenience": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 2,
+        "tn": 17,
+        "support": 3,
+        "n": 20,
+        "accuracy": 0.9,
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5
+      },
+      "safety": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "tn": 18,
+        "support": 2,
+        "n": 20,
+        "accuracy": 0.9,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "other": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "tn": 18,
+        "support": 2,
+        "n": 20,
+        "accuracy": 0.9,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    "explicit_spillover": {
+      "tp": 4,
+      "fp": 7,
+      "fn": 0,
+      "tn": 9,
+      "support": 4,
+      "n": 20,
+      "accuracy": 0.65,
+      "precision": 0.36363636363636365,
+      "recall": 1.0,
+      "f1": 0.5333333333333333
+    }
+  },
+  "accepted_count": 9,
+  "mean_seconds": 15.223252085002605,
+  "false_positives": [
+    "product_only",
+    "meta_only",
+    "sarcasm",
+    "rayban_blame",
+    "product_purchase_rejection",
+    "meta_blame_brand_defence",
+    "product_sarcasm"
+  ],
+  "false_negatives": []
+}

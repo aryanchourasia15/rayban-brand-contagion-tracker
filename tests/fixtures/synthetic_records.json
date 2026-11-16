@@ -1,0 +1,49 @@
+[
+  {
+    "record_id": "synth_rec_001",
+    "source": "Reddit",
+    "source_type": "customer_discussion",
+    "source_id": "reddit_post_abc123",
+    "title": "Concerned about Ray-Ban Meta camera in public gym",
+    "text": "I noticed someone wearing Ray-Ban Meta glasses in the locker room. The recording light is so tiny that nobody notices. Does EssilorLuxottica have any privacy safeguards or is this all on Meta?",
+    "normalized_text": "i noticed someone wearing ray-ban meta glasses in the locker room. the recording light is so tiny that nobody notices. does essilorluxottica have any privacy safeguards or is this all on meta?",
+    "original_url": "https://www.reddit.com/r/privacy/comments/abc123/rayban_meta_gym/?utm_source=share&utm_medium=web2x",
+    "canonical_url": "https://reddit.com/r/privacy/comments/abc123/rayban_meta_gym",
+    "published_at": "2024-03-15T14:30:00Z",
+    "collected_at": "2024-03-15T15:00:00Z",
+    "domain": "reddit.com",
+    "collection_method": "API",
+    "content_hash": "a1b2c3d4e5f600112233445566778899aabbccddeeff00112233445566778899",
+    "import_batch_id": null,
+    "status": "valid",
+    "is_synthetic": 1,
+    "raw_payload": {
+      "subreddit": "privacy",
+      "upvotes": 142,
+      "num_comments": 47
+    }
+  },
+  {
+    "record_id": "synth_rec_002",
+    "source": "News",
+    "source_type": "media",
+    "source_id": "news_art_987xyz",
+    "title": "Smart Glasses Face Renewed European Privacy Scrutiny",
+    "text": "Data protection authorities across Europe are reviewing whether Meta and Ray-Ban maker EssilorLuxottica provided sufficient transparency regarding passive bystander recording.",
+    "normalized_text": "data protection authorities across europe are reviewing whether meta and ray-ban maker essilorluxottica provided sufficient transparency regarding passive bystander recording.",
+    "original_url": "https://www.theverge.com/2024/2/1/smart-glasses-privacy-europe?ref=rss",
+    "canonical_url": "https://theverge.com/2024/2/1/smart-glasses-privacy-europe",
+    "published_at": "2024-02-01T09:15:00Z",
+    "collected_at": "2024-02-01T10:00:00Z",
+    "domain": "theverge.com",
+    "collection_method": "GDELT",
+    "content_hash": "b2c3d4e5f6a100112233445566778899aabbccddeeff00112233445566778899",
+    "import_batch_id": null,
+    "status": "valid",
+    "is_synthetic": 1,
+    "raw_payload": {
+      "author": "Tech Policy Reporter",
+      "language": "en"
+    }
+  }
+]

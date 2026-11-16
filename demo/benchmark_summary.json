@@ -1,0 +1,167 @@
+{
+  "synthetic_only": true,
+  "model": {
+    "model_name": "qwen2.5:3b",
+    "model_version": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+    "runtime_version": "0.40.16"
+  },
+  "protocol": "V2 frozen before held-out inference; no post-heldout tuning; 60 actual local calls. Historical v1 regression copied verbatim.",
+  "comparison": {
+    "regression_v1": {
+      "n": 20,
+      "accuracy": {
+        "sentiment": 0.9,
+        "target": 0.45,
+        "responsibility": 0.15,
+        "spillover": 0.6,
+        "purchase_intent": 0.95
+      },
+      "topic_exact_match": 0.15,
+      "explicit": {
+        "tp": 4,
+        "fp": 7,
+        "fn": 0,
+        "tn": 9,
+        "support": 4,
+        "n": 20,
+        "accuracy": 0.65,
+        "precision": 0.36363636363636365,
+        "recall": 1.0,
+        "f1": 0.5333333333333333
+      },
+      "accepted": 9,
+      "mean_seconds": 15.223252085002605,
+      "false_positives": [
+        "product_only",
+        "meta_only",
+        "sarcasm",
+        "rayban_blame",
+        "product_purchase_rejection",
+        "meta_blame_brand_defence",
+        "product_sarcasm"
+      ],
+      "false_negatives": []
+    },
+    "regression:brand-contagion-2.0.0": {
+      "n": 20,
+      "evaluable": 20,
+      "accuracy": {
+        "sentiment": 0.85,
+        "target": 0.8,
+        "responsibility": 0.85,
+        "spillover": 0.8,
+        "purchase_intent": 1.0
+      },
+      "topic_exact_match": 0.2,
+      "explicit": {
+        "tp": 4,
+        "fp": 1,
+        "fn": 0,
+        "tn": 15,
+        "support": 4,
+        "n": 20,
+        "accuracy": 0.95,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.8888888888888888
+      },
+      "accepted": 17,
+      "mean_seconds": 19.073170184993067,
+      "median_seconds": 15.696540649980307,
+      "false_positives": [
+        "rayban_blame"
+      ],
+      "false_negatives": [],
+      "rejected_reference_positives": [
+        "brand_boycott",
+        "explicit_refusal_paraphrase"
+      ]
+    },
+    "heldout:brand-contagion-1.0.0": {
+      "n": 20,
+      "evaluable": 20,
+      "accuracy": {
+        "sentiment": 0.75,
+        "target": 0.45,
+        "responsibility": 0.15,
+        "spillover": 0.45,
+        "purchase_intent": 0.75
+      },
+      "topic_exact_match": 0.35,
+      "explicit": {
+        "tp": 4,
+        "fp": 5,
+        "fn": 1,
+        "tn": 10,
+        "support": 5,
+        "n": 20,
+        "accuracy": 0.7,
+        "precision": 0.4444444444444444,
+        "recall": 0.8,
+        "f1": 0.5714285714285714
+      },
+      "accepted": 11,
+      "mean_seconds": 14.130899944997509,
+      "median_seconds": 12.812337949988432,
+      "false_positives": [
+        "held_negated_rayban_blame",
+        "held_rayban_only_blame",
+        "held_shared_product_accountability",
+        "held_unspecified_sarcasm",
+        "held_core_purchase_despite_distrust"
+      ],
+      "false_negatives": [
+        "held_explicit_core_rejection"
+      ],
+      "rejected_reference_positives": [
+        "held_explicit_brand_avoidance",
+        "held_explicit_brand_boycott",
+        "held_explicit_trust_paraphrase",
+        "held_explicit_all_eyewear"
+      ]
+    },
+    "heldout:brand-contagion-2.0.0": {
+      "n": 20,
+      "evaluable": 20,
+      "accuracy": {
+        "sentiment": 0.75,
+        "target": 0.8,
+        "responsibility": 0.85,
+        "spillover": 0.95,
+        "purchase_intent": 0.9
+      },
+      "topic_exact_match": 0.3,
+      "explicit": {
+        "tp": 5,
+        "fp": 1,
+        "fn": 0,
+        "tn": 14,
+        "support": 5,
+        "n": 20,
+        "accuracy": 0.95,
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1": 0.9090909090909091
+      },
+      "accepted": 16,
+      "mean_seconds": 16.58471384999866,
+      "median_seconds": 16.293751049990533,
+      "false_positives": [
+        "held_shared_product_accountability"
+      ],
+      "false_negatives": [],
+      "rejected_reference_positives": [
+        "held_explicit_trust_paraphrase",
+        "held_explicit_all_eyewear"
+      ]
+    }
+  },
+  "prompt_sha256": {
+    "brand-contagion-1.0.0": "c7754a666ec211a08f8726a66819b3b93061db46a85fab2b408ea8ff09310aab",
+    "brand-contagion-2.0.0": "bc3d69e588928e0c580c00d8099beb02c58a61c12735d160d811225f00f1c5b3"
+  },
+  "reference_hashes": {
+    "regression": "0c7a0e8ee49ad6f2fa89cb58d12230ae3b3acee41d4f63d142e8797b7b5788c4",
+    "heldout": "95d2916141401f80cf33d35bcac7c2aeb88b03db0376b85989194ac208468891"
+  }
+}
