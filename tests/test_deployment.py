@@ -78,7 +78,7 @@ class TestCloudApplication(unittest.TestCase):
         app = self.app()
         app.text_input(key='voice_search_True').set_value('traditional').run()
         self.assertEqual(list(app.exception), [])
-        app.selectbox[0].select('Regression (20 examples)').run()
+        next(item for item in app.selectbox if item.label == 'Benchmark cohort').select('Regression (20 examples)').run()
         self.assertEqual(list(app.exception), [])
         app.text_input(key='voice_search_True').set_value('').run()
         next(item for item in app.text_input if item.label == 'Reviewer identifier').set_value('Demo reviewer')

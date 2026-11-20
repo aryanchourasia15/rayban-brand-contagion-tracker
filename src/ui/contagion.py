@@ -304,13 +304,18 @@ def render_contagion(*, force_demo=False):
     st.caption('CUSTOMER VOICE / PRODUCT → BRAND')
     st.title('Brand Contagion Analysis')
     st.write('Distinguish criticism of smart glasses from distrust of the wider Ray-Ban brand.')
+    if force_demo:
+        from src.ui.synthetic_reactions import render_public_dashboard
+        render_public_dashboard()
+        return
     if demo:
         st.warning('SYNTHETIC DEMONSTRATION · Customer scenarios are invented; the timeline uses sourced real-world events. '
                    'Fixture labels and actual recorded local AI outputs are shown separately. No customer research findings. '
                    'Demo reviews are session-only and never enter SQLite.')
         rows = demo_discussions()
         from src.ui.demo_benchmark import render_benchmark
-        render_benchmark()
+        with st.expander('Previous fixed-set AI benchmarks — separate v1/v2 diagnostics'):
+            render_benchmark()
         for row in rows:
             reviews = st.session_state.get('contagion_demo_reviews', {}).get(row['record_id'], [])
             if reviews:
@@ -325,10 +330,18 @@ def render_contagion(*, force_demo=False):
     if result:
         st.dataframe(pd.DataFrame(result).drop(columns=['labels'], errors='ignore'), hide_index=True)
     tabs = st.tabs(['Contagion analytics', 'Customer voice', 'Local classification', 'Human validation',
-                    'Verified timeline', 'Synthetic AI case study', 'Strategic implications'])
+                    'Verified timeline', 'Synthetic AI case study', 'Strategic implications', 'Real Media Evidence'])
     with tabs[0]:
-        analytics_panel(rows, demo)
+        if demo:
+            from src.ui.synthetic_reactions import render_simulation
+            render_simulation()
+            with st.expander('Legacy small-fixture sandbox — separate from the generated scenarios'):
+                analytics_panel(rows, demo)
+        else:
+            analytics_panel(rows, demo)
     with tabs[1]:
+        if demo:
+            st.caption('This is the separate small-fixture sandbox. The generated customer-reaction corpus and its filters are in Contagion analytics.')
         explorer_panel(rows, demo)
     with tabs[2]:
         classification_panel(demo)
@@ -341,3 +354,10 @@ def render_contagion(*, force_demo=False):
         render_case_study()
     with tabs[6]:
         render_strategy()
+    with tabs[7]:
+        if force_demo:
+            from src.ui.synthetic_reactions import render_public_sources
+            render_public_sources()
+        else:
+            from src.ui.media_evidence import render_real_media
+            render_real_media(allow_review=True)

@@ -14,7 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.data.db import init_db, insert_record
 from src.data.deduplicator import DeduplicationEngine
 from src.data.importers.file_importer import (
-    parse_file_to_rows, detect_column_mapping, validate_and_transform_rows,
+    parse_file_to_rows, detect_column_mapping, validate_and_transform_rows, declared_synthetic_row,
 )
 
 
@@ -62,9 +62,12 @@ def check_dataset(file_path, db_path=None):
                     issues.append('missing_source_identification')
                 if not value('source_type'):
                     issues.append('missing_source_type')
-                valid, invalid = validate_and_transform_rows([row], column_mapping=mapping)
+                # This audit only writes disposable scratch storage. Explicitly retain
+                # simulation status while checking marked fixtures; real ingestion still rejects them.
+                synthetic = declared_synthetic_row(row)
+                valid, invalid = validate_and_transform_rows([row], column_mapping=mapping, is_synthetic=synthetic)
                 result = dict(row_number=index, issues=issues, validation_errors=[], source=None,
-                              source_type=None, relevance_flag=None, duplicate=None)
+                              source_type=None, relevance_flag=None, duplicate=None, is_synthetic=synthetic)
                 if invalid:
                     issues.append('invalid_row')
                     result['validation_errors'] = invalid[0]['errors']

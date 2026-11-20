@@ -32,6 +32,13 @@ DEFAULT_COLUMN_ALIASES: Dict[str, List[str]] = {
 }
 
 
+def declared_synthetic_row(row):
+    """Recognise explicit simulation markers, without changing ingestion mode."""
+    return isinstance(row, dict) and (
+        str(row.get("is_synthetic", "")).strip().lower() in ("true", "1", "yes") or
+        str(row.get("source_kind", "")).strip().lower() == "ai-generated simulation")
+
+
 def detect_column_mapping(columns: List[str]) -> Dict[str, str]:
     """
     Automatically detect canonical field mappings from a list of column names.
@@ -199,6 +206,9 @@ def validate_and_transform_rows(
             continue
 
         errors: List[str] = []
+        # Explicit simulation markers must never be silently imported as real research.
+        if declared_synthetic_row(row) and not is_synthetic:
+            errors.append("AI-generated/synthetic rows require explicit is_synthetic=True ingestion; they cannot enter real research data.")
 
         # Helper to get mapped value
         def get_val(canonical_key: str, preserve: bool = False) -> Optional[str]:

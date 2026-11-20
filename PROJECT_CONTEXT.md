@@ -14,6 +14,26 @@ Developed as part of an HEC Paris Strategic Management course.
 ## 2. Central Research Question
 > **Is the privacy controversy surrounding Ray-Ban Meta remaining confined to smart glasses, or is it contaminating customer perceptions of the wider Ray-Ban brand?**
 
+### Approved demonstration methodology (19 November 2026)
+
+The professor permits AI-generated mock customer responses for the strategic
+demonstration. The current deliverable uses 260 explicitly synthetic reactions
+grounded in the existing 32 genuine bibliographic media records and sourced
+timeline. Real customer collection is not required for this demonstration.
+Scenario quotas and reference labels are design choices, not measured attitudes
+or independently validated ground truth. Local Qwen generation and subsequent
+classification are distinct stages; both use the same model, so agreement is
+an in-sample diagnostic, not evidence of generalisation. H1-H3 remain hypotheses.
+Keep genuine media context, simulated customer reactions, and recorded model
+evaluation separate. No synthetic records may enter real research metrics.
+
+Finalization (20 November 2026): the public app presents the full 260-case corpus
+and the saved 220/40 acceptance split. A stratified 50-case AI-assisted proposal
+review is stored separately, pending independent human validation. No additional
+customer comments or model inference are required. Historical source/prediction
+artefacts and prompt versions remain immutable; new evidence wording support is
+opt-in and does not retroactively change historical acceptance or model scores.
+
 ---
 
 ## 3. Strategic Hypotheses

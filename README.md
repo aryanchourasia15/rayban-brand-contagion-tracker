@@ -4,6 +4,24 @@ HEC Paris Strategic Management research artefact. The Data Collection Centre
 keeps customer discussions separate from journalistic media evidence. Relevance is
 a keyword-based triage flag, not a sentiment or brand-spillover conclusion.
 
+The current professor-approved demonstration uses locally AI-generated reactions
+grounded in 32 genuine media references. All simulated charts are illustrative,
+not empirical customer sentiment. The public `cloud_app.py` runs from curated
+`demo/` artefacts without Ollama, credentials or private research files. Scenario
+design labels and actual classifier outputs are shown separately. See
+[the synthetic methodology](docs/SYNTHETIC_DEMONSTRATION.md) for generation,
+reproduction, provenance and evaluation limitations. Nothing is published automatically.
+
+The finalized public view opens with 260 simulations, 32 contextual news sources,
+220 historically accepted predictions and 40 rejections. The six main tabs separate
+scenario analytics, the full customer-voice explorer, sourced timeline, strategy,
+model evaluation and genuine media references. Legacy fixtures remain in Advanced.
+[The 50-case error review](docs/CLASSIFICATION_ERROR_REVIEW.md) provides separate
+AI-assisted proposals, never human-validation labels or replacements for saved
+predictions. Historical prompt versions, benchmarks and the 260-case inputs remain
+unchanged. Evidence rule `context-evidence-2.0` is opt-in; historical replay defaults
+to `legacy-1.0`. Public release marker: `hec-review-2026-11-20-v1`.
+
 ## Run locally (Python 3.11+)
 
 From this directory, in PowerShell:
@@ -363,3 +381,48 @@ forced synthetic `cloud_app.py` entry point is prepared for public demonstration
 The explorer loads matching records into memory, making this first version suitable
 for research-sized datasets. Reddit ingestion and Strategy Lab are outside this
 release. No paid API credentials are required.
+
+### Reviewing the local real-media dataset
+
+Launch the local application on localhost (not `cloud_app.py`):
+
+```powershell
+$env:RAYBAN_APP_MODE = "local"
+.venv\Scripts\python -m streamlit run app.py --server.address 127.0.0.1
+```
+
+Open **Brand Contagion Analysis > Real Media Evidence**. The article queue uses
+`data/research_news_2023_2026/human_review_template.csv`; keep its source IDs,
+fingerprints and proposal snapshots unchanged. The private dataset must already
+exist locally; it is not included in a public checkout.
+
+1. Enter your reviewer name or agreed team identifier. Select an article and open
+   its original source. Compare the date, publisher, headline, proposed labels,
+   evidence and flags with the source context. No source content is fetched automatically.
+2. Explicitly choose **Confirm proposed labels**, **Correct classifications**,
+   **Mark uncertain**, or **Exclude from analysis**. Correct individual fields as
+   needed and record supporting evidence and a short justification, including any
+   access limitations. Use uncertainty rather than guessing when verification is blocked.
+3. Check the source-evidence attestation and select **Save media review**. The
+   application appends an event with an automatic UTC timestamp to the existing
+   `media_review_events.csv`. Refresh never approves a record. Uncheck the
+   pending-only filter to inspect history or append a later correction.
+4. Use **Export completed media reviews (CSV)** for the latest resolved decision
+   per article, including exclusions. Pending and uncertain cases are omitted;
+   spreadsheet formula-like cells are escaped only in the download.
+
+Reviewed coverage includes confirm/correct/exclude decisions. Uncertain decisions
+remain pending and flagged. **Disagreements** counts latest label corrections
+against proposals plus exclusions; it does not measure agreement between reviewers.
+Reviewed findings use only current confirmed/corrected labels, separately from
+provisional counts. An explicit wider-brand reference can be positive or stylistic:
+it is not evidence of brand damage. An allegation or inquiry is not proven liability.
+
+The append-only ledger preserves earlier decisions and original classifications.
+An OS file lock protects concurrent saves on one filesystem; stale saves are
+rejected. This is a local, unauthenticated team workflow, not a tamper-proof or
+multi-host review service. Protect the ignored data directory and keep backups;
+reviewer identity and actual source checks remain the team's responsibility.
+Demo/cloud mode cannot save or export named reviews. Preparation-time summary
+CSV/JSON files are snapshots; the dashboard recomputes current findings from the
+ledger and the completed-review download reflects current decisions.

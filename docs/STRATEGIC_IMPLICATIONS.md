@@ -77,12 +77,32 @@ No target percentages or reputational forecasts are asserted. Evaluate benefits,
 costs and accessibility alongside safeguards; do not assume all recording is harmful
 or every concern leads to brand rejection.
 
-## What the research still needs
+## When could criticism cross the brand boundary?
 
-Obtain authorised customer records spanning positive, neutral and critical views,
-with original dates and provenance. Use independent human coding, including
-disagreement adjudication, before estimating spillover in that sample. Track Meta
-and core Ray-Ban targets separately; document missing years and recruitment bias.
-Longitudinal comparisons need a defined sampling frame and alternative explanations
-such as product quality, price and general attitudes toward Meta. No causal claim
-or population spillover rate is supported by the material currently presented.
+**Illustrative hypotheses:** Wider-brand contagion becomes plausible when a person
+interprets Ray-Ban's endorsement as responsibility for privacy choices, sees a
+conflict between the brand's values and treatment of bystanders, or cannot separate
+ordinary eyewear from the camera-bearing product. A broken expectation of discretion
+could turn product avoidance into wider-brand distrust. These are proposed mechanisms,
+not measured customer reactions. Mere brand naming, negative product coverage or an
+official inquiry cannot establish that this transfer has happened.
+
+The opposite boundary is equally important: a person may criticise Meta's processing
+role while valuing Ray-Ban's design and traditional frames. Clear responsibilities,
+credible evidence of safeguards and distinct product positioning could support H3.
+Marketing distinctions alone cannot resolve a substantive privacy concern. The
+strategic challenge of market convergence is to earn both technological usefulness
+and social legitimacy with customers and nearby people.
+
+## What this approved demonstration can establish
+
+Under the professor-approved methodology, local AI-generated scenarios illustrate
+H1, H2 and H3 without collecting real customer comments. The prescribed category
+balance deliberately makes contrasting mechanisms visible. It cannot estimate
+spillover prevalence, historical customer trends, causality or actual brand damage.
+Generation references are provisional design labels; comparison with the same
+model's classifications is diagnostic agreement, not independent validation.
+Genuine media sources establish contextual developments and their evidential
+status, not the authenticity of an invented reaction. Independent human coding
+and a defined real-customer sampling frame would be needed for later empirical
+claims; they are not prerequisites for this explicitly illustrative deliverable.

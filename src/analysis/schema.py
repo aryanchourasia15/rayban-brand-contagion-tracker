@@ -33,12 +33,14 @@ def _no_duplicate_keys(pairs):
     return value
 
 
-def validate_labels(value, text):
+def validate_labels(value, text, *, evidence_version='legacy-1.0'):
     """Validate complete labels and exact evidence. Return a detached JSON value.
 
     Explicit-spillover checks deliberately favor review over false brand-damage claims.
     These checks are safeguards, not a substitute for semantic human validation.
     """
+    if evidence_version not in ('legacy-1.0', 'context-evidence-2.0'):
+        raise ValueError('Unknown evidence validation version.')
     if isinstance(value, str):
         value = json.loads(value, object_pairs_hook=_no_duplicate_keys)
     if not isinstance(value, dict) or set(value) != set(JSON_SCHEMA['required']):
@@ -74,6 +76,9 @@ def validate_labels(value, text):
                 controversy = re.search(r'privacy|recording|surveillance|meta|smart glasses|camera', clause)
                 connection = re.search(r'because|due to|after|since|made me|makes me|so ', clause)
                 supported |= bool(core and criticism and controversy and connection and not product_first and not negated)
+        if not supported and evidence_version == 'context-evidence-2.0':
+            from src.analysis.spillover_evidence import explicit_core_support
+            supported = explicit_core_support(quotes)
         if not supported:
             raise ValueError('Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit.')
     return json.loads(json.dumps(value, allow_nan=False))

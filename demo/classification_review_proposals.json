@@ -1,0 +1,2951 @@
+{
+  "kind": "ai_assisted_review_proposals_not_human_validation",
+  "is_synthetic": true,
+  "review_date": "2026-11-20",
+  "method": "AI-assisted editorial assessment of existing text; no new generation or model inference.",
+  "policy": "Qualified doubt can be explicit when a direct product-to-core causal link is stated; concerns, hypothetical spread and core-brand defence alone are not explicit. Buying intent is not inferred from trust or wearing preference. Responsibility requires textual attribution.",
+  "source_hash_basis": "Canonical JSON records; portable across Git line-ending conversion.",
+  "dataset_sha256": "31f1d3fa56f5714fab7972ac05d7da8d17e40160ee57006f7cb5a9643d88d8bb",
+  "predictions_sha256": "f08a1aace48526b731b29a1b66225b0dbdf748be13599d26a352c1c20831cd4c",
+  "records": [
+    {
+      "synthetic_id": "SIM-0001",
+      "is_synthetic": true,
+      "stratum": "product_or_Meta_criticism",
+      "text": "These camera and AI features make these Ray-Ban Meta glasses too invasive. I won't be buying them for privacy reasons.",
+      "simulated_publication_year": 2023,
+      "related_article_ids": [
+        "news_e6655b74ea2029c5f142"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.9,
+        "rationale": "The speaker explicitly states they won't be buying the Ray-Ban Meta glasses due to privacy reasons, indicating a direct negative perception of the product and its implications for the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "These camera and AI features make these Ray-Ban Meta glasses too invasive. I won't be buying them for privacy reasons."
+        ]
+      },
+      "historical_status": "failed",
+      "historical_validation": "Product-only/Meta-only criticism cannot establish explicit brand spillover.",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy",
+          "recording",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "These camera and AI features make these Ray-Ban Meta glasses too invasive. I won't be buying them for privacy reasons."
+      ],
+      "proposal_rationale": "Refusal to buy these camera glasses is product-only; no wider-brand rejection or company-specific blame is stated.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "Product-only/Meta-only criticism cannot establish explicit brand spillover.",
+        "context-evidence-2.0": "Product-only/Meta-only criticism cannot establish explicit brand spillover."
+      }
+    },
+    {
+      "synthetic_id": "SIM-0007",
+      "is_synthetic": true,
+      "stratum": "product_or_Meta_criticism",
+      "text": "The camera and AI features in these Ray-Ban Meta glasses raise serious privacy concerns. I think both Meta and Ray-Ban should be held accountable for these features, as they could be misused without proper safeguards.",
+      "simulated_publication_year": 2024,
+      "related_article_ids": [
+        "news_dc03f5dce61952898932"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "both",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "both",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text criticizes the camera and AI features in the Ray-Ban Meta glasses, raising privacy concerns. The speaker holds both Meta and Ray-Ban responsible for these features, suggesting they should be held accountable. This leads to an explicit spillover effect, as the speaker expresses distrust in the wider Ray-Ban brand due to these privacy concerns.",
+        "evidence_quotes": [
+          "The camera and AI features in these Ray-Ban Meta glasses raise serious privacy concerns.",
+          "I think both Meta and Ray-Ban should be held accountable for these features, as they could be misused without proper safeguards."
+        ]
+      },
+      "historical_status": "failed",
+      "historical_validation": "Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit.",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "both",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ]
+      },
+      "evidence_quotes": [
+        "The camera and AI features in these Ray-Ban Meta glasses raise serious privacy concerns. I think both Meta and Ray-Ban should be held accountable for these features, as they could be misused without proper safeguards."
+      ],
+      "proposal_rationale": "Both companies are explicitly held accountable for features. Shared responsibility is not wider-brand distrust; no buying decision is stated.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit.",
+        "context-evidence-2.0": "Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit."
+      }
+    },
+    {
+      "synthetic_id": "SIM-0013",
+      "is_synthetic": true,
+      "stratum": "product_or_Meta_criticism",
+      "text": "Really? Camera in glasses? This is more invasion of privacy than a security blanket. Don't need that with Ray-Ban Meta.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_c0c754aafb20d7504073"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text criticizes the camera feature in Ray-Ban Meta glasses, calling it an invasion of privacy. The speaker does not explicitly blame either Ray-Ban Meta or the wider Ray-Ban brand, but suggests that the privacy concerns could lead to a negative perception of the entire Ray-Ban brand.",
+        "evidence_quotes": [
+          "Really? Camera in glasses? This is more invasion of privacy than a security blanket."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ]
+      },
+      "evidence_quotes": [
+        "Really? Camera in glasses? This is more invasion of privacy than a security blanket. Don't need that with Ray-Ban Meta."
+      ],
+      "proposal_rationale": "Camera intrusion is criticised sarcastically; ordinary eyewear and explicit company blame are absent.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0019",
+      "is_synthetic": true,
+      "stratum": "product_or_Meta_criticism",
+      "text": "If they're not training on camera roll content, that's great, but why risk privacy at all? I won't buy Ray-Ban Meta for their camera, and it's not just about ordinary sunglasses anymore.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_5f76b934cb9b6d8087c7"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "both",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses concern about privacy risks associated with Ray-Ban Meta's camera feature and explicitly states they will not buy Ray-Ban Meta due to this issue.",
+        "evidence_quotes": [
+          "I won't buy Ray-Ban Meta for their camera, and it's not just about ordinary sunglasses anymore."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ]
+      },
+      "evidence_quotes": [
+        "If they're not training on camera roll content, that's great, but why risk privacy at all? I won't buy Ray-Ban Meta for their camera, and it's not just about ordinary sunglasses anymore."
+      ],
+      "proposal_rationale": "The speaker welcomes a possible safeguard but refuses Ray-Ban Meta. The ordinary-sunglasses phrase does not state distrust of traditional frames.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0025",
+      "is_synthetic": true,
+      "stratum": "product_or_Meta_criticism",
+      "text": "The camera in these glasses feels like a privacy violation, but even with its cool features, the camera component is too intrusive.",
+      "simulated_publication_year": 2026,
+      "related_article_ids": [
+        "news_ce65b3336d9016b131ef"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses concern about the camera component in the smart-glasses, which is seen as a privacy violation. This negative sentiment is directed at the smart-glasses product (Ray-Ban Meta), but the speaker does not explicitly blame either Meta or Ray-Ban for the privacy issue. The text does not provide enough information to determine if the speaker would avoid the wider Ray-Ban brand or traditional Ray-Ban eyewear.",
+        "evidence_quotes": [
+          "The camera in these glasses feels like a privacy violation."
+        ]
+      },
+      "historical_status": "failed",
+      "historical_validation": "Evidence quotations must be exact nonempty substrings of the original text.",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "The camera in these glasses feels like a privacy violation, but even with its cool features, the camera component is too intrusive."
+      ],
+      "proposal_rationale": "Cool features and an intrusive camera form a mixed product assessment. No core-brand distrust or purchase commitment is expressed.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "Evidence quotations must be exact nonempty substrings of the original text.",
+        "context-evidence-2.0": "Evidence quotations must be exact nonempty substrings of the original text."
+      }
+    },
+    {
+      "synthetic_id": "SIM-0031",
+      "is_synthetic": true,
+      "stratum": "product_or_Meta_criticism",
+      "text": "I've kept my Ray-Ban frames for years because they're reliable and functional, not because of this camera. The built-in capture indicator in Gen 3 feels like a privacy invasion, especially when visibility alone doesn't establish bystander consent. I'll continue to avoid Meta's Ray-Ban Meta Audio and Gen 3 for fear of what they might do with my privacy.",
+      "simulated_publication_year": 2026,
+      "related_article_ids": [
+        "news_b8b0c7a08fbb9b3490ed"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "both",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.9,
+        "rationale": "The speaker explicitly links the privacy invasion of the camera to their avoidance of the Meta Ray-Ban Meta Audio and Gen 3, indicating a negative perception of the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "I'll continue to avoid Meta's Ray-Ban Meta Audio and Gen 3 for fear of what they might do with my privacy."
+        ]
+      },
+      "historical_status": "failed",
+      "historical_validation": "Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit.",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy",
+          "recording",
+          "fashion"
+        ]
+      },
+      "evidence_quotes": [
+        "I've kept my Ray-Ban frames for years because they're reliable and functional, not because of this camera. The built-in capture indicator in Gen 3 feels like a privacy invasion, especially when visibility alone doesn't establish bystander consent. I'll continue to avoid Meta's Ray-Ban Meta Audio and Gen 3 for fear of what they might do with my privacy."
+      ],
+      "proposal_rationale": "Reliable old frames are defended while Meta-branded smart products are avoided. A product name alone does not establish explicit corporate responsibility.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit.",
+        "context-evidence-2.0": "Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit."
+      }
+    },
+    {
+      "synthetic_id": "SIM-0037",
+      "is_synthetic": true,
+      "stratum": "product_or_Meta_criticism",
+      "text": "If Ray-Ban Meta is behind the cameras and AI, I won't be buying these glasses for privacy reasons.",
+      "simulated_publication_year": 2023,
+      "related_article_ids": [
+        "news_d47d7c3c384423b28fc2"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "Ray-Ban",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.9,
+        "rationale": "The speaker explicitly states they won't be buying Ray-Ban Meta glasses due to privacy concerns, indicating a direct negative perception of the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "If Ray-Ban Meta is behind the cameras and AI, I won't be buying these glasses for privacy reasons."
+        ]
+      },
+      "historical_status": "failed",
+      "historical_validation": "Product-only/Meta-only criticism cannot establish explicit brand spillover.",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ]
+      },
+      "evidence_quotes": [
+        "If Ray-Ban Meta is behind the cameras and AI, I won't be buying these glasses for privacy reasons."
+      ],
+      "proposal_rationale": "The compound product name is not a separate assignment of blame to Ray-Ban. The conditional refusal concerns these glasses only.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "Product-only/Meta-only criticism cannot establish explicit brand spillover.",
+        "context-evidence-2.0": "Product-only/Meta-only criticism cannot establish explicit brand spillover."
+      }
+    },
+    {
+      "synthetic_id": "SIM-0043",
+      "is_synthetic": true,
+      "stratum": "product_or_Meta_criticism",
+      "text": "I’m uncomfortable with the idea of smart glasses that can track and identify people. It feels like a privacy violation, even if it’s for safety reasons. I prefer sticking with traditional Ray-Ban sunglasses for now.",
+      "simulated_publication_year": 2024,
+      "related_article_ids": [
+        "news_71ac13f98c9f77182dc9"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "both",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses discomfort with smart glasses that can track and identify people, which they perceive as a privacy violation. They prefer traditional Ray-Ban sunglasses, indicating a negative perception of the wider Ray-Ban brand due to the privacy concerns.",
+        "evidence_quotes": [
+          "I’m uncomfortable with the idea of smart glasses that can track and identify people. It feels like a privacy violation, even if it’s for safety reasons."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "safety",
+          "fashion"
+        ]
+      },
+      "evidence_quotes": [
+        "I’m uncomfortable with the idea of smart glasses that can track and identify people. It feels like a privacy violation, even if it’s for safety reasons. I prefer sticking with traditional Ray-Ban sunglasses for now."
+      ],
+      "proposal_rationale": "Traditional sunglasses are preferred, so the recording concern does not establish wider-brand damage. The tracking claim is a simulated belief, not a verified capability.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0049",
+      "is_synthetic": true,
+      "stratum": "product_or_Meta_criticism",
+      "text": "Their privacy policies are non-existent. These glasses are a privacy nightmare.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_5268f6946dc9a6bdfaaf"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.9,
+        "rationale": "The text criticizes the privacy policies of Ray-Ban Meta, which are described as non-existent. This is presented as a privacy nightmare, indicating a negative perception of the smart-glasses product. The speaker links the privacy concerns to distrust of the wider Ray-Ban brand, which is an explicit spillover of negative perception to the traditional Ray-Ban brand.",
+        "evidence_quotes": [
+          "Their privacy policies are non-existent."
+        ]
+      },
+      "historical_status": "failed",
+      "historical_validation": "Product-only/Meta-only criticism cannot establish explicit brand spillover.",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "evidence_quotes": [
+        "Their privacy policies are non-existent. These glasses are a privacy nightmare."
+      ],
+      "proposal_rationale": "The simulated policy accusation names no responsible company and expresses no purchase intention or wider-brand consequence. It is not a factual finding about policy.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "Product-only/Meta-only criticism cannot establish explicit brand spillover.",
+        "context-evidence-2.0": "Product-only/Meta-only criticism cannot establish explicit brand spillover."
+      }
+    },
+    {
+      "synthetic_id": "SIM-0055",
+      "is_synthetic": true,
+      "stratum": "product_or_Meta_criticism",
+      "text": "If Ray-Ban Meta is secretly recording me, I’ll be leaving them behind for ordinary sunglasses. Privacy is non-negotiable.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_7839458cf697f81ad66b"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "both",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "Ray-Ban",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.9,
+        "rationale": "The speaker explicitly states they will leave Ray-Ban Meta for ordinary sunglasses due to privacy concerns, indicating a negative perception of the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "If Ray-Ban Meta is secretly recording me, I'll be leaving them behind for ordinary sunglasses."
+        ]
+      },
+      "historical_status": "failed",
+      "historical_validation": "Evidence quotations must be exact nonempty substrings of the original text.",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ]
+      },
+      "evidence_quotes": [
+        "If Ray-Ban Meta is secretly recording me, I’ll be leaving them behind for ordinary sunglasses. Privacy is non-negotiable."
+      ],
+      "proposal_rationale": "The conditional move to ordinary sunglasses rejects the smart product; it does not reject traditional Ray-Ban or explicitly assign company blame.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "Evidence quotations must be exact nonempty substrings of the original text.",
+        "context-evidence-2.0": "Evidence quotations must be exact nonempty substrings of the original text."
+      }
+    },
+    {
+      "synthetic_id": "SIM-0061",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I'm glad they're considering privacy, but I still can't shake the doubt that Ray-Ban Meta is gathering too much data. It's not just the glasses, it's the whole brand now.",
+      "simulated_publication_year": 2026,
+      "related_article_ids": [
+        "news_eafd5f0d4a51fc57a820"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses doubt about Ray-Ban Meta's data collection, which extends to the whole brand, indicating implicit spillover of negative perception to the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "I'm glad they're considering privacy, but I still can't shake the doubt that Ray-Ban Meta is gathering too much data."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "evidence_quotes": [
+        "I'm glad they're considering privacy, but I still can't shake the doubt that Ray-Ban Meta is gathering too much data. It's not just the glasses, it's the whole brand now."
+      ],
+      "proposal_rationale": "Data-gathering doubt is expressly extended beyond the glasses to the whole brand now. The original negative buying label is unsupported.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0062",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I used to really like wearing my Ray-Ban sunglasses, but hearing about the AI technology in the smart glasses makes me wonder if I should still trust Ray-Ban for my regular sunglasses. I mean, who knows what other privacy issues they might be hiding?",
+      "simulated_publication_year": 2026,
+      "related_article_ids": [
+        "news_55b74e4db487d61c8485"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "Ray-Ban",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses doubt about Ray-Ban's traditional sunglasses due to concerns about their AI technology in smart glasses, indicating a negative sentiment towards the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "I used to really like wearing my Ray-Ban sunglasses, but hearing about the AI technology in the smart glasses makes me wonder if I should still trust Ray-Ban for my regular sunglasses."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "I used to really like wearing my Ray-Ban sunglasses, but hearing about the AI technology in the smart glasses makes me wonder if I should still trust Ray-Ban for my regular sunglasses. I mean, who knows what other privacy issues they might be hiding?"
+      ],
+      "proposal_rationale": "The text directly links smart-glasses AI to doubt about trusting regular Ray-Ban sunglasses. This is qualified distrust, not a resolved buying decision.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0063",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I guess I'm still not sure if I can trust traditional Ray-Ban after seeing all the privacy concerns with their new gadgets. It makes me question if I should even wear my old frames anymore.",
+      "simulated_publication_year": 2026,
+      "related_article_ids": [
+        "news_b8b0c7a08fbb9b3490ed"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "both",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses doubt about traditional Ray-Ban after learning about privacy concerns with their new gadgets. This suggests a negative perception of the traditional Ray-Ban brand, which is an implicit spillover effect.",
+        "evidence_quotes": [
+          "It makes me question if I should even wear my old frames anymore."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "evidence_quotes": [
+        "I guess I'm still not sure if I can trust traditional Ray-Ban after seeing all the privacy concerns with their new gadgets. It makes me question if I should even wear my old frames anymore."
+      ],
+      "proposal_rationale": "Trust in traditional Ray-Ban and wearing old frames are questioned after privacy concerns. The link is explicit even though the attitude remains tentative.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0064",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I used to love my Ray-Ban sunglasses, but the whole privacy thing has me worried. I might just skip the smart-glasses and stick with regular ones for now.",
+      "simulated_publication_year": 2026,
+      "related_article_ids": [
+        "news_9e2ec082117739874ff6"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses worry about privacy issues related to Ray-Ban's smart-glasses, which has led them to consider skipping the smart-glasses and sticking with traditional Ray-Ban sunglasses.",
+        "evidence_quotes": [
+          "I used to love my Ray-Ban sunglasses, but the whole privacy thing has me worried."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "fashion"
+        ]
+      },
+      "evidence_quotes": [
+        "I used to love my Ray-Ban sunglasses, but the whole privacy thing has me worried. I might just skip the smart-glasses and stick with regular ones for now."
+      ],
+      "proposal_rationale": "Sticking with regular frames while skipping smart glasses preserves a boundary. The designed explicit-spillover label is contradicted by the text.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0065",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I used to love how classic and timeless my Ray-Ban sunglasses looked. But now, the idea of them being associated with smart glasses makes me doubt my trust in all their products.",
+      "simulated_publication_year": 2023,
+      "related_article_ids": [
+        "news_e6655b74ea2029c5f142"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "technology",
+          "fashion"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses doubt about Ray-Ban's products in general due to their association with smart glasses, indicating a negative perception of the wider Ray-Ban brand. This is considered implicit spillover from the controversy involving the smart glasses.",
+        "evidence_quotes": [
+          "But now, the idea of them being associated with smart glasses makes me doubt my trust in all their products."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "technology",
+          "fashion"
+        ]
+      },
+      "evidence_quotes": [
+        "I used to love how classic and timeless my Ray-Ban sunglasses looked. But now, the idea of them being associated with smart glasses makes me doubt my trust in all their products."
+      ],
+      "proposal_rationale": "Association with smart glasses is expressly said to cause doubt about all products. This is broader technology-linked distrust; privacy is not actually named.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0066",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I don't trust Meta enough to wear any of their products, but traditional Ray-Ban seems like a safer bet now.",
+      "simulated_publication_year": 2023,
+      "related_article_ids": [
+        "news_f9c551f02f6241725c2f"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "Ray-Ban",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy",
+          "safety"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker explicitly states they don't trust Meta enough to wear any of their products, indicating a negative perception of Meta. They also mention that traditional Ray-Ban seems like a safer bet now, suggesting a negative perception of the wider Ray-Ban brand. The text does not provide any evidence of spillover effects.",
+        "evidence_quotes": [
+          "I don't trust Meta enough to wear any of their products, but traditional Ray-Ban seems like a safer bet now."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "other",
+          "fashion"
+        ]
+      },
+      "evidence_quotes": [
+        "I don't trust Meta enough to wear any of their products, but traditional Ray-Ban seems like a safer bet now."
+      ],
+      "proposal_rationale": "Distrust of Meta coexists with a safer traditional-Ray-Ban alternative. Refusing Meta products does not reject the wider Ray-Ban brand; privacy is unstated.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0067",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I guess I'm still not sure if I can trust traditional Ray-Ban anymore, but the smart-glasses issue is just the cherry on top of my growing skepticism about the whole brand.",
+      "simulated_publication_year": 2023,
+      "related_article_ids": [
+        "news_c4217e3cedff02db7e60"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "both",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses skepticism about the traditional Ray-Ban brand due to the smart-glasses issue, indicating a negative perception of the wider Ray-Ban brand. The speaker does not explicitly blame either company, making the responsibility unclear. The spillover is implicit as the speaker's skepticism about the smart-glasses issue is inferred to affect their trust in the traditional Ray-Ban brand.",
+        "evidence_quotes": [
+          "I guess I'm still not sure if I can trust traditional Ray-Ban anymore, but the smart-glasses issue is just the cherry on top of my growing skepticism about the whole brand."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "I guess I'm still not sure if I can trust traditional Ray-Ban anymore, but the smart-glasses issue is just the cherry on top of my growing skepticism about the whole brand."
+      ],
+      "proposal_rationale": "Smart-glasses issues add to an existing wider-brand scepticism. Privacy-specific causation and a buying decision are not established.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0068",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "While I'm excited about the tech side of Meta's smart glasses, the privacy concerns keep me from wanting to wear the regular Ray-Ban frames anymore. It’s a tough decision, but I’m afraid of where this tech might lead for all of Ray-Ban’s eyewear.",
+      "simulated_publication_year": 2023,
+      "related_article_ids": [
+        "news_78e787d545db1783052c"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses privacy concerns about Meta's smart glasses, which leads to a negative perception of the wider Ray-Ban brand. The speaker is unsure about the responsibility of either company and does not make a clear purchase decision.",
+        "evidence_quotes": [
+          "It’s a tough decision, but I’m afraid of where this tech might lead for all of Ray-Ban’s eyewear."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "While I'm excited about the tech side of Meta's smart glasses, the privacy concerns keep me from wanting to wear the regular Ray-Ban frames anymore. It’s a tough decision, but I’m afraid of where this tech might lead for all of Ray-Ban’s eyewear."
+      ],
+      "proposal_rationale": "Privacy concerns explicitly prevent willingness to wear regular Ray-Ban frames. Excitement about the technology remains; wearing is not necessarily purchasing.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0069",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I'm hesitant to give up my trust in traditional Ray-Ban after this smart-glasses debacle.",
+      "simulated_publication_year": 2023,
+      "related_article_ids": [
+        "news_d47d7c3c384423b28fc2"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses hesitation in continuing to trust the traditional Ray-Ban brand due to a privacy issue with the smart-glasses, indicating an implicit spillover effect.",
+        "evidence_quotes": [
+          "I'm hesitant to give up my trust in traditional Ray-Ban after this smart-glasses debacle."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "unclear",
+        "purchase_intent": "unclear",
+        "topic": [
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "I'm hesitant to give up my trust in traditional Ray-Ban after this smart-glasses debacle."
+      ],
+      "proposal_rationale": "Hesitant to give up trust can mean reluctance to abandon the brand, not loss of trust. Do not force a negative-spillover conclusion.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0070",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I still trust traditional Ray-Ban. But their integration with Meta makes me wary. If they're tracking my every move, I won't wear their glasses.",
+      "simulated_publication_year": 2023,
+      "related_article_ids": [
+        "news_ff29a18da1f16afd269b"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "Ray-Ban",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses distrust towards traditional Ray-Ban due to their integration with Meta, specifically mentioning privacy concerns. The speaker states they won't wear their glasses if they are being tracked, indicating a negative perception of the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "I still trust traditional Ray-Ban. But their integration with Meta makes me wary.",
+          "If they're tracking my every move, I won't wear their glasses."
+        ]
+      },
+      "historical_status": "failed",
+      "historical_validation": "Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit.",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "unclear",
+        "responsibility": "unclear",
+        "spillover": "unclear",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ]
+      },
+      "evidence_quotes": [
+        "I still trust traditional Ray-Ban. But their integration with Meta makes me wary. If they're tracking my every move, I won't wear their glasses."
+      ],
+      "proposal_rationale": "Traditional-brand trust is expressly retained. Their glasses and hypothetical tracking do not resolve whether rejection concerns smart glasses or ordinary frames.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit.",
+        "context-evidence-2.0": "Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit."
+      }
+    },
+    {
+      "synthetic_id": "SIM-0071",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I don't trust Meta to handle privacy properly, and I'm starting to wonder if I can still trust traditional Ray-Ban. If their tech can invade my privacy, I'm going to avoid everything.",
+      "simulated_publication_year": 2024,
+      "related_article_ids": [
+        "news_dc03f5dce61952898932"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "both",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy",
+          "technology"
+        ],
+        "confidence": 0.9,
+        "rationale": "The speaker explicitly links Meta's privacy issues to their avoidance of traditional Ray-Ban products, indicating a negative perception of the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "I don't trust Meta to handle privacy properly, and I'm starting to wonder if I can still trust traditional Ray-Ban."
+        ]
+      },
+      "historical_status": "failed",
+      "historical_validation": "Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit.",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "I don't trust Meta to handle privacy properly, and I'm starting to wonder if I can still trust traditional Ray-Ban. If their tech can invade my privacy, I'm going to avoid everything."
+      ],
+      "proposal_rationale": "Meta is explicitly distrusted over privacy. Traditional-brand doubt is emerging, but avoid everything has ambiguous scope and the quoted evidence lacks a decisive causal core-brand rejection.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit.",
+        "context-evidence-2.0": "Explicit spillover requires quoted core-brand distrust linked to the controversy; otherwise use unclear/implicit."
+      }
+    },
+    {
+      "synthetic_id": "SIM-0072",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I still trust traditional Ray-Ban. But their integration with Meta makes me uneasy about privacy. ",
+      "simulated_publication_year": 2024,
+      "related_article_ids": [
+        "news_920c0f24ea1c1e0d4a80"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses unease about the integration of Ray-Ban with Meta, suggesting a negative perception of the wider Ray-Ban brand due to privacy concerns. This is considered implicit spillover.",
+        "evidence_quotes": [
+          "But their integration with Meta makes me uneasy about privacy."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "evidence_quotes": [
+        "I still trust traditional Ray-Ban. But their integration with Meta makes me uneasy about privacy. "
+      ],
+      "proposal_rationale": "Still trusting traditional Ray-Ban is explicit; partnership unease does not by itself revoke that trust.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0073",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I trust traditional Ray-Ban, but this partnership raises serious privacy concerns.",
+      "simulated_publication_year": 2024,
+      "related_article_ids": [
+        "news_66397d72fe66d51101ef"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses trust in traditional Ray-Ban and raises privacy concerns about a partnership, indicating a negative sentiment towards the traditional Ray-Ban brand.",
+        "evidence_quotes": [
+          "I trust traditional Ray-Ban, but this partnership raises serious privacy concerns."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "evidence_quotes": [
+        "I trust traditional Ray-Ban, but this partnership raises serious privacy concerns."
+      ],
+      "proposal_rationale": "Traditional Ray-Ban is expressly trusted despite partnership concerns. No wider rejection or purchase refusal is stated.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0074",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I used to trust traditional Ray-Ban. But now I'm just not sure about their privacy practices with this smart-glass integration.",
+      "simulated_publication_year": 2024,
+      "related_article_ids": [
+        "news_d5d4be9a8e881594b11a"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "Ray-Ban",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses doubt about traditional Ray-Ban's privacy practices, which is a negative sentiment towards the wider Ray-Ban brand. This is considered implicit spillover because the text does not explicitly state that the consumer will avoid traditional Ray-Ban products, but the privacy concerns are strong enough to affect the consumer's trust in the brand.",
+        "evidence_quotes": [
+          "But now I'm just not sure about their privacy practices with this smart-glass integration."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "I used to trust traditional Ray-Ban. But now I'm just not sure about their privacy practices with this smart-glass integration."
+      ],
+      "proposal_rationale": "Past trust contrasts with current uncertainty about integration practices. The broader effect is suggested, without a clear present rejection or company-specific blame.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0075",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I still wear traditional Ray-Ban glasses, but the smart-glasses partnership is making me very uncomfortable. I worry about privacy and how this tech might be misused with the glasses I trust.",
+      "simulated_publication_year": 2024,
+      "related_article_ids": [
+        "news_71ac13f98c9f77182dc9"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "both",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses discomfort with the smart-glasses partnership, indicating a negative sentiment towards the product. The speaker's discomfort is linked to privacy concerns, which implicitly suggests a negative perception of the wider Ray-Ban brand. The speaker does not explicitly blame either company, making the responsibility unclear. The speaker's discomfort is not strong enough to form a clear purchase intention.",
+        "evidence_quotes": [
+          "I still wear traditional Ray-Ban glasses, but the smart-glasses partnership is making me very uncomfortable."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "I still wear traditional Ray-Ban glasses, but the smart-glasses partnership is making me very uncomfortable. I worry about privacy and how this tech might be misused with the glasses I trust."
+      ],
+      "proposal_rationale": "The partnership is worrying while traditional glasses are still worn and trusted. Possible association is suggested; current wider distrust remains ambiguous.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0076",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I trust traditional Ray-Ban, but the idea of their glasses combining with external services is making me wary. Privacy issues with smart glasses might spill over to my trust in their standard frames too.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_d70f0e7a9bc508f4e330"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses distrust in the combination of traditional Ray-Ban glasses with external services, which they perceive as a privacy issue. This distrust is seen as potentially affecting their trust in the wider Ray-Ban brand, indicating an implicit spillover of negative perception from the smart glasses to the traditional frames.",
+        "evidence_quotes": [
+          "I trust traditional Ray-Ban, but the idea of their glasses combining with external services is making me wary."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "I trust traditional Ray-Ban, but the idea of their glasses combining with external services is making me wary. Privacy issues with smart glasses might spill over to my trust in their standard frames too."
+      ],
+      "proposal_rationale": "Might spill over is a prospective concern, not a report that trust has already transferred. Core trust is still stated.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0077",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "Their smart glasses raise privacy concerns, but I still prefer classic Ray-Ban frames.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_c0c754aafb20d7504073"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses privacy concerns about Ray-Ban Meta's smart glasses, indicating a negative sentiment towards them. The speaker prefers classic Ray-Ban frames, showing a preference for the traditional Ray-Ban brand. The responsibility attribution is unclear as the speaker does not explicitly blame either company. There is no evidence of spillover to the wider Ray-Ban brand or traditional eyewear. The purchase intent is unclear as the speaker does not explicitly state a plan to buy or avoid buying either product.",
+        "evidence_quotes": [
+          "Their smart glasses raise privacy concerns"
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "fashion"
+        ]
+      },
+      "evidence_quotes": [
+        "Their smart glasses raise privacy concerns, but I still prefer classic Ray-Ban frames."
+      ],
+      "proposal_rationale": "Preference for classic frames protects the traditional brand while criticising smart-glasses privacy.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0078",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "Their traditional glasses are fine, but the partnership worries me more. Smart glasses raise serious privacy issues that I can't ignore, and I'm starting to doubt whether I should even wear Ray-Ban anymore.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_cb5fe0a97c56f29b7a1c"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "Ray-Ban",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses concern about the privacy issues raised by the partnership between Ray-Ban and Meta, indicating a negative perception of the wider Ray-Ban brand. The speaker doubts whether they should even wear Ray-Ban glasses anymore, which is an implicit spillover effect.",
+        "evidence_quotes": [
+          "Their traditional glasses are fine, but the partnership worries me more.",
+          "Smart glasses raise serious privacy issues that I can't ignore."
+        ]
+      },
+      "historical_status": "failed",
+      "historical_validation": "Evidence quotations must be exact nonempty substrings of the original text.",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "evidence_quotes": [
+        "Their traditional glasses are fine, but the partnership worries me more. Smart glasses raise serious privacy issues that I can't ignore, and I'm starting to doubt whether I should even wear Ray-Ban anymore."
+      ],
+      "proposal_rationale": "Privacy concerns are directly connected to questioning whether to wear Ray-Ban at all, alongside praise for traditional glasses. The saved quote with an added period was not exact.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "Evidence quotations must be exact nonempty substrings of the original text.",
+        "context-evidence-2.0": "Evidence quotations must be exact nonempty substrings of the original text."
+      }
+    },
+    {
+      "synthetic_id": "SIM-0079",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I still rely on traditional Ray-Ban for my daily glasses, but the partnership with Meta leaves me uneasy about their privacy practices. It makes me question whether I can continue to trust their brand for all their products.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_7a0cb93116ce469bfb89"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "both",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses unease about the partnership with Meta, questioning whether they can continue to trust the brand for all their products, indicating a negative sentiment towards the core Ray-Ban brand.",
+        "evidence_quotes": [
+          "It makes me question whether I can continue to trust their brand for all their products."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "evidence_quotes": [
+        "I still rely on traditional Ray-Ban for my daily glasses, but the partnership with Meta leaves me uneasy about their privacy practices. It makes me question whether I can continue to trust their brand for all their products."
+      ],
+      "proposal_rationale": "Partnership privacy unease is expressly said to cause doubt about trusting the brand across all products. No company-specific blame or resolved purchase decision is stated.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0080",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I still use traditional Ray-Ban glasses, but the smart-glasses partnership makes me wary of the brand's other products too. Privacy issues with their tech spill over to me not wanting their regular eyewear.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_17f9a75e012b50e769a8"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses concern about privacy issues with Meta's tech, which makes them wary of the brand's other products, including traditional Ray-Ban eyewear.",
+        "evidence_quotes": [
+          "Privacy issues with their tech spill over to me not wanting their regular eyewear."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "I still use traditional Ray-Ban glasses, but the smart-glasses partnership makes me wary of the brand's other products too. Privacy issues with their tech spill over to me not wanting their regular eyewear."
+      ],
+      "proposal_rationale": "Privacy issues are explicitly said to spill over into not wanting regular eyewear. This is direct core scope and causation, even without boycott vocabulary.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0081",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I used to love traditional Ray-Ban, but these smart glasses have me worried about my privacy. Can’t trust Meta or Ray-Ban on this one.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_5268f6946dc9a6bdfaaf"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses worry about privacy issues with the smart glasses, which they attribute to both Meta and Ray-Ban. They state they can't trust either company, indicating a negative perception of the wider Ray-Ban brand due to the privacy concerns.",
+        "evidence_quotes": [
+          "I used to love traditional Ray-Ban, but these smart glasses have me worried about my privacy. Can’t trust Meta or Ray-Ban on this one."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "both",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "evidence_quotes": [
+        "I used to love traditional Ray-Ban, but these smart glasses have me worried about my privacy. Can’t trust Meta or Ray-Ban on this one."
+      ],
+      "proposal_rationale": "Both firms are distrusted on this one, which may restrict criticism to the smart-glasses product. Past traditional-brand affection alone does not prove current wider rejection.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0082",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I used to love traditional Ray-Ban, but these smart glasses raise privacy concerns. I still can't shake the thought that someone could be watching me through my lenses.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_950e0e5512c11dbd0a54"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "Ray-Ban",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses concern about privacy issues with the smart glasses, which is linked to a negative perception of the wider Ray-Ban brand. The speaker still loves traditional Ray-Ban, indicating a negative core-brand perception. The speaker does not explicitly blame either Meta or Ray-Ban, leaving the spillover as implicit.",
+        "evidence_quotes": [
+          "I used to love traditional Ray-Ban, but these smart glasses raise privacy concerns."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ]
+      },
+      "evidence_quotes": [
+        "I used to love traditional Ray-Ban, but these smart glasses raise privacy concerns. I still can't shake the thought that someone could be watching me through my lenses."
+      ],
+      "proposal_rationale": "Privacy fear concerns these smart glasses; the past liking for traditional frames is not explicitly withdrawn.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0083",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I still love traditional Ray-Ban for my daily wear, but these smart-glasses make me worry about privacy. It's not just Meta or Ray-Ban, but the whole brand I'm starting to doubt now.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_5f76b934cb9b6d8087c7"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "both",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses worry about privacy issues related to the smart-glasses, which they associate with the whole Ray-Ban brand. They still love traditional Ray-Ban but are starting to doubt the brand as a whole due to privacy concerns.",
+        "evidence_quotes": [
+          "It's not just Meta or Ray-Ban, but the whole brand I'm starting to doubt now."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "evidence_quotes": [
+        "I still love traditional Ray-Ban for my daily wear, but these smart-glasses make me worry about privacy. It's not just Meta or Ray-Ban, but the whole brand I'm starting to doubt now."
+      ],
+      "proposal_rationale": "The speaker still likes daily-wear frames but expressly extends smart-glasses privacy doubt to the whole brand now.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0084",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I used to love traditional Ray-Ban for my daily wear, but the thought of any smart technology has me reaching for polaroid classics instead.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_b3c83d3374208d0eab31"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "negative",
+        "topic": [
+          "technology",
+          "fashion"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses a preference for traditional Ray-Ban sunglasses over smart-glasses, indicating a negative sentiment towards the smart-glasses product. The speaker avoids purchasing smart-glasses and prefers polaroid classics, which is a clear indication of a negative purchase intention.",
+        "evidence_quotes": [
+          "I used to love traditional Ray-Ban for my daily wear, but the thought of any smart technology has me reaching for polaroid classics instead."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "technology",
+          "fashion"
+        ]
+      },
+      "evidence_quotes": [
+        "I used to love traditional Ray-Ban for my daily wear, but the thought of any smart technology has me reaching for polaroid classics instead."
+      ],
+      "proposal_rationale": "An alternative-frame preference follows smart-technology aversion. Privacy is not stated, so do not assert explicit privacy-contagion causation.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0085",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I still appreciate traditional Ray-Ban for their classic designs, but the integration of smart features worries me about privacy and the overall brand integrity.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_ca32a59ec9a1b0d4c12d"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses concern about privacy and brand integrity, indicating a negative sentiment towards the traditional Ray-Ban brand. The speaker appreciates traditional Ray-Ban but is worried about the integration of smart features, which is seen as a privacy concern. The text does not explicitly blame either Meta or Ray-Ban, nor does it suggest a purchase intention.",
+        "evidence_quotes": [
+          "I still appreciate traditional Ray-Ban for their classic designs, but the integration of smart features worries me about privacy and the overall brand integrity."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "fashion"
+        ]
+      },
+      "evidence_quotes": [
+        "I still appreciate traditional Ray-Ban for their classic designs, but the integration of smart features worries me about privacy and the overall brand integrity."
+      ],
+      "proposal_rationale": "Classic design remains appreciated; brand-integrity concern suggests association without an explicit loss of trust or refusal.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0086",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I used to love traditional Ray-Ban for their classic designs, but now I worry about the privacy implications of their smart glasses. It's a shame they're abandoning their core brand for gadgets.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_e2f0020580d06de07353"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "Ray-Ban",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses worry about the privacy implications of Ray-Ban's smart glasses, which they view as abandoning their core brand. This indicates a negative perception of the wider Ray-Ban brand due to the privacy concerns.",
+        "evidence_quotes": [
+          "I used to love traditional Ray-Ban for their classic designs, but now I worry about the privacy implications of their smart glasses."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Ray-Ban",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology",
+          "fashion"
+        ]
+      },
+      "evidence_quotes": [
+        "I used to love traditional Ray-Ban for their classic designs, but now I worry about the privacy implications of their smart glasses. It's a shame they're abandoning their core brand for gadgets."
+      ],
+      "proposal_rationale": "The speaker criticises abandoning the core brand for gadgets. The described strategic choice points to Ray-Ban, but a current rejection of ordinary products is not stated.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0087",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I used to love traditional Ray-Ban, but if they're going down this privacy rabbit hole with their smart glasses, I'm just not sure I want to be associated with them anymore. What if it all blows up in a big way?",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_7839458cf697f81ad66b"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "both",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses concern about the privacy implications of Ray-Ban's smart glasses, indicating a negative perception of the wider Ray-Ban brand. The speaker does not explicitly blame either company, but suggests a potential negative spillover to the traditional Ray-Ban brand.",
+        "evidence_quotes": [
+          "I used to love traditional Ray-Ban, but if they're going down this privacy rabbit hole with their smart glasses, I'm just not sure I want to be associated with them anymore."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "I used to love traditional Ray-Ban, but if they're going down this privacy rabbit hole with their smart glasses, I'm just not sure I want to be associated with them anymore. What if it all blows up in a big way?"
+      ],
+      "proposal_rationale": "The conditional privacy concern is directly linked to not wanting association with the traditional brand. This is stated potential rejection, not observed purchasing behaviour.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0088",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I know the classic Ray-Ban frames are great, but the idea of privacy concerns makes me wary of the whole brand. If they start messing with my data, I might just avoid them altogether.",
+      "simulated_publication_year": 2026,
+      "related_article_ids": [
+        "news_858e829910b0f296f71d"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses concern about privacy issues with the Ray-Ban brand, indicating a negative perception of the brand. The speaker is wary of the brand and might avoid purchasing Ray-Ban sunglasses if privacy concerns escalate.",
+        "evidence_quotes": [
+          "I know the classic Ray-Ban frames are great, but the idea of privacy concerns makes me wary of the whole brand."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "evidence_quotes": [
+        "I know the classic Ray-Ban frames are great, but the idea of privacy concerns makes me wary of the whole brand. If they start messing with my data, I might just avoid them altogether."
+      ],
+      "proposal_rationale": "Privacy concerns explicitly make the speaker wary of the whole brand; subsequent avoidance is conditional. Appreciation for the frames remains.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0089",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "Their recent move has me worried about my traditional Ray-Ban glasses too. Privacy is a serious concern now.",
+      "simulated_publication_year": 2026,
+      "related_article_ids": [
+        "news_ce65b3336d9016b131ef"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses concern about traditional Ray-Ban glasses due to privacy issues, indicating a negative perception of the wider Ray-Ban brand. This is considered implicit spillover as the text does not explicitly link the privacy concerns to the traditional Ray-Ban brand.",
+        "evidence_quotes": [
+          "Their recent move has me worried about my traditional Ray-Ban glasses too. Privacy is a serious concern now."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "evidence_quotes": [
+        "Their recent move has me worried about my traditional Ray-Ban glasses too. Privacy is a serious concern now."
+      ],
+      "proposal_rationale": "Concern reaches traditional glasses too, but their recent move does not specify a clear causal mechanism or actual loss of trust.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0090",
+      "is_synthetic": true,
+      "stratum": "all_designed_explicit",
+      "text": "I appreciate traditional Ray-Ban for their classic designs, but the smart-glasses privacy concerns are worrying. It makes me question if I should even consider their other products.",
+      "simulated_publication_year": 2026,
+      "related_article_ids": [
+        "news_9401d354489ca32fd1eb"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "Ray-Ban",
+        "spillover": "explicit",
+        "purchase_intent": "negative",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses concern about privacy issues with Ray-Ban Meta's smart glasses, which leads to questioning whether they should consider other products from the Ray-Ban brand. This indicates an implicit spillover of negative perception towards the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "It makes me question if I should even consider their other products."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "explicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "fashion"
+        ]
+      },
+      "evidence_quotes": [
+        "I appreciate traditional Ray-Ban for their classic designs, but the smart-glasses privacy concerns are worrying. It makes me question if I should even consider their other products."
+      ],
+      "proposal_rationale": "Smart-glasses privacy concern is expressly said to question considering other products. It is qualified purchase consideration, not a settled refusal.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0091",
+      "is_synthetic": true,
+      "stratum": "implicit_or_brand_protection",
+      "text": "I used to appreciate traditional Ray-Ban for their classic designs. Now I’m a bit concerned about how much data they might be collecting with their AI eyewear.",
+      "simulated_publication_year": 2026,
+      "related_article_ids": [
+        "news_62b9162b3e581ae5d715"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "both",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The text expresses concern about data collection by Ray-Ban's AI eyewear, which could be interpreted as a negative perception of the wider Ray-Ban brand. The speaker still appreciates traditional Ray-Ban designs, indicating no explicit rejection of the traditional brand.",
+        "evidence_quotes": [
+          "I used to appreciate traditional Ray-Ban for their classic designs."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "unclear",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "I used to appreciate traditional Ray-Ban for their classic designs. Now I’m a bit concerned about how much data they might be collecting with their AI eyewear."
+      ],
+      "proposal_rationale": "Past frame appreciation and current AI data concern do not establish whether traditional-brand trust changes.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0097",
+      "is_synthetic": true,
+      "stratum": "implicit_or_brand_protection",
+      "text": "I used to love my classic Ray-Ban frames, but the integration of AI in their glasses worries me. What if this spreads to traditional Ray-Ban too?",
+      "simulated_publication_year": 2023,
+      "related_article_ids": [
+        "news_e6655b74ea2029c5f142"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses concern about the integration of AI in Ray-Ban glasses, which they used to love. This indicates a negative sentiment towards the traditional Ray-Ban brand due to privacy concerns. The speaker does not clearly attribute blame to either Ray-Ban Meta or Ray-Ban, making the responsibility unclear. The implicit spillover suggests that the speaker's negative perception of the AI integration in Ray-Ban glasses extends to the traditional Ray-Ban brand.",
+        "evidence_quotes": [
+          "What if this spreads to traditional Ray-Ban too?"
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "technology",
+          "fashion"
+        ]
+      },
+      "evidence_quotes": [
+        "I used to love my classic Ray-Ban frames, but the integration of AI in their glasses worries me. What if this spreads to traditional Ray-Ban too?"
+      ],
+      "proposal_rationale": "A hypothetical spread to traditional frames is feared rather than reported as an actual trust change. Privacy itself is not stated.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0103",
+      "is_synthetic": true,
+      "stratum": "implicit_or_brand_protection",
+      "text": "The smart-glasses AI is exciting, but the privacy implications are deeply concerning. I worry that traditional Ray-Ban frames might be seen as less trustworthy due to the smart-glasses privacy issues.",
+      "simulated_publication_year": 2024,
+      "related_article_ids": [
+        "news_dc03f5dce61952898932"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "both",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses concern about the privacy implications of the smart-glasses AI, which they view as deeply concerning. They worry that this could lead to a negative perception of traditional Ray-Ban frames, which they consider less trustworthy due to the smart-glasses privacy issues. This indicates an implicit spillover from the smart-glasses product to the wider Ray-Ban brand.",
+        "evidence_quotes": [
+          "I worry that traditional Ray-Ban frames might be seen as less trustworthy due to the smart-glasses privacy issues."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "The smart-glasses AI is exciting, but the privacy implications are deeply concerning. I worry that traditional Ray-Ban frames might be seen as less trustworthy due to the smart-glasses privacy issues."
+      ],
+      "proposal_rationale": "The speaker anticipates others viewing traditional frames as less trustworthy, not a definite personal rejection. Technical appeal also remains.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0109",
+      "is_synthetic": true,
+      "stratum": "implicit_or_brand_protection",
+      "text": "The smart-glasses are neat, but I still feel uneasy about my privacy. Wondering if traditional Ray-Ban will keep me as safe.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_c0c754aafb20d7504073"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "mixed",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.7,
+        "rationale": "The text expresses mixed sentiment towards the smart-glasses (neat but uneasy about privacy), indicating a concern about traditional Ray-Ban as well. The speaker does not explicitly blame either company, nor does the text suggest a clear spillover effect.",
+        "evidence_quotes": [
+          "Wondering if traditional Ray-Ban will keep me as safe."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "both",
+        "responsibility": "unclear",
+        "spillover": "unclear",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "safety",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "The smart-glasses are neat, but I still feel uneasy about my privacy. Wondering if traditional Ray-Ban will keep me as safe."
+      ],
+      "proposal_rationale": "The traditional-brand safety question is unresolved. A question is not evidence of a definite negative brand judgement.",
+      "uncertainty_flag": true,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0115",
+      "is_synthetic": true,
+      "stratum": "implicit_or_brand_protection",
+      "text": "While the smart-glasses AI sounds promising, I'm still concerned about privacy issues. I don't want to see my every move recorded, even if it means my traditional Ray-Bans remain unaffected.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_5f76b934cb9b6d8087c7"
+      ],
+      "original_design_labels": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "both",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses concern about privacy issues related to the smart-glasses (Ray-Ban Meta), indicating a negative sentiment towards them. They do not want to see their traditional Ray-Ban eyewear affected by these privacy issues, suggesting a spillover effect.",
+        "evidence_quotes": [
+          "I'm still concerned about privacy issues. I don't want to see my every move recorded, even if it means my traditional Ray-Bans remain unaffected."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Ray-Ban Meta",
+        "responsibility": "unclear",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "While the smart-glasses AI sounds promising, I'm still concerned about privacy issues. I don't want to see my every move recorded, even if it means my traditional Ray-Bans remain unaffected."
+      ],
+      "proposal_rationale": "Traditional Ray-Bans are explicitly described as unaffected, which contradicts the designed implicit-spillover label.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0121",
+      "is_synthetic": true,
+      "stratum": "implicit_or_brand_protection",
+      "text": "I get it's innovative, but the privacy concerns still worry me. I trust traditional Ray-Ban, but Meta needs to step up on data security.",
+      "simulated_publication_year": 2026,
+      "related_article_ids": [
+        "news_ce65b3336d9016b131ef"
+      ],
+      "original_design_labels": {
+        "sentiment": "mixed",
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "positive",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses privacy concerns and distrusts Meta, but does not explicitly state a negative perception of traditional Ray-Ban. The speaker links privacy issues to a negative perception of the wider Ray-Ban brand, indicating implicit spillover.",
+        "evidence_quotes": [
+          "I get it's innovative, but the privacy concerns still worry me."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "I get it's innovative, but the privacy concerns still worry me. I trust traditional Ray-Ban, but Meta needs to step up on data security."
+      ],
+      "proposal_rationale": "Meta is asked to improve data security while traditional Ray-Ban is explicitly trusted. Trust does not prove purchase intention.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0133",
+      "is_synthetic": true,
+      "stratum": "implicit_or_brand_protection",
+      "text": "Meta holds the responsibility for the digital and privacy side, but I still trust traditional Ray-Ban sunglasses.",
+      "simulated_publication_year": 2023,
+      "related_article_ids": [
+        "news_d47d7c3c384423b28fc2"
+      ],
+      "original_design_labels": {
+        "sentiment": "mixed",
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "positive",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "core Ray-Ban",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker criticizes Meta for the digital and privacy side, indicating a negative sentiment towards the traditional Ray-Ban sunglasses due to the privacy concerns.",
+        "evidence_quotes": [
+          "Meta holds the responsibility for the digital and privacy side, but I still trust traditional Ray-Ban sunglasses."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "positive",
+        "target": "core Ray-Ban",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "fashion"
+        ]
+      },
+      "evidence_quotes": [
+        "Meta holds the responsibility for the digital and privacy side, but I still trust traditional Ray-Ban sunglasses."
+      ],
+      "proposal_rationale": "Meta is assigned a processing role without an adverse claim; the express evaluation of traditional frames is trust. No buying intention is stated.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0145",
+      "is_synthetic": true,
+      "stratum": "implicit_or_brand_protection",
+      "text": "Meta gets the blame for the privacy issues, but I still trust traditional Ray-Ban.",
+      "simulated_publication_year": 2025,
+      "related_article_ids": [
+        "news_5268f6946dc9a6bdfaaf"
+      ],
+      "original_design_labels": {
+        "sentiment": "mixed",
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "positive",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker criticizes Meta for privacy issues and expresses trust in traditional Ray-Ban, indicating a negative sentiment towards the traditional Ray-Ban brand.",
+        "evidence_quotes": [
+          "Meta gets the blame for the privacy issues"
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "evidence_quotes": [
+        "Meta gets the blame for the privacy issues, but I still trust traditional Ray-Ban."
+      ],
+      "proposal_rationale": "Meta is explicitly blamed while traditional Ray-Ban is trusted. This is insulation, not negative wider-brand spillover.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0157",
+      "is_synthetic": true,
+      "stratum": "implicit_or_brand_protection",
+      "text": "The camera and AI are impressive, but I still trust traditional Ray-Ban. Meta needs to prove their privacy filters are effective first.",
+      "simulated_publication_year": 2026,
+      "related_article_ids": [
+        "news_eafd5f0d4a51fc57a820"
+      ],
+      "original_design_labels": {
+        "sentiment": "mixed",
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "positive",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "negative",
+        "target": "both",
+        "responsibility": "Meta",
+        "spillover": "implicit",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker praises the camera and AI features, but expresses trust in traditional Ray-Ban and criticizes Meta's privacy filters. This indicates a negative perception of the wider Ray-Ban brand due to the Meta controversy, but the speaker does not explicitly state a purchase intention.",
+        "evidence_quotes": [
+          "The camera and AI are impressive, but I still trust traditional Ray-Ban."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "technology"
+        ]
+      },
+      "evidence_quotes": [
+        "The camera and AI are impressive, but I still trust traditional Ray-Ban. Meta needs to prove their privacy filters are effective first."
+      ],
+      "proposal_rationale": "Meta must prove privacy effectiveness, while core trust and technical appeal remain. No wider rejection or purchase commitment is stated.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    },
+    {
+      "synthetic_id": "SIM-0169",
+      "is_synthetic": true,
+      "stratum": "implicit_or_brand_protection",
+      "text": "Meta gets the blame for the privacy issues, but I still trust traditional Ray-Ban sunglasses. It's a win-win situation for me.",
+      "simulated_publication_year": 2024,
+      "related_article_ids": [
+        "news_66397d72fe66d51101ef"
+      ],
+      "original_design_labels": {
+        "sentiment": "mixed",
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "positive",
+        "topic": [
+          "privacy"
+        ]
+      },
+      "historical_prediction": {
+        "sentiment": "positive",
+        "target": "core Ray-Ban",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "positive",
+        "topic": [
+          "privacy",
+          "recording"
+        ],
+        "confidence": 0.8,
+        "rationale": "The speaker expresses trust in traditional Ray-Ban sunglasses despite the privacy issues with Meta, indicating a positive sentiment towards the traditional brand.",
+        "evidence_quotes": [
+          "I still trust traditional Ray-Ban sunglasses."
+        ]
+      },
+      "historical_status": "success",
+      "historical_validation": "passed",
+      "proposed_labels": {
+        "sentiment": "mixed",
+        "target": "Meta",
+        "responsibility": "Meta",
+        "spillover": "none",
+        "purchase_intent": "unclear",
+        "topic": [
+          "privacy",
+          "fashion"
+        ]
+      },
+      "evidence_quotes": [
+        "Meta gets the blame for the privacy issues, but I still trust traditional Ray-Ban sunglasses. It's a win-win situation for me."
+      ],
+      "proposal_rationale": "Meta blame and traditional-brand trust coexist. Win-win expresses satisfaction, not an explicit intention to buy.",
+      "uncertainty_flag": false,
+      "review_status": "AI-assisted proposal — pending independent human validation",
+      "safeguard_replay": {
+        "legacy-1.0": "passes",
+        "context-evidence-2.0": "passes"
+      }
+    }
+  ],
+  "records_sha256": "0a6d5a6af99fcaac7baf345646ed164c84928bab826bc835432707ea2db9354e",
+  "summary": {
+    "n": 50,
+    "strata": {
+      "product_or_Meta_criticism": 10,
+      "all_designed_explicit": 30,
+      "implicit_or_brand_protection": 10
+    },
+    "proposed_spillover": {
+      "none": 22,
+      "explicit": 12,
+      "implicit": 12,
+      "unclear": 4
+    },
+    "designed_explicit_proposals": {
+      "explicit": 12,
+      "none": 6,
+      "implicit": 10,
+      "unclear": 2
+    }
+  }
+}

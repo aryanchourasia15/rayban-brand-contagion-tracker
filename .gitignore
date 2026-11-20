@@ -52,6 +52,13 @@ uploads/
 !demo/benchmark_summary.json
 !demo/research_timeline.json
 !demo/case_study_results.json
+!demo/media_sources.json
+!demo/grounded_scenarios.json
+!demo/grounded_scenarios.csv
+!demo/simulation_generation.json
+!demo/simulation_classifications.json
+!demo/classification_review_proposals.json
+!demo/classification_review_proposals.csv
 
 # Test coverage & caches
 .pytest_cache/

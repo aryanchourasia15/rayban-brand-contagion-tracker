@@ -13,7 +13,7 @@ def main(*, cloud=False):
         st.stop()
     if mode == 'demo':
         from src.ui.contagion import render_contagion
-        st.sidebar.info('DEMO MODE · Synthetic examples only · No research database or live AI')
+        st.sidebar.info('DEMO MODE · Synthetic customer examples and separate sourced media · No research database or live AI')
         st.navigation([st.Page(lambda: render_contagion(force_demo=True),
                               title='Brand Contagion Demo', default=True)]).run()
     else:
