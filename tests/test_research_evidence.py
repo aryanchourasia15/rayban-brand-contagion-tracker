@@ -144,7 +144,8 @@ class TestEvidenceDashboard(unittest.TestCase):
                 patch('requests.Session.request', side_effect=AssertionError('No network')):
             app = AppTest.from_file(str(ROOT / 'cloud_app.py'), default_timeout=30).run()
             self.assertEqual(list(app.exception), [])
-            self.assertIn('Verified timeline', [tab.label for tab in app.tabs])
+            evidence = next(tab for tab in app.tabs if tab.label == 'Evidence & Methodology')
+            self.assertIn('Verified context, not customer sentiment', [item.value for item in evidence.subheader])
             app.multiselect(key='context_years').set_value(['2026']).run()
             app.multiselect(key='case_status').set_value(['failed']).run()
             self.assertEqual(list(app.exception), [])

@@ -157,7 +157,8 @@ class TestMediaDashboard(unittest.TestCase):
                 patch('src.ui.media_evidence.load_media_rows', return_value=rows):
             app = AppTest.from_file(str(ROOT / 'cloud_app.py'), default_timeout=30).run()
             self.assertEqual(list(app.exception), [])
-            self.assertIn('Real Media Evidence', [tab.label for tab in app.tabs])
+            evidence = next(tab for tab in app.tabs if tab.label == 'Evidence & Methodology')
+            self.assertIn('Real Media Evidence', [item.value for item in evidence.subheader])
             self.assertEqual(next(metric.value for metric in app.metric if metric.label == 'Genuine source references'), '32')
             self.assertEqual(next(metric.value for metric in app.metric if metric.label == 'Demo examples'), str(len(demo_discussions())))
             tables = [item.value for item in app.dataframe if 'denominator' in item.value.columns and 'basis' in item.value.columns]

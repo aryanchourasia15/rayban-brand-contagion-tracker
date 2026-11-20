@@ -68,7 +68,8 @@ class TestCloudApplication(unittest.TestCase):
 
     def test_cloud_ignores_local_setting_and_has_no_research_controls(self):
         app = self.app()
-        self.assertIn('Brand Contagion Analysis', [item.value for item in app.title])
+        from src.ui.strategic_story import QUESTION
+        self.assertIn(QUESTION, [item.value for item in app.title])
         self.assertFalse(any(item.label == 'Analysis mode' for item in app.radio))
         self.assertEqual(len(app.get('file_uploader')), 0)
         self.assertFalse(any('Ollama' in button.label or 'Classify approved' in button.label for button in app.button))

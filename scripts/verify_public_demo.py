@@ -18,10 +18,10 @@ import websockets
 
 ROOT=Path(__file__).resolve().parents[1]
 URL='https://rayban-brand-contagion-tracker-ketx7kggvl3vh2sdpvtnf4.streamlit.app/'
-RELEASE='hec-review-2026-11-20-v1'
+RELEASE='hec-story-2026-11-20-v2'
 
 
-async def inspect(socket_url, timeout, observe_only):
+async def inspect(socket_url, timeout, observe_only, *, story=False, mobile=False):
     async with websockets.connect(socket_url,max_size=12_000_000,proxy=None) as socket:
         sequence=0
         contexts=set()
@@ -57,6 +57,9 @@ async def inspect(socket_url, timeout, observe_only):
             if result.get('exceptionDetails'):raise RuntimeError(str(result['exceptionDetails']))
             return result.get('result',{}).get('value')
         await call('Page.enable')
+        if mobile:
+            await call('Emulation.setDeviceMetricsOverride', {'width':390, 'height':844,
+                       'deviceScaleFactor':1, 'mobile':True})
         await call('Runtime.enable')
         await call('Target.setAutoAttach',{'autoAttach':True,'waitForDebuggerOnStart':False,'flatten':True})
         deadline=time.monotonic()+timeout
@@ -87,7 +90,44 @@ async def inspect(socket_url, timeout, observe_only):
                     active=None
             await asyncio.sleep(2)
         snapshot['overview_verified']=bool(ready)
-        if ready and not observe_only:
+        if ready and not observe_only and (story or 'Strategic Question' in snapshot.get('text','')):
+            snapshot['sections_verified'] = []
+            snapshot['layout_checks'] = []
+            async def screenshot(name):
+                capture = await call('Page.captureScreenshot', {'format':'png','captureBeyondViewport':False})
+                suffix = 'mobile' if mobile else 'desktop'
+                (ROOT/f'benchmarks/story_{suffix}_{name}.png').write_bytes(base64.b64decode(capture['data']))
+            await screenshot('landing')
+            sections = ['Strategic Question','Evidence & Methodology','Brand Contagion Analysis',
+                        'Strategic Recommendations','Research Appendix']
+            for index, label in enumerate(sections):
+                clicked = await evaluate("(()=>{const b=[...document.querySelectorAll('[role=tab]')].find(x=>x.innerText.trim()==="+json.dumps(label)+");if(b)b.click();return !!b})()")
+                await asyncio.sleep(1)
+                visible = await evaluate("[...document.querySelectorAll('[role=tabpanel]')].filter(x=>!x.hidden).map(x=>x.innerText).join('\\n')")
+                if clicked and visible: snapshot['sections_verified'].append(label)
+                if index == 2:
+                    await evaluate("(()=>{const b=[...document.querySelectorAll('[role=tab]')].find(x=>x.innerText.trim()==='Customer voice');b.click()})()")
+                    await asyncio.sleep(1)
+                    voice = await evaluate('document.body.innerText')
+                    snapshot['customer_voice_verified'] = 'Showing 260/260 simulations' in voice
+                    await screenshot('voice')
+                    await evaluate("(()=>{const b=[...document.querySelectorAll('[role=tab]')].find(x=>x.innerText.trim()==='Mechanisms & charts');b.click()})()")
+                    await asyncio.sleep(2)
+                    snapshot['charts_rendered'] = await evaluate("[...document.querySelectorAll('[data-testid=stVegaLiteChart] canvas,[data-testid=stVegaLiteChart] svg')].filter(x=>x.getBoundingClientRect().width>0).length")
+                    await evaluate("document.querySelector('[data-testid=stVegaLiteChart]').scrollIntoView({block:'center'})")
+                    await screenshot('charts')
+                if index == 0:
+                    await evaluate("[...document.querySelectorAll('.story-card')].find(x=>x.innerText.startsWith('H1')).scrollIntoView({block:'start'})")
+                    await screenshot('mechanisms')
+                if index == 4:
+                    await evaluate("(()=>{const b=[...document.querySelectorAll('summary')].find(x=>x.innerText.includes('50 AI-assisted review proposals'));if(b)b.click()})()")
+                    await asyncio.sleep(.5)
+                layout = await evaluate("({viewport:innerWidth,body:document.documentElement.scrollWidth,processColumns:document.querySelector('.story-process')?getComputedStyle(document.querySelector('.story-process')).gridTemplateColumns:null,errors:[...document.querySelectorAll('[data-testid=stException]')].map(x=>x.innerText)})")
+                snapshot['layout_checks'].append({'section':label, **layout})
+                await evaluate("document.querySelector('[data-testid=stMain]').scrollTo(0,0)")
+                await screenshot(str(index))
+            snapshot['review_proposals_verified'] = '50-case AI-assisted error review' in await evaluate('document.body.innerText')
+        elif ready and not observe_only:
             await evaluate("(()=>{const b=[...document.querySelectorAll('[role=tab]')].find(x=>x.innerText.trim()==='Customer voice');if(b)b.click();return !!b})()")
             await asyncio.sleep(2)
             voice=await evaluate('document.body.innerText')
@@ -111,6 +151,8 @@ def main():
     parser.add_argument('--url',default=URL)
     parser.add_argument('--timeout',type=int,default=90)
     parser.add_argument('--observe-only',action='store_true')
+    parser.add_argument('--story',action='store_true',help='Inspect the five-section strategic narrative')
+    parser.add_argument('--mobile',action='store_true',help='Inspect a 390px mobile viewport')
     args=parser.parse_args()
     browsers=[Path(r'C:\Program Files\Google\Chrome\Application\chrome.exe'),
               Path(r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe')]
@@ -132,10 +174,17 @@ def main():
             with urllib.request.urlopen(f'http://127.0.0.1:{port}/json/list',timeout=5) as response:
                 targets=json.load(response)
             target=next(t for t in targets if t['type']=='page')
-            snapshot=asyncio.run(inspect(target['webSocketDebuggerUrl'],args.timeout,args.observe_only))
+            snapshot=asyncio.run(inspect(target['webSocketDebuggerUrl'],args.timeout,args.observe_only,
+                                       story=args.story,mobile=args.mobile))
             snapshot['url']=args.url
-            (ROOT/'benchmarks/public_demo_verification.json').write_text(json.dumps(snapshot,ensure_ascii=False,indent=2),encoding='utf-8')
+            destination = ('story_mobile_verification.json' if args.mobile else 'story_desktop_verification.json') if args.story else 'public_demo_verification.json'
+            (ROOT/'benchmarks'/destination).write_text(json.dumps(snapshot,ensure_ascii=False,indent=2),encoding='utf-8')
             print(json.dumps({key:snapshot.get(key) for key in ('url','title','overview_verified','customer_voice_verified','review_proposals_verified')}))
+            if args.story:
+                if len(snapshot.get('sections_verified',[])) != 5 or snapshot.get('charts_rendered') != 5:
+                    raise SystemExit('Narrative sections or charts did not render.')
+                if any(row['errors'] or row['body']>row['viewport'] for row in snapshot.get('layout_checks',[])):
+                    raise SystemExit('Layout overflow or app exception detected.')
             if not args.observe_only and not all(snapshot.get(k) for k in ('overview_verified','customer_voice_verified','review_proposals_verified')):
                 raise SystemExit('Live rendered results not verified; inspect ignored verification snapshot.')
         finally:

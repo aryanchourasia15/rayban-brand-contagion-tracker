@@ -287,6 +287,28 @@ def render_contagion(*, force_demo=False):
         .evidence-text {white-space:pre-wrap; line-height:1.8; padding:1.2rem;
             border-left:3px solid #C62430; background:#F5F5F5; border-radius:4px;}
         mark {background:#F7D9DC; color:#171717; padding:.1em .15em;}
+        .story-card {height:100%; border:1px solid #E3E3E3; border-top:3px solid;
+            border-radius:6px; padding:1.3rem; margin-bottom:1rem;}
+        .story-card h3 {font-size:1.25rem; margin:.6rem 0; line-height:1.25;}
+        .story-card p {font-size:.96rem; line-height:1.6;}
+        .story-kicker {font-size:.72rem; font-weight:700; letter-spacing:.1em; color:#666;}
+        .story-card blockquote {margin:1rem 0 .5rem; padding-left:.8rem;
+            border-left:2px solid #C62430; font-size:.95rem; line-height:1.6;}
+        .story-card small {font-size:.78rem; color:#606060;}
+        .story-process {display:grid; grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+            align-items:start; gap:.65rem; margin:1.5rem 0;}
+        .process-step {background:#F5F5F5; padding:1rem; border-radius:5px; min-width:0;}
+        .process-step strong {display:block; font-size:1rem; line-height:1.4; margin:.5rem 0;}
+        .process-step small {font-size:.65rem; font-weight:700; letter-spacing:.05em; color:#666;}
+        .process-step p {font-size:.85rem; line-height:1.5; margin-bottom:0;}
+        .process-arrow {color:#C62430; padding-top:2.5rem;}
+        @media(max-width:800px) {
+            .story-process {grid-template-columns:1fr; gap:.4rem;}
+            .process-arrow {padding:0; text-align:center; transform:rotate(90deg);}
+            .block-container {padding:1.2rem 1rem;}
+            h1 {font-size:2rem !important; line-height:1.15 !important;}
+            [data-testid="stTabs"] [role="tablist"] {gap:.5rem;}
+        }
         </style>''', unsafe_allow_html=True)
     with st.sidebar:
         st.markdown('### RAY-BAN')
@@ -302,8 +324,13 @@ def render_contagion(*, force_demo=False):
             st.rerun()
     demo = mode == 'Synthetic demo'
     st.caption('CUSTOMER VOICE / PRODUCT → BRAND')
-    st.title('Brand Contagion Analysis')
-    st.write('Distinguish criticism of smart glasses from distrust of the wider Ray-Ban brand.')
+    if force_demo:
+        from src.ui.strategic_story import QUESTION
+        st.title(QUESTION)
+        st.caption('HEC Paris · Market Convergence & Legitimacy · Strategic horizon 2030')
+    else:
+        st.title('Brand Contagion Analysis')
+        st.write('Distinguish criticism of smart glasses from distrust of the wider Ray-Ban brand.')
     if force_demo:
         from src.ui.synthetic_reactions import render_public_dashboard
         render_public_dashboard()

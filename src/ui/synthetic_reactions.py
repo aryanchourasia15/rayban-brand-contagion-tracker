@@ -5,12 +5,13 @@ from pathlib import Path
 
 from src.analysis.simulation import (NOTICE, fingerprint, validate_sources, validate_scenarios,
     scenario_distributions, filter_scenarios, evaluate_simulation, display_basis, representative_case)
+from src.ui.strategic_story import readable
 from src.analysis.schema import LABELS
 from src.analysis.schema import validate_labels
 from src.analysis.evaluation import evaluate_pairs
 
 ROOT = Path(__file__).resolve().parents[2]
-PUBLIC_RELEASE = 'hec-review-2026-11-20-v1'
+PUBLIC_RELEASE = 'hec-story-2026-11-20-v2'
 
 
 def read(name):
@@ -114,11 +115,11 @@ def render_public_sources():
                  hide_index=True, column_config={'url': st.column_config.LinkColumn('Original source')})
 
 
-def render_simulation(*, include_details=True):
+def render_simulation(*, include_details=True, show_mechanisms=True):
     import pandas as pd
     import streamlit as st
 
-    st.subheader('Grounded customer reaction simulations')
+    st.subheader('Where does criticism stop — the product or the brand?')
     st.warning(NOTICE)
     try:
         dataset, output, manifest = load_simulation()
@@ -150,20 +151,11 @@ def render_simulation(*, include_details=True):
     else:
         chart_rows = display_basis(rows)
         st.caption('Design-reference charts describe intended scenarios, not validated semantic annotations or model predictions.')
-    with st.expander('Scenario design and generation provenance'):
-        st.json({key: dataset[key] for key in ('category_quotas', 'reference_basis', 'generation_model',
-                                               'generation_prompt_sha256', 'plan_sha256')})
-        if dataset.get('quality'):
-            diversity = dataset['quality']['diversity']
-            st.caption(f"Diversity audit: {dataset['quality']['unique_normalized_texts']} unique normalized texts; "
-                       f"{diversity['min_words']}–{diversity['max_words']} words; "
-                       f"{len(diversity['high_similarity_pairs'])} similar-wording pairs flagged. "
-                       'Repeated structures remain; lexical checks are not human validation.')
     columns = st.columns(4)
     years = columns[0].multiselect('Simulated year', sorted({row['simulated_publication_year'] for row in rows}), key='simulation_years')
-    sentiments = columns[1].multiselect('Scenario sentiment', LABELS['sentiment'], key='simulation_sentiments')
-    responsibilities = columns[2].multiselect('Scenario responsibility', LABELS['responsibility'], key='simulation_responsibilities')
-    spillovers = columns[3].multiselect('Scenario spillover', LABELS['spillover'], key='simulation_spillovers')
+    sentiments = columns[1].multiselect('Scenario sentiment', LABELS['sentiment'], format_func=readable, key='simulation_sentiments')
+    responsibilities = columns[2].multiselect('Scenario responsibility', LABELS['responsibility'], format_func=readable, key='simulation_responsibilities')
+    spillovers = columns[3].multiselect('Scenario spillover', LABELS['spillover'], format_func=readable, key='simulation_spillovers')
     selected = filter_scenarios(chart_rows, years=years, sentiments=sentiments, responsibilities=responsibilities,
                                 spillovers=spillovers, label_key='active_labels')
     counters = st.columns(4)
@@ -175,41 +167,51 @@ def render_simulation(*, include_details=True):
     if not selected:
         st.info('No scenarios match these filters. Clear a filter to restore the demonstration.')
     else:
+        from src.ui.strategic_story import render_count_chart
         distributions = scenario_distributions(selected, label_key='active_labels')
-        columns = st.columns(2)
-        for index, (field, title) in enumerate((('sentiment', 'Simulated sentiment'), ('spillover', 'Simulated brand spillover'),
-                                               ('responsibility', 'Simulated responsibility attribution'), ('purchase_intent', 'Simulated purchase intention'))):
-            with columns[index % 2]:
-                st.write('**' + title + '**')
-                st.caption(NOTICE + ' Label basis: ' + basis + '.')
-                st.bar_chart(pd.DataFrame.from_dict(distributions[field], orient='index', columns=['Simulated reaction count']), color='#C62430')
-        st.write('**Product criticism versus wider-brand distrust**')
-        st.caption(NOTICE + ' Counts reflect assigned scenario categories; no causal effect is estimated.')
-        st.bar_chart(pd.DataFrame.from_dict(dict(Counter(r['scenario_category'] for r in selected)), orient='index', columns=['Designed scenario count']), color='#C62430')
+        chart_specs = [
+            ('spillover', 'Does distrust cross the brand boundary?',
+             'Explicit spillover requires a stated transfer to the wider brand. Implicit association remains uncertain; product criticism alone does not establish either.'),
+            ('responsibility', 'Who is held responsible?',
+             'Blame directed at Meta can coexist with trust in traditional Ray-Ban. Shared branding makes accountability important, but does not establish joint liability.'),
+            ('purchase_intent', 'Does the reaction express purchase intention?',
+             'A stated intention is distinct from buying behaviour. Unclear means no definite direction was expressed; it is not evidence of neutrality.'),
+            ('sentiment', 'How are the scenarios framed?',
+             'Negative tone can concern a product, Meta or the wider brand. Sentiment alone cannot establish brand contagion.'),
+        ]
+        for offset in range(0, len(chart_specs), 2):
+            for column, (field, title, interpretation) in zip(st.columns(2), chart_specs[offset:offset+2]):
+                with column:
+                    render_count_chart(distributions[field], title, interpretation, basis=basis, field=field)
+        render_count_chart(dict(Counter(r['scenario_category'] for r in selected)),
+            'Product criticism versus wider-brand distrust: the constructed scenario mix',
+            'These assigned groups show the deliberate demonstration design, not verified meanings or customer prevalence. They remain design categories even when the selected cohort uses accepted AI labels.',
+            basis='Scenario design categories within the selected cohort')
         if include_details:
-            _render_voice(selected, output, manifest)
-    with st.expander('H1, H2 and H3: contrasting illustrative mechanisms', expanded=True):
-        st.caption(NOTICE + ' These examples illustrate hypotheses; they do not test them empirically.')
-        for hypothesis, category, explanation in (
-            ('H1', 'privacy_product_criticism', 'Concern remains attached to the camera/AI product.'),
-            ('H2', 'wider_brand_distrust', 'A customer could transfer distrust when Ray-Ban endorsement makes the partnership feel like a breach of wider-brand values.'),
-            ('H3', 'meta_responsibility_brand_protected', 'Assigning the data-processing role to Meta can preserve a boundary around traditional eyewear.')):
-            example = representative_case(selected, category)
-            st.write(f'**{hypothesis}: {explanation}**')
-            if example:
-                st.write(f"{example['synthetic_id']} — SIMULATED: {example['text']}")
-            else:
-                st.caption('No matching scenario in the current filtered subset.')
+            _render_voice(selected, output, manifest, show_raw=True)
+    if show_mechanisms:
+        from src.ui.strategic_story import render_mechanisms
+        render_mechanisms(rows)
     if include_details:
         with st.expander('Local AI agreement against synthetic references'):
             _render_evaluation(dataset, output)
+    if include_details:
+        with st.expander('Scenario design and generation provenance'):
+            st.json({key: dataset[key] for key in ('category_quotas', 'reference_basis', 'generation_model',
+                                                   'generation_prompt_sha256', 'plan_sha256')})
+            if dataset.get('quality'):
+                diversity = dataset['quality']['diversity']
+                st.caption(f"Diversity audit: {dataset['quality']['unique_normalized_texts']} unique normalized texts; "
+                           f"{diversity['min_words']}–{diversity['max_words']} words; "
+                           f"{len(diversity['high_similarity_pairs'])} similar-wording pairs flagged. "
+                           'Repeated structures remain; lexical checks are not human validation.')
     csv_path = ROOT / 'demo/grounded_scenarios.csv'
     if dataset.get('completed') and csv_path.exists():
         st.download_button('Download labelled synthetic scenario CSV', csv_path.read_bytes(),
                            'AI_GENERATED_SIMULATIONS.csv', 'text/csv')
 
 
-def _render_voice(selected, output, manifest, *, inspect_key="simulation_inspect"):
+def _render_voice(selected, output, manifest, *, inspect_key="simulation_inspect", show_raw=False):
     import pandas as pd
     import streamlit as st
     if not selected:
@@ -222,12 +224,16 @@ def _render_voice(selected, output, manifest, *, inspect_key="simulation_inspect
                     raw_AI_spillover=(predictions.get(r['synthetic_id'],{}).get('parsed_output') or {}).get('spillover'),
                     historical_status=predictions.get(r['synthetic_id'],{}).get('status','unattempted')) for r in selected]
     st.caption('Raw AI columns can contain rejected outputs. Historical status controls acceptance; design labels never replace a failed prediction.')
-    st.dataframe(pd.DataFrame(compact), hide_index=True)
+    with st.expander('Browse the scenario table and label comparisons'):
+        st.dataframe(pd.DataFrame(compact), hide_index=True)
     selected_id = st.selectbox('Inspect an AI-generated reaction', [r['synthetic_id'] for r in selected], key=inspect_key)
     row = next(r for r in selected if r['synthetic_id'] == selected_id)
     st.info('SIMULATED CUSTOMER — ' + row['text'])
-    st.caption(f"Simulated date: {row['simulated_publication_date']} · {row['scenario_category']} · {row['writing_style']}")
-    st.json({'scenario_design_reference_not_ground_truth': row['expected_labels']})
+    st.caption(f"Simulated date: {row['simulated_publication_date']} · {readable(row['scenario_category'])} · {row['writing_style']}")
+    st.write('**Design reference labels — not validated ground truth:** ' + ' · '.join(
+        _label_summary(key, value) for key, value in row['expected_labels'].items() if isinstance(value, str)))
+    if show_raw:
+        st.json({'scenario_design_reference_not_ground_truth': row['expected_labels']})
     for source_id in row['related_article_ids']:
         source = next(s for s in manifest['sources'] if s['source_id'] == source_id)
         st.link_button(f"Context: {source['publisher']} · {source['published_at']} · {source['title']}", source['url'])
@@ -235,17 +241,32 @@ def _render_voice(selected, output, manifest, *, inspect_key="simulation_inspect
         prediction = next((r for r in output['results'] if r['case'] == selected_id), None)
         if prediction:
             st.write('**Actual local model response — ' + prediction['status'] + '**')
-            st.code(prediction['raw_output'] or '(No model output)', language='json')
+            parsed = prediction.get('parsed_output') or {}
+            st.write(' · '.join(_label_summary(key, value) for key, value in parsed.items()
+                               if key in ('sentiment', 'target', 'responsibility', 'spillover', 'purchase_intent') and isinstance(value, str)))
+            st.write(parsed.get('rationale', 'No readable rationale was returned.'))
+            for quote in parsed.get('evidence_quotes', []):
+                st.text('Model-cited evidence: ' + quote)
+            if show_raw:
+                st.code(prediction['raw_output'] or '(No model output)', language='json')
+            else:
+                st.caption('Verbatim saved JSON and full technical inspection are available in Research Appendix.')
             st.caption(prediction.get('validation') or prediction.get('error') or 'No validation detail recorded.')
     proposal_file = ROOT / 'demo/classification_review_proposals.json'
     if proposal_file.exists():
         proposal = next((r for r in load_review_proposals()['records'] if r['synthetic_id']==selected_id), None)
         if proposal:
             with st.expander('AI-assisted review proposal — not independent human validation'):
-                st.json(proposal['proposed_labels'])
+                st.write(' · '.join(f"{key.replace('_', ' ').title()}: {readable(value)}"
+                                   for key, value in proposal['proposed_labels'].items() if isinstance(value, str)))
                 st.write(proposal['proposal_rationale'])
                 st.text('Supporting original text: ' + proposal['evidence_quotes'][0])
                 st.caption(proposal['review_status'])
+
+
+def _label_summary(key, value):
+    label = 'Smart glasses and traditional Ray-Ban' if key == 'target' and value == 'both' else readable(value)
+    return f"{key.replace('_', ' ').title()}: {label}"
 
 
 def _render_evaluation(dataset, output):
@@ -294,9 +315,9 @@ def render_customer_voice():
     rows = display_basis(dataset['records'], output['results'] if output and basis.startswith('Accepted') else None)
     cols = st.columns(4)
     years = cols[0].multiselect('Voice: simulated year', sorted({r['simulated_publication_year'] for r in dataset['records']}), key='public_voice_years')
-    sentiments = cols[1].multiselect('Voice: sentiment', LABELS['sentiment'], key='public_voice_sentiments')
-    responsibilities = cols[2].multiselect('Voice: responsibility', LABELS['responsibility'], key='public_voice_responsibilities')
-    spillovers = cols[3].multiselect('Voice: spillover', LABELS['spillover'], key='public_voice_spillovers')
+    sentiments = cols[1].multiselect('Voice: sentiment', LABELS['sentiment'], format_func=readable, key='public_voice_sentiments')
+    responsibilities = cols[2].multiselect('Voice: responsibility', LABELS['responsibility'], format_func=readable, key='public_voice_responsibilities')
+    spillovers = cols[3].multiselect('Voice: spillover', LABELS['spillover'], format_func=readable, key='public_voice_spillovers')
     status = st.selectbox('Prediction review queue', ['All scenarios','Rejected predictions','Uncertain or needs review'], key='public_voice_status')
     selected = filter_scenarios(rows, years=years, sentiments=sentiments, responsibilities=responsibilities,
                                 spillovers=spillovers, label_key='active_labels')
@@ -331,50 +352,81 @@ def render_review_proposals():
 
 def render_public_dashboard():
     import streamlit as st
+    from src.ui.strategic_story import (SECTIONS, render_question, render_methodology,
+                                       render_recommendations)
     dataset, output, manifest = load_simulation()
     st.caption('PUBLIC RELEASE · ' + PUBLIC_RELEASE)
     st.warning('SYNTHETIC DEMONSTRATION · ' + NOTICE)
     if dataset is None or output is None:
         st.error('The public demonstration assets are unavailable. No substitute findings are generated.')
         return
-    cols=st.columns(4)
-    for col,label,value in zip(cols, ('Simulated customer reactions','Contextual news sources',
-                                      'Accepted model classifications','Rejected model classifications'),
-                               (len(dataset['records']),len(manifest['sources']),output['summary']['accepted'],output['summary']['rejected'])):
-        col.metric(label,value)
-    st.write('**When could criticism of smart glasses reach ordinary Ray-Ban eyewear?** '
-             'Explore product-specific concern (H1), perceived endorsement and wider distrust (H2), '
-             'and insulation when responsibility stays with Meta (H3). These are illustrative mechanisms, not measured brand damage.')
-    tabs=st.tabs(['Contagion analytics','Customer voice','Verified timeline','Strategic implications','Model evaluation','Real Media Evidence'])
+    tabs = st.tabs(SECTIONS)
     with tabs[0]:
-        render_simulation(include_details=False)
-    with tabs[1]:
-        render_customer_voice()
+        render_question(dataset['records'])
+        st.markdown('### What this demonstration contains')
+        cols = st.columns(4)
+        for col, label, value in zip(cols, ('Simulated customer reactions', 'Contextual news sources',
+                                          'Accepted model classifications', 'Rejected model classifications'),
+                                     (len(dataset['records']), len(manifest['sources']), output['summary']['accepted'], output['summary']['rejected'])):
+            col.metric(label, value)
+        st.caption('Read Evidence & Methodology for the source boundary, explore mechanisms in Brand Contagion Analysis, then consider the Strategic Recommendations. Full diagnostics are in Research Appendix.')
     from src.ui.research_evidence import render_timeline, render_strategy, render_case_study
-    with tabs[2]:
+    with tabs[1]:
+        render_methodology()
         render_timeline()
+        with st.expander('All 32 genuine contextual news references'):
+            render_public_sources()
+    with tabs[2]:
+        st.caption('H1: product criticism · H2: wider-brand contagion · H3: brand insulation. These mechanisms are illustrative, not empirical tests.')
+        analysis_tabs = st.tabs(['Mechanisms & charts', 'Customer voice'])
+        with analysis_tabs[0]:
+            render_simulation(include_details=False, show_mechanisms=False)
+        with analysis_tabs[1]:
+            render_customer_voice()
     with tabs[3]:
-        render_strategy()
+        render_recommendations()
+        with st.expander('Full sourced strategic discussion and evidence boundaries'):
+            render_strategy()
     with tabs[4]:
-        st.subheader('Model evaluation — saved local Qwen outputs')
+        st.subheader('Research Appendix')
         st.write('Historical run: 260 attempts, 220 accepted, 40 rejected. Raw spillover agreement is 52.3% against unvalidated scenario-design labels. No explicit-spillover output passed the historical safeguards.')
-        _render_evaluation(dataset, output)
-        render_review_proposals()
-    with tabs[5]:
-        render_public_sources()
-    with st.expander('Advanced: historical benchmarks and small-fixture sandbox'):
-        from src.ui.demo_benchmark import render_benchmark
-        from src.ui.contagion_data import demo_discussions
-        from src.ui.contagion import analytics_panel, explorer_panel, classification_panel, validation_panel
-        render_benchmark()
-        st.caption('The following legacy fixtures are separate from the 260 generated scenarios. Demo corrections remain session-only.')
-        rows=demo_discussions()
-        for row in rows:
-            reviews=st.session_state.get('contagion_demo_reviews',{}).get(row['record_id'],[])
-            if reviews:
-                row['human_labels']=reviews[-1]['labels'];row['review_id']=len(reviews)
-        analytics_panel(rows,True)
-        explorer_panel(rows,True)
-        classification_panel(True)
-        validation_panel(rows,True)
-        render_case_study()
+        st.caption('A zero accepted explicit count is a model limitation, not evidence that brand contagion is absent. Rejected predictions are preserved as abstentions.')
+        with st.expander('Model evaluation, confusion matrices and saved metrics'):
+            _render_evaluation(dataset, output)
+        with st.expander('Raw outputs and per-scenario technical inspection'):
+            _render_raw_outputs(dataset, output)
+        with st.expander('Scenario design and generation provenance'):
+            st.json({key: dataset[key] for key in ('category_quotas', 'reference_basis', 'generation_model',
+                                                   'generation_prompt_sha256', 'plan_sha256')})
+            st.json(dataset.get('quality', {}))
+        with st.expander('50 AI-assisted review proposals — pending human validation'):
+            render_review_proposals()
+        with st.expander('Historical benchmarks and small-fixture sandbox'):
+            from src.ui.demo_benchmark import render_benchmark
+            from src.ui.contagion_data import demo_discussions
+            from src.ui.contagion import analytics_panel, explorer_panel, classification_panel, validation_panel
+            render_benchmark()
+            st.caption('The following legacy fixtures are separate from the 260 generated scenarios. Demo corrections remain session-only.')
+            rows = demo_discussions()
+            for row in rows:
+                reviews = st.session_state.get('contagion_demo_reviews', {}).get(row['record_id'], [])
+                if reviews:
+                    row['human_labels'] = reviews[-1]['labels']; row['review_id'] = len(reviews)
+            analytics_panel(rows, True)
+            explorer_panel(rows, True)
+            classification_panel(True)
+            validation_panel(rows, True)
+            render_case_study()
+
+
+def _render_raw_outputs(dataset, output):
+    import streamlit as st
+    by_id = {r['synthetic_id']: r for r in dataset['records']}
+    selected = st.selectbox('Saved prediction record', list(by_id), key='appendix_raw_record')
+    row = by_id[selected]
+    prediction = next(r for r in output['results'] if r['case'] == selected)
+    st.text(row['text'])
+    st.json({'scenario_design_reference_not_ground_truth': row['expected_labels']})
+    st.write('Historical safeguard status: **' + prediction['status'] + '**')
+    st.code(prediction['raw_output'] or '(No model output)', language='json')
+    st.caption(prediction.get('validation') or prediction.get('error') or 'No validation detail recorded.')

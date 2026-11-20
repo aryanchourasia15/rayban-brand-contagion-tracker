@@ -51,8 +51,9 @@ def render_timeline():
     selected = st.multiselect('Timeline years', years, key='context_years')
     if selected:
         frame = frame.loc[frame['date'].str[:4].isin(selected)]
-    st.dataframe(frame[['date', 'title', 'evidence_type', 'description', 'publisher', 'source_url']],
-                 hide_index=True, column_config={'source_url': st.column_config.LinkColumn('Source')})
+    with st.expander('Full timeline reference table'):
+        st.dataframe(frame[['date', 'title', 'evidence_type', 'description', 'publisher', 'source_url']],
+                     hide_index=True, column_config={'source_url': st.column_config.LinkColumn('Source')})
     for row in frame.to_dict('records'):
         with st.expander(f"{row['date']} · {row['title']}"):
             st.write(f"**{row['evidence_type']}** · {row['description']}")
