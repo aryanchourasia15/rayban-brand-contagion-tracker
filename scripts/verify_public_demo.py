@@ -24,29 +24,67 @@ RELEASE='hec-review-2026-11-20-v1'
 async def inspect(socket_url, timeout, observe_only):
     async with websockets.connect(socket_url,max_size=12_000_000,proxy=None) as socket:
         sequence=0
-        async def call(method,params=None):
+        contexts=set()
+        sessions={None}
+        enabled={None}
+        active=None
+        async def call(method,params=None,session=None):
             nonlocal sequence
             sequence+=1; request_id=sequence
-            await socket.send(json.dumps({'id':request_id,'method':method,'params':params or {}}))
+            request={'id':request_id,'method':method,'params':params or {}}
+            if session:request['sessionId']=session
+            await socket.send(json.dumps(request))
             while True:
                 message=json.loads(await asyncio.wait_for(socket.recv(),timeout=15))
+                if message.get('method')=='Runtime.executionContextCreated':
+                    context=message['params']['context']
+                    if context.get('auxData',{}).get('isDefault'):
+                        contexts.add((message.get('sessionId'),context['id']))
+                elif message.get('method')=='Runtime.executionContextsCleared':
+                    contexts.difference_update([c for c in contexts if c[0]==message.get('sessionId')])
+                elif message.get('method')=='Runtime.executionContextDestroyed':
+                    contexts.discard((message.get('sessionId'),message['params']['executionContextId']))
+                elif message.get('method')=='Target.attachedToTarget':
+                    sessions.add(message['params']['sessionId'])
                 if message.get('id')==request_id:
                     if message.get('error'):raise RuntimeError(message['error'])
                     return message.get('result',{})
-        async def evaluate(expression):
-            result=await call('Runtime.evaluate',{'expression':expression,'returnByValue':True})
+        async def evaluate(expression,context=None):
+            selected=context or active
+            params={'expression':expression,'returnByValue':True}
+            if selected:params['contextId']=selected[1]
+            result=await call('Runtime.evaluate',params,session=selected[0] if selected else None)
             if result.get('exceptionDetails'):raise RuntimeError(str(result['exceptionDetails']))
             return result.get('result',{}).get('value')
+        await call('Page.enable')
+        await call('Runtime.enable')
+        await call('Target.setAutoAttach',{'autoAttach':True,'waitForDebuggerOnStart':False,'flatten':True})
         deadline=time.monotonic()+timeout
         snapshot={}
         while True:
-            snapshot=await evaluate("({url:location.href,title:document.title,text:document.body.innerText,metrics:[...document.querySelectorAll('[data-testid=stMetric]')].map(x=>x.innerText)})")
+            active=None
+            for session in list(sessions-enabled):
+                await call('Runtime.enable',session=session)
+                enabled.add(session)
+            candidates=[]
+            for context in [None]+list(contexts):
+                try:
+                    candidate=await evaluate("({title:document.title,text:document.body?document.body.innerText:'',metrics:[...document.querySelectorAll('[data-testid=stMetric]')].map(x=>x.innerText)})",context)
+                    if isinstance(candidate,dict):candidates.append((context,candidate))
+                except RuntimeError:
+                    continue
+            if candidates:
+                active,snapshot=max(candidates,key=lambda item:(RELEASE in item[1].get('text',''),len(item[1].get('text',''))))
             text=snapshot.get('text','')
             ready=RELEASE in text and all(any(label in metric and number in metric for metric in snapshot['metrics'])
                 for label,number in [('Simulated customer reactions','260'),('Contextual news sources','32'),('Accepted model classifications','220'),('Rejected model classifications','40')])
             if ready or (observe_only and len(text)>150) or time.monotonic()>=deadline:break
             # Public Community Cloud wake-up is a normal authorised app action, not authentication.
-            await evaluate("(()=>{const b=[...document.querySelectorAll('button')].find(x=>/yes, get this app back up/i.test(x.innerText));if(b)b.click();return !!b})()")
+            if 'gone to sleep' in text.lower():
+                try:
+                    await evaluate("(()=>{const b=[...document.querySelectorAll('button')].find(x=>/yes, get this app back up/i.test(x.innerText));if(b)b.click();return !!b})()")
+                except RuntimeError:
+                    active=None
             await asyncio.sleep(2)
         snapshot['overview_verified']=bool(ready)
         if ready and not observe_only:
@@ -95,6 +133,7 @@ def main():
                 targets=json.load(response)
             target=next(t for t in targets if t['type']=='page')
             snapshot=asyncio.run(inspect(target['webSocketDebuggerUrl'],args.timeout,args.observe_only))
+            snapshot['url']=args.url
             (ROOT/'benchmarks/public_demo_verification.json').write_text(json.dumps(snapshot,ensure_ascii=False,indent=2),encoding='utf-8')
             print(json.dumps({key:snapshot.get(key) for key in ('url','title','overview_verified','customer_voice_verified','review_proposals_verified')}))
             if not args.observe_only and not all(snapshot.get(k) for k in ('overview_verified','customer_voice_verified','review_proposals_verified')):
