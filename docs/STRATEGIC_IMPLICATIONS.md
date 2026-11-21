@@ -2,12 +2,17 @@
 
 Evidence reviewed through 16 November 2026. This is an interpretation of sourced
 context, not a finding about customer sentiment. The synthetic demonstrations and
-AI benchmarks provide no evidence that H1, H2 or H3 is true in the population.
+AI benchmarks do not establish how common Reactions A, B or C are among real customers.
 
-**Primary stakeholder:** existing and potential Ray-Ban customers, including
-smart-glasses buyers and customers of traditional eyewear. Bystanders are affected
-stakeholders; their treatment is relevant to the proposed explanation of customer
-trust and legitimacy, not a replacement for customer evidence.
+**Primary stakeholder for the presentation:** shareholders. Customer trust is an
+intermediate mechanism that could connect a privacy scandal to brand reputation
+and future shareholder value. Customers and bystanders remain affected stakeholders.
+
+**Analytical chain:** Privacy scandal → Possible customer distrust → Potential brand
+damage → Shareholder exposure. None of these links establishes that sales fell,
+shareholders lost money or the wider Ray-Ban brand was damaged. Reactions A/B/C
+describe customer mechanisms; H1/H2/H3 are reserved for the presentation's separate
+litigation, brand damage and pricing framework, which this simulation does not test.
 
 ## Market convergence and legitimacy
 
@@ -17,16 +22,15 @@ Meta's [prescription-focused 2026 range](https://about.fb.com/news/2026/03/meta-
 extends the category toward ordinary optical use.
 
 **Interpretation:** Eyewear, consumer electronics and AI platforms are converging.
-Ray-Ban contributes design familiarity and optical distribution; Meta contributes
-software and platform capabilities. Familiar frames can support adoption while
-making the boundary between ordinary eyewear and a recording device less apparent.
+Ray-Ban brings familiar design and optical distribution; Meta brings software and
+AI capabilities. Familiar frames may encourage adoption while making recording
+devices less easy to distinguish from ordinary eyewear.
 Following [Suchman (1995), *Managing Legitimacy: Strategic and Institutional Approaches*](https://doi.org/10.5465/amr.1995.9508080331),
-pragmatic legitimacy concerns audience self-interest, moral legitimacy concerns
-normative approval, and cognitive legitimacy concerns comprehensibility and
-taken-for-grantedness. Applied here, perceived customer usefulness, approval of
-privacy practices and the social intelligibility of camera-equipped eyewear are
-distinct questions. These are theoretical applications, not measured legitimacy
-scores. Success on one dimension does not guarantee the others.
+pragmatic legitimacy asks whether a product is useful, moral legitimacy whether
+its practices are acceptable, and cognitive legitimacy whether people understand
+and accept its place in everyday life. Here, convenience, privacy practices and
+understanding when eyewear records are separate questions. These are applications
+of theory, not measured scores. A useful product is not automatically a trusted one.
 
 ## Values, customer trust and affected noncustomers
 
@@ -56,11 +60,11 @@ and protection of eyewear trust. Shared branding can create a governance problem
 it does not establish joint legal liability. Customers may blame Meta, the product,
 Ray-Ban, both partners, or neither. Those possibilities must remain distinct.
 
-**Hypotheses:** H1 predicts that privacy controversies negatively affect customer
-perceptions of Ray-Ban Meta. H2 requires evidence that
-criticism reaches ordinary Ray-Ban eyewear or the wider brand. H3 predicts that
-customers preserve that distinction. Product rejection, manufacturer blame and
-negative headlines alone do not establish H2. Implicit association warrants review,
+**Possible customer mechanisms:** Reaction A is criticism of Ray-Ban Meta prompted
+by privacy concerns. Reaction B requires evidence that distrust reaches ordinary
+Ray-Ban eyewear or the wider brand. Reaction C preserves the distinction between
+the product or Meta and traditional Ray-Ban. Product rejection, manufacturer blame and
+negative headlines alone do not establish Reaction B. Implicit association warrants review,
 not a claim of causation. Positive traditional-brand views may coexist with privacy
 criticism. Media coverage is context, not a substitute for permission-verified
 customer discussions.
@@ -89,15 +93,15 @@ official inquiry cannot establish that this transfer has happened.
 
 The opposite boundary is equally important: a person may criticise Meta's processing
 role while valuing Ray-Ban's design and traditional frames. Clear responsibilities,
-credible evidence of safeguards and distinct product positioning could support H3.
+credible evidence of safeguards and distinct product positioning could support Reaction C.
 Marketing distinctions alone cannot resolve a substantive privacy concern. The
 strategic challenge of market convergence is to earn both technological usefulness
 and social legitimacy with customers and nearby people.
 
 ## What this approved demonstration can establish
 
-Under the professor-approved methodology, local AI-generated scenarios illustrate
-H1, H2 and H3 without collecting real customer comments. The prescribed category
+The approved demonstration uses local AI-generated scenarios to illustrate
+Reactions A, B and C without collecting real customer comments. The prescribed category
 balance deliberately makes contrasting mechanisms visible. It cannot estimate
 spillover prevalence, historical customer trends, causality or actual brand damage.
 Generation references are provisional design labels; comparison with the same

@@ -217,7 +217,7 @@ def write_findings(dataset, output):
             lines.append(f"| {field} | {label} | {n}/{summary['accepted']} |")
     lines.extend(['', '## Observed limitations of this recorded run', '',
         f"Accepted explicit-spillover predictions: {summary['accepted_prediction_distributions']['spillover'].get('explicit', 0)}. "
-        'Zero accepted explicit outputs is not evidence of zero real spillover, nor does it falsify H2. '
+        'Zero accepted explicit outputs is not evidence of zero real spillover, nor does it rule out Reaction B. '
         'Intended scenario labels and accepted model labels remain separate.', '',
         'Safeguard rejection reasons:', ''])
     for reason, n in Counter(r.get('validation', r.get('parse_error', 'No evaluable response')) for r in output['results'] if r['status'] != 'success').items():
@@ -234,8 +234,8 @@ def write_findings(dataset, output):
                       '| --- | ' + ' | '.join('---:' for _ in choices) + ' |'])
         for truth, counts in data['confusion'].items():
             lines.append('| ' + truth + ' | ' + ' | '.join(str(counts[c]) for c in choices) + ' |')
-    lines.extend(['', '## H1, H2 and H3: illustrative cases, not empirical tests', ''])
-    for hypothesis, category in [('H1', 'privacy_product_criticism'), ('H2', 'wider_brand_distrust'), ('H3', 'meta_responsibility_brand_protected')]:
+    lines.extend(['', '## Reactions A, B and C: illustrative cases, not empirical tests', ''])
+    for hypothesis, category in [('Reaction A', 'privacy_product_criticism'), ('Reaction B', 'wider_brand_distrust'), ('Reaction C', 'meta_responsibility_brand_protected')]:
         case = representative_case(dataset['records'], category)
         if case is None:
             continue

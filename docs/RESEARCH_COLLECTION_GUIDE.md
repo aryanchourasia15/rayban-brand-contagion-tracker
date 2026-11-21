@@ -6,7 +6,7 @@ No real comments have been collected or imported by this implementation.
 
 ## Scope and sampling
 
-Test H1, H2 and H3 from PROJECT_CONTEXT.md without presuming brand damage.
+Examine Reactions A, B and C from PROJECT_CONTEXT.md without presuming brand damage.
 Prioritize genuine public discussions; ownership is self-reported, not verified.
 Keep media in a separate stratum. Do not treat a journalist's wording as a customer's opinion.
 Cover 1 January 2023 through the actual collection cutoff in 2026, never future dates.

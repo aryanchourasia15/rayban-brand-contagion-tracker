@@ -18,7 +18,7 @@ import websockets
 
 ROOT=Path(__file__).resolve().parents[1]
 URL='https://rayban-brand-contagion-tracker-ketx7kggvl3vh2sdpvtnf4.streamlit.app/'
-RELEASE='hec-story-2026-11-20-v2'
+RELEASE='hec-copy-2026-11-21-v3'
 
 
 async def inspect(socket_url, timeout, observe_only, *, story=False, mobile=False):
@@ -117,7 +117,7 @@ async def inspect(socket_url, timeout, observe_only, *, story=False, mobile=Fals
                     await evaluate("document.querySelector('[data-testid=stVegaLiteChart]').scrollIntoView({block:'center'})")
                     await screenshot('charts')
                 if index == 0:
-                    await evaluate("[...document.querySelectorAll('.story-card')].find(x=>x.innerText.startsWith('H1')).scrollIntoView({block:'start'})")
+                    await evaluate("[...document.querySelectorAll('.story-card')].find(x=>x.innerText.startsWith('Reaction A')).scrollIntoView({block:'start'})")
                     await screenshot('mechanisms')
                 if index == 4:
                     await evaluate("(()=>{const b=[...document.querySelectorAll('summary')].find(x=>x.innerText.includes('50 AI-assisted review proposals'));if(b)b.click()})()")

@@ -4,6 +4,10 @@ Audit cutoff: 16 November 2026. Scope: the 15 timeline entries, strategic report
 saved AI outputs and their existing dashboard representation. No new live inference,
 customer collection, research-data import, commit or publication was performed.
 
+Historical terminology below records the audited version. The current presentation
+uses shareholders as the primary stakeholder and Reaction A/B/C for customer
+mechanisms; the earlier H1/H2/H3 labels below are archival, not the current framework.
+
 ## Source-to-claim verification
 
 All 15 entries have direct support for the stated announcement, report or response.

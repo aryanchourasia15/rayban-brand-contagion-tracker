@@ -92,7 +92,7 @@ Rejected design-reference explicit positives: SIM-0070, SIM-0071, SIM-0078.
 
 ## Observed limitations of this recorded run
 
-Accepted explicit-spillover predictions: 0. Zero accepted explicit outputs is not evidence of zero real spillover, nor does it falsify H2. Intended scenario labels and accepted model labels remain separate.
+Accepted explicit-spillover predictions: 0. Zero accepted explicit outputs is not evidence of zero real spillover, nor does it rule out Reaction B. Intended scenario labels and accepted model labels remain separate.
 
 Safeguard rejection reasons:
 
@@ -152,17 +152,17 @@ Rows are design references; columns are raw model predictions.
 | negative | 0 | 37 | 53 |
 | unclear | 0 | 5 | 105 |
 
-## H1, H2 and H3: illustrative cases, not empirical tests
+## Reactions A, B and C: illustrative cases, not empirical tests
 
-**H1, SIM-0001 — simulated:** These camera and AI features make these Ray-Ban Meta glasses too invasive. I won't be buying them for privacy reasons.
+**Reaction A, SIM-0001 — simulated:** These camera and AI features make these Ray-Ban Meta glasses too invasive. I won't be buying them for privacy reasons.
 
 Design spillover: none; actual raw model spillover: explicit; safeguard status: failed.
 
-**H2, SIM-0061 — simulated:** I'm glad they're considering privacy, but I still can't shake the doubt that Ray-Ban Meta is gathering too much data. It's not just the glasses, it's the whole brand now.
+**Reaction B, SIM-0061 — simulated:** I'm glad they're considering privacy, but I still can't shake the doubt that Ray-Ban Meta is gathering too much data. It's not just the glasses, it's the whole brand now.
 
 Design spillover: explicit; actual raw model spillover: implicit; safeguard status: success.
 
-**H3, SIM-0121 — simulated:** I get it's innovative, but the privacy concerns still worry me. I trust traditional Ray-Ban, but Meta needs to step up on data security.
+**Reaction C, SIM-0121 — simulated:** I get it's innovative, but the privacy concerns still worry me. I trust traditional Ray-Ban, but Meta needs to step up on data security.
 
 Design spillover: none; actual raw model spillover: implicit; safeguard status: success.
 

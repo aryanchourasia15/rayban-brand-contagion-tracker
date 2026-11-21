@@ -4,7 +4,7 @@ HEC Paris Strategic Management research artefact. The Data Collection Centre
 keeps customer discussions separate from journalistic media evidence. Relevance is
 a keyword-based triage flag, not a sentiment or brand-spillover conclusion.
 
-The current professor-approved demonstration uses locally AI-generated reactions
+The current approved demonstration uses locally AI-generated reactions
 grounded in 32 genuine media references. All simulated charts are illustrative,
 not empirical customer sentiment. The public `cloud_app.py` runs from curated
 `demo/` artefacts without Ollama, credentials or private research files. Scenario
@@ -12,15 +12,16 @@ design labels and actual classifier outputs are shown separately. See
 [the synthetic methodology](docs/SYNTHETIC_DEMONSTRATION.md) for generation,
 reproduction, provenance and evaluation limitations. Nothing is published automatically.
 
-The finalized public view opens with 260 simulations, 32 contextual news sources,
-220 historically accepted predictions and 40 rejections. The six main tabs separate
-scenario analytics, the full customer-voice explorer, sourced timeline, strategy,
-model evaluation and genuine media references. Legacy fixtures remain in Advanced.
+The public view introduces the shareholder dilemma, then separates Strategic Question,
+Evidence & Methodology, Brand Contagion Analysis, Strategic Recommendations and Research
+Appendix. It retains 260 simulations, 32 contextual news sources, 220 historically
+accepted predictions and 40 rejections. Reaction A/B/C describe customer mechanisms,
+not measured shareholder outcomes. Legacy fixtures remain in the appendix.
 [The 50-case error review](docs/CLASSIFICATION_ERROR_REVIEW.md) provides separate
 AI-assisted proposals, never human-validation labels or replacements for saved
 predictions. Historical prompt versions, benchmarks and the 260-case inputs remain
 unchanged. Evidence rule `context-evidence-2.0` is opt-in; historical replay defaults
-to `legacy-1.0`. Public release marker: `hec-review-2026-11-20-v1`.
+to `legacy-1.0`. Presentation release marker: `hec-copy-2026-11-21-v3`.
 
 ## Run locally (Python 3.11+)
 

@@ -1,11 +1,19 @@
 """Presentation of frozen evidence and scenarios; no inference or data mutation."""
 from html import escape
 
-QUESTION = "Can Meta's Privacy Controversies Damage the Ray-Ban Brand?"
+QUESTION = "Can Meta's Privacy Scandals Damage the Ray-Ban Brand?"
 CONCLUSION = ('Brand contagion is a plausible strategic risk, '
               'but actual wider-brand damage has not been established.')
 SECTIONS = ['Strategic Question', 'Evidence & Methodology', 'Brand Contagion Analysis',
             'Strategic Recommendations', 'Research Appendix']
+LABEL_BASIS_GUIDE = (
+    'Explore four dimensions: sentiment (tone), responsibility (who is blamed), '
+    'brand spillover (whether distrust reaches traditional Ray-Ban), and purchase intention. '
+    'Start with Scenario design references to explore all 260 constructed reactions; these labels '
+    'describe the intended scenarios, not validated ground truth. Accepted local AI predictions '
+    'uses the 220 predictions that passed safeguards and excludes the 40 rejected outputs. '
+    'Neither option measures real customer sentiment.'
+)
 NAMES = {
     'explicit': 'Explicit wider-brand distrust', 'implicit': 'Implicit brand association',
     'none': 'No spillover', 'unclear': 'Unclear / not stated',
@@ -34,15 +42,15 @@ def render_mechanisms(records):
     import streamlit as st
     by_id = {r['synthetic_id']: r for r in records}
     st.subheader('Three ways the brand boundary could behave')
-    st.caption('Hypotheses illustrated with existing AI-generated scenarios — not observed customer findings.')
+    st.caption('Three possible customer reactions, illustrated with AI-generated scenarios—not observed customer findings.')
     definitions = [
-        ('H1', 'Product Criticism', '#777777', 'SIM-0001',
+        ('Reaction A', 'Product Criticism', '#777777', 'SIM-0001',
          'Privacy concerns lead someone to reject the smart glasses. Traditional eyewear is not rejected.',
          'Address product safeguards and explain how recording and data use work.'),
-        ('H2', 'Brand Contagion', '#C62430', 'SIM-0080',
+        ('Reaction B', 'Brand Contagion', '#C62430', 'SIM-0080',
          'Distrust crosses from smart glasses to ordinary Ray-Ban eyewear. Product criticism alone is insufficient.',
          'Treat brand endorsement as a trust obligation extending beyond the device.'),
-        ('H3', 'Brand Insulation', '#171717', 'SIM-0133',
+        ('Reaction C', 'Brand Insulation', '#171717', 'SIM-0133',
          'Someone attributes privacy responsibility to Meta while retaining trust in traditional Ray-Ban.',
          'Clarify accountability while keeping Ray-Ban accountable for its own commitments.'),
     ]
@@ -57,30 +65,33 @@ def render_mechanisms(records):
 
 def render_question(records):
     import streamlit as st
-    st.write('Smart eyewear brings fashion, consumer technology and AI into the same product. '
-             'For Ray-Ban, the opportunity is useful innovation; the dilemma is whether privacy concerns '
-             'remain with the device and Meta, or reach the trust attached to ordinary eyewear.')
+    st.write('Smart eyewear creates opportunities for Ray-Ban. But could a privacy scandal involving '
+             'Meta weaken customer trust in ordinary Ray-Ban eyewear—and expose shareholders to risk?')
+    st.subheader('The Dilemma')
     for col, (title, text) in zip(st.columns(3), [
-        ('The opportunity', 'Familiar design and optical distribution can help bring smart eyewear into everyday use.'),
-        ('The legitimacy challenge', 'Recording, bystander expectations and data handling raise questions beyond technical performance.'),
-        ('The brand boundary', 'Ray-Ban endorsement may link these concerns to traditional eyewear, but that transfer must not be assumed.'),
+        ('Opportunity', 'Smart eyewear combines Ray-Ban design with new technology and services.'),
+        ('Risk', 'Privacy scandals could weaken customer trust in the product and its partners.'),
+        ('Shareholder Concern', 'If distrust reaches the wider Ray-Ban brand, its reputation and future earnings could be at risk.'),
     ]):
-        with col: card('STRATEGIC DILEMMA', title, text)
-    st.markdown('### Our qualified answer')
+        with col: card('THE DILEMMA', title, text)
+    st.markdown('### Our Qualified Answer')
     st.info(CONCLUSION)
-    st.caption('This demonstration explores conditions under which distrust could spread. It does not measure its prevalence or establish causation.')
+    st.write('Shareholders are the primary stakeholder in this presentation. Customer reactions are '
+             'the intermediate mechanism: lost trust could put brand reputation and future value at risk. '
+             'This demonstration establishes neither brand damage, sales reductions nor shareholder losses.')
+    st.markdown('**Privacy scandal → Possible customer distrust → Potential brand damage → Shareholder exposure**')
     render_mechanisms(records)
 
 
 def render_methodology():
     import streamlit as st
-    st.subheader('From real context to illustrative strategic mechanisms')
+    st.subheader('How the demonstration works')
     steps = [
-        ('01 · REAL EVIDENCE', '32 genuine news sources', 'Sourced developments and company / official responses; media is not customer opinion.'),
-        ('02 · SYNTHETIC', '260 AI-generated scenarios', 'Constructed reactions grounded in the news, with deliberately assigned scenario categories.'),
-        ('03 · RECORDED AI', 'Local AI classification', 'Saved Qwen2.5:3b outputs: 220 accepted and 40 rejected. No live inference.'),
-        ('04 · INTERPRETATION', 'Brand contagion analysis', 'Compare product criticism, wider-brand distrust and brand insulation; keep label bases separate.'),
-        ('05 · STRATEGY', 'Implications through 2030', 'Proposed actions and evidence to seek, rather than forecasts or established brand damage.'),
+        ('01 · REAL EVIDENCE', '32 news sources', 'Genuine context, not customer opinion.'),
+        ('02 · SIMULATION', '260 generated reactions', 'AI-generated, not real customer posts.'),
+        ('03 · AI ANALYSIS', '220 accepted, 40 rejected', 'Saved local model outputs.'),
+        ('04 · INTERPRETATION', 'Reactions A/B/C', 'Product criticism, contagion or insulation.'),
+        ('05 · STRATEGY', 'Implications through 2030', 'Proposed actions, not forecasts.'),
     ]
     # CSS grid becomes a vertical process diagram on narrow screens.
     items = []
@@ -96,10 +107,9 @@ def render_recommendations():
     import streamlit as st
     st.subheader('Protect trust as eyewear and AI converge')
     st.info(CONCLUSION)
-    st.write('Responsibility attribution can contain or transmit distrust. Ray-Ban’s endorsement can make '
-             'privacy expectations relevant to the wider brand, even when Meta operates the technology. '
-             'Market convergence therefore requires both customer usefulness and social legitimacy: '
-             'trust in what the product does, how it treats people, and who answers when expectations fail.')
+    st.write('Ray-Ban should make privacy responsibilities clear, show that safeguards work, and protect '
+             'trust in its traditional eyewear. Customer trust can support brand reputation and future '
+             'shareholder value; this demonstration does not measure a financial effect.')
     priorities = [
         ('01 · 2026–2027', 'Clarify accountability', 'Publish a joint, plain-language responsibility map covering capture, processing, vendor access and deletion. Train retailers to explain each partner’s role.', 'Look for: understandable disclosures and tested customer comprehension.'),
         ('02 · 2027–2028', 'Make privacy safeguards verifiable', 'Independently evaluate recording indicators, privacy choices and vendor-access controls. Explain findings and limitations publicly.', 'Look for: independent tests, access audits and documented incident responses.'),
@@ -110,11 +120,18 @@ def render_recommendations():
     st.caption('Recommendations are proposed strategic responses, not company commitments, measured outcomes or forecasts.')
 
 
-def render_count_chart(counts, title, interpretation, *, basis, field=None):
+def render_label_basis_guide():
+    import streamlit as st
+    st.write(LABEL_BASIS_GUIDE)
+    st.space('small')
+
+
+def render_count_chart(counts, title, interpretation, *, basis, field=None, show_basis=True):
     import streamlit as st
     values = [{'Label': readable(key), 'Scenarios': value} for key, value in counts.items()]
-    st.markdown('**'+title+'**')
-    st.caption(f'{basis} · n={sum(counts.values())} simulated scenarios')
+    st.markdown('**'+title+'**', help=interpretation)
+    if show_basis:
+        st.caption(f'{basis} · n={sum(counts.values())} simulated scenarios')
     if not values or not sum(counts.values()):
         st.info('No scenarios match these filters.')
         return
@@ -136,4 +153,3 @@ def render_count_chart(counts, title, interpretation, *, basis, field=None):
         'config': {'view':{'stroke':None}, 'axis':{'labelFontSize':12, 'titleFontSize':12,
                                                 'labelColor':'#606060', 'titleColor':'#606060'}}},
         width='stretch', theme=None)
-    st.write(interpretation)

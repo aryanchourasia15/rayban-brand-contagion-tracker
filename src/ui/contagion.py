@@ -297,7 +297,7 @@ def render_contagion(*, force_demo=False):
         .story-card small {font-size:.78rem; color:#606060;}
         .story-process {display:grid; grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr;
             align-items:start; gap:.65rem; margin:1.5rem 0;}
-        .process-step {background:#F5F5F5; padding:1rem; border-radius:5px; min-width:0;}
+        .process-step {background:#F5F5F5; padding:1rem; border-radius:5px; min-width:0; overflow-wrap:break-word;}
         .process-step strong {display:block; font-size:1rem; line-height:1.4; margin:.5rem 0;}
         .process-step small {font-size:.65rem; font-weight:700; letter-spacing:.05em; color:#666;}
         .process-step p {font-size:.85rem; line-height:1.5; margin-bottom:0;}
@@ -307,7 +307,8 @@ def render_contagion(*, force_demo=False):
             .process-arrow {padding:0; text-align:center; transform:rotate(90deg);}
             .block-container {padding:1.2rem 1rem;}
             h1 {font-size:2rem !important; line-height:1.15 !important;}
-            [data-testid="stTabs"] [role="tablist"] {gap:.5rem;}
+            [data-testid="stTabs"] [role="tablist"] {gap:.5rem; flex-wrap:wrap; height:auto;}
+            [data-testid="stTabs"] [role="tab"] {white-space:normal; height:auto; min-height:2.6rem;}
         }
         </style>''', unsafe_allow_html=True)
     with st.sidebar:

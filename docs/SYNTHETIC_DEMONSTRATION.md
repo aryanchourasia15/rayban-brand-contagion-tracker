@@ -2,7 +2,7 @@
 
 **AI-generated customer scenarios — illustrative, not empirical customer sentiment.**
 
-The professor-approved demonstration illustrates H1/H2/H3 mechanisms without real
+The approved demonstration illustrates Reactions A/B/C without real
 customer collection. The original 32 media records and review ledger stay separate.
 
 ## Design and artefacts
@@ -85,8 +85,8 @@ rejected outputs; accepted-only metrics have a selected denominator. Rejections
 are abstentions, not automatically `none`. Confusion matrices use reference rows
 and prediction columns. Undefined metrics are null, not invented zeros/perfection.
 
-H1 illustrates product-specific concern; H2 a possible transfer through perceived
-endorsement and conflicting brand values; H3 preserved trust in ordinary eyewear
+Reaction A illustrates product-specific concern; Reaction B a possible transfer through perceived
+endorsement and conflicting brand values; Reaction C preserved trust in ordinary eyewear
 alongside Meta-focused blame. Genuine media provides context. Neither simulations
 nor model agreement establishes real reputational damage or tests these hypotheses
 empirically. See `STRATEGIC_IMPLICATIONS.md` for conditional recommendations to 2030.

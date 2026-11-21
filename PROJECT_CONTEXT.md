@@ -5,7 +5,7 @@ Developed as part of an HEC Paris Strategic Management course.
 - **Company**: EssilorLuxottica
 - **Focal Brand**: Ray-Ban (eyewear, heritage, brand trust)
 - **Product**: Ray-Ban Meta smart glasses (camera/audio wearable AI glasses)
-- **Primary Stakeholder**: Customers
+- **Primary Stakeholder (presentation)**: Shareholders; customer reactions are an intermediate mechanism.
 - **Historical Research Period**: 2023–2026
 - **Strategic Horizon**: 2030
 
@@ -23,7 +23,7 @@ timeline. Real customer collection is not required for this demonstration.
 Scenario quotas and reference labels are design choices, not measured attitudes
 or independently validated ground truth. Local Qwen generation and subsequent
 classification are distinct stages; both use the same model, so agreement is
-an in-sample diagnostic, not evidence of generalisation. H1-H3 remain hypotheses.
+an in-sample diagnostic, not evidence of generalisation. Reactions A/B/C remain illustrative mechanisms.
 Keep genuine media context, simulated customer reactions, and recorded model
 evaluation separate. No synthetic records may enter real research metrics.
 
@@ -36,17 +36,21 @@ opt-in and does not retroactively change historical acceptance or model scores.
 
 ---
 
-## 3. Strategic Hypotheses
-- **H1**: Privacy controversies negatively affect customer perceptions of Ray-Ban Meta.
-- **H2**: Negative perceptions spill over into the wider Ray-Ban brand.
-- **H3**: Customers distinguish Ray-Ban's fashion identity from Meta's technology and privacy responsibilities, limiting reputational damage to the core brand.
+## 3. Customer Reaction Mechanisms
+- **Reaction A — Product Criticism**: Privacy concerns affect perceptions of Ray-Ban Meta.
+- **Reaction B — Brand Contagion**: Distrust reaches the wider Ray-Ban brand.
+- **Reaction C — Brand Insulation**: Customers distinguish traditional Ray-Ban from Meta's technology and privacy responsibilities.
+
+H1/H2/H3 are reserved for the presentation's litigation, brand damage and pricing framework.
+The chain is privacy scandal → possible customer distrust → potential brand damage → shareholder exposure.
+The demonstration establishes neither actual brand damage, sales reductions nor shareholder losses.
 
 *Note: These are hypotheses to test through empirical data, not foregone conclusions.*
 
 ---
 
 ## 4. Key Analytical Principles
-1. **No Presumption of Damage**: The platform objectively tests for brand damage rather than assuming it exists.
+1. **No Presumption of Damage**: The demonstration illustrates possible mechanisms; it does not establish actual brand damage or financial losses.
 2. **Distinguish Product vs. Brand**: A negative sentiment regarding Ray-Ban Meta is not automatically evidence of damage to wider Ray-Ban eyewear.
 3. **Spillover Classification**: Distinguish between:
    - *Explicit spillover* (explicitly stating distrust in Ray-Ban brand because of Meta glasses).

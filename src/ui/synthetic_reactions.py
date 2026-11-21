@@ -11,7 +11,7 @@ from src.analysis.schema import validate_labels
 from src.analysis.evaluation import evaluate_pairs
 
 ROOT = Path(__file__).resolve().parents[2]
-PUBLIC_RELEASE = 'hec-story-2026-11-20-v2'
+PUBLIC_RELEASE = 'hec-copy-2026-11-21-v3'
 
 
 def read(name):
@@ -120,7 +120,8 @@ def render_simulation(*, include_details=True, show_mechanisms=True):
     import streamlit as st
 
     st.subheader('Where does criticism stop — the product or the brand?')
-    st.warning(NOTICE)
+    if include_details:
+        st.warning(NOTICE)
     try:
         dataset, output, manifest = load_simulation()
     except (OSError, ValueError, KeyError, TypeError) as exc:
@@ -132,9 +133,8 @@ def render_simulation(*, include_details=True, show_mechanisms=True):
     rows = dataset['records']
     if not dataset.get('completed'):
         st.info(f'Generation is incomplete: {len(rows)} recorded scenarios. No completion is implied.')
-    st.caption('The scenario quotas deliberately over-sample privacy criticism and wider-brand distrust. '
-               'Choose the label basis explicitly: design intentions or accepted local AI predictions. Neither is population sentiment. '
-               'Simulated dates provide narrative context, not historical customer trends.')
+    from src.ui.strategic_story import render_label_basis_guide
+    render_label_basis_guide()
     basis = st.radio('Synthetic chart label basis', ['Scenario design references', 'Accepted local AI predictions'],
                      key='simulation_basis', horizontal=True)
     use_ai = basis == 'Accepted local AI predictions'
@@ -144,13 +144,12 @@ def render_simulation(*, include_details=True, show_mechanisms=True):
             chart_rows = []
         else:
             chart_rows = display_basis(rows, output['results'])
-            st.caption(f"Accepted-only chart sample: {len(chart_rows)}/{len(rows)} scenarios. Rejected/unattempted cases are omitted, never filled with design labels.")
             if output.get('completed') and not output['summary']['accepted_prediction_distributions']['spillover'].get('explicit', 0):
                 st.info('No explicit-spillover prediction passed the safeguards in this saved run. '
                         'This exposes a model/reference-agreement limitation; it does not establish absence of real brand spillover.')
     else:
         chart_rows = display_basis(rows)
-        st.caption('Design-reference charts describe intended scenarios, not validated semantic annotations or model predictions.')
+    st.space('small')
     columns = st.columns(4)
     years = columns[0].multiselect('Simulated year', sorted({row['simulated_publication_year'] for row in rows}), key='simulation_years')
     sentiments = columns[1].multiselect('Scenario sentiment', LABELS['sentiment'], format_func=readable, key='simulation_sentiments')
@@ -163,7 +162,9 @@ def render_simulation(*, include_details=True, show_mechanisms=True):
     counters[1].metric('Simulated product-only criticism', sum(r['scenario_category'] == 'privacy_product_criticism' for r in selected))
     counters[2].metric('Simulated wider-brand distrust', sum(r['scenario_category'] == 'wider_brand_distrust' for r in selected))
     counters[3].metric('Linked genuine source articles', len({s for r in selected for s in r['related_article_ids']}))
-    st.caption(NOTICE)
+    st.caption(f'{NOTICE} Charts use {basis.lower()} for {len(selected)}/{len(chart_rows)} eligible scenarios '
+               f'({len(rows)} in the full dataset). All four classification charts use this same denominator. '
+               'Scenario groups deliberately over-sample criticism; simulated years are not historical customer trends.')
     if not selected:
         st.info('No scenarios match these filters. Clear a filter to restore the demonstration.')
     else:
@@ -182,11 +183,13 @@ def render_simulation(*, include_details=True, show_mechanisms=True):
         for offset in range(0, len(chart_specs), 2):
             for column, (field, title, interpretation) in zip(st.columns(2), chart_specs[offset:offset+2]):
                 with column:
-                    render_count_chart(distributions[field], title, interpretation, basis=basis, field=field)
+                    render_count_chart(distributions[field], title, interpretation, basis=basis, field=field, show_basis=False)
+        st.caption(f'The constructed scenario mix below uses design categories for the same {len(selected)} selected scenarios, '
+                   'even when the four classification charts use accepted AI labels.')
         render_count_chart(dict(Counter(r['scenario_category'] for r in selected)),
             'Product criticism versus wider-brand distrust: the constructed scenario mix',
             'These assigned groups show the deliberate demonstration design, not verified meanings or customer prevalence. They remain design categories even when the selected cohort uses accepted AI labels.',
-            basis='Scenario design categories within the selected cohort')
+            basis='Scenario design categories within the selected cohort', show_basis=False)
         if include_details:
             _render_voice(selected, output, manifest, show_raw=True)
     if show_mechanisms:
@@ -223,9 +226,18 @@ def _render_voice(selected, output, manifest, *, inspect_key="simulation_inspect
                     design_spillover=r['expected_labels']['spillover'],
                     raw_AI_spillover=(predictions.get(r['synthetic_id'],{}).get('parsed_output') or {}).get('spillover'),
                     historical_status=predictions.get(r['synthetic_id'],{}).get('status','unattempted')) for r in selected]
-    st.caption('Raw AI columns can contain rejected outputs. Historical status controls acceptance; design labels never replace a failed prediction.')
     with st.expander('Browse the scenario table and label comparisons'):
-        st.dataframe(pd.DataFrame(compact), hide_index=True)
+        st.caption('Raw AI columns include rejected outputs. Check Prediction status before interpreting them; '
+                   'design labels never replace failed predictions.')
+        frame = pd.DataFrame(compact)
+        for key in ('sentiment', 'responsibility', 'spillover', 'purchase_intent', 'design_spillover', 'raw_AI_spillover'):
+            if key in frame:
+                frame[key] = frame[key].map(lambda value: readable(value) if isinstance(value, str) else value)
+        frame['historical_status'] = frame['historical_status'].map({'success':'Accepted', 'failed':'Rejected', 'unattempted':'Not attempted'})
+        st.dataframe(frame, hide_index=True, column_config={
+            'synthetic_id':'Scenario ID', 'simulated_year':'Simulated year', 'text':'Generated reaction',
+            'design_spillover':'Designed brand spillover', 'raw_AI_spillover':'Raw AI brand spillover',
+            'historical_status':'Prediction status', 'purchase_intent':'Purchase intention'})
     selected_id = st.selectbox('Inspect an AI-generated reaction', [r['synthetic_id'] for r in selected], key=inspect_key)
     row = next(r for r in selected if r['synthetic_id'] == selected_id)
     st.info('SIMULATED CUSTOMER — ' + row['text'])
@@ -240,7 +252,8 @@ def _render_voice(selected, output, manifest, *, inspect_key="simulation_inspect
     if output:
         prediction = next((r for r in output['results'] if r['case'] == selected_id), None)
         if prediction:
-            st.write('**Actual local model response — ' + prediction['status'] + '**')
+            status_label = 'Accepted' if prediction['status'] == 'success' else 'Rejected — not a validated classification'
+            st.write('**Saved local AI response — ' + status_label + '**')
             parsed = prediction.get('parsed_output') or {}
             st.write(' · '.join(_label_summary(key, value) for key, value in parsed.items()
                                if key in ('sentiment', 'target', 'responsibility', 'spillover', 'purchase_intent') and isinstance(value, str)))
@@ -305,20 +318,29 @@ def _render_evaluation(dataset, output):
 def render_customer_voice():
     import streamlit as st
     st.subheader('Interactive customer voice — AI-generated simulations')
-    st.caption(NOTICE)
+    st.write('Explore how each simulated reaction connects privacy concerns, customer trust and brand reputation, '
+             'with links to its genuine news context.')
     dataset, output, manifest = load_simulation()
     if dataset is None:
         st.info('No public scenario dataset is available.')
         return
+    from src.ui.strategic_story import render_label_basis_guide
+    render_label_basis_guide()
     basis = st.radio('Customer voice filter basis', ['Scenario design references','Accepted local AI predictions'],
                      key='public_voice_basis', horizontal=True)
     rows = display_basis(dataset['records'], output['results'] if output and basis.startswith('Accepted') else None)
+    st.space('small')
     cols = st.columns(4)
     years = cols[0].multiselect('Voice: simulated year', sorted({r['simulated_publication_year'] for r in dataset['records']}), key='public_voice_years')
     sentiments = cols[1].multiselect('Voice: sentiment', LABELS['sentiment'], format_func=readable, key='public_voice_sentiments')
     responsibilities = cols[2].multiselect('Voice: responsibility', LABELS['responsibility'], format_func=readable, key='public_voice_responsibilities')
     spillovers = cols[3].multiselect('Voice: spillover', LABELS['spillover'], format_func=readable, key='public_voice_spillovers')
-    status = st.selectbox('Prediction review queue', ['All scenarios','Rejected predictions','Uncertain or needs review'], key='public_voice_status')
+    st.space('small')
+    status = st.selectbox('Prediction Review Queue', ['All scenarios','Rejected predictions','Uncertain or needs review'], key='public_voice_status',
+                          help='All scenarios keeps the selected label basis. Rejected predictions shows failed safeguards; '
+                               'Uncertain or needs review shows the model review flags. Use scenario-design mode to inspect rejected cases, '
+                               'because accepted-AI mode excludes them.')
+    st.caption('The queue filters prediction status or review flags—not whether a reaction is positive or negative.')
     selected = filter_scenarios(rows, years=years, sentiments=sentiments, responsibilities=responsibilities,
                                 spillovers=spillovers, label_key='active_labels')
     by_id = {r['case']:r for r in output['results']} if output else {}
@@ -326,8 +348,9 @@ def render_customer_voice():
         selected = [r for r in selected if by_id.get(r['synthetic_id'],{}).get('status')=='failed']
     elif status == 'Uncertain or needs review':
         selected = [r for r in selected if by_id.get(r['synthetic_id'],{}).get('needs_review')]
-    st.write(f"Showing {len(selected)}/{len(dataset['records'])} simulations. Filter basis: {basis}.")
-    st.caption('Use design-reference mode to inspect rejected cases. Accepted-AI mode omits rejections; it never substitutes reference labels.')
+    st.space('small')
+    st.write(f"Showing {len(selected)}/{len(dataset['records'])} simulations. Filter basis: {basis}. "
+             'AI-generated, not real customer opinions. Rejected outputs remain available in scenario-design mode.')
     _render_voice(selected, output, manifest, inspect_key='public_voice_inspect')
 
 
@@ -377,7 +400,8 @@ def render_public_dashboard():
         with st.expander('All 32 genuine contextual news references'):
             render_public_sources()
     with tabs[2]:
-        st.caption('H1: product criticism · H2: wider-brand contagion · H3: brand insulation. These mechanisms are illustrative, not empirical tests.')
+        st.caption('Reaction A: product criticism · Reaction B: wider-brand contagion · Reaction C: brand insulation. '
+                   'These customer mechanisms illustrate possible shareholder exposure; they do not establish financial or brand damage.')
         analysis_tabs = st.tabs(['Mechanisms & charts', 'Customer voice'])
         with analysis_tabs[0]:
             render_simulation(include_details=False, show_mechanisms=False)
