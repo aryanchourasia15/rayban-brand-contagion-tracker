@@ -18,7 +18,7 @@ import websockets
 
 ROOT=Path(__file__).resolve().parents[1]
 URL='https://rayban-brand-contagion-tracker-ketx7kggvl3vh2sdpvtnf4.streamlit.app/'
-RELEASE='hec-copy-2026-11-21-v3'
+RELEASE='hec-analysis-2026-11-24-v4'
 
 
 async def inspect(socket_url, timeout, observe_only, *, story=False, mobile=False):
@@ -98,14 +98,20 @@ async def inspect(socket_url, timeout, observe_only, *, story=False, mobile=Fals
                 suffix = 'mobile' if mobile else 'desktop'
                 (ROOT/f'benchmarks/story_{suffix}_{name}.png').write_bytes(base64.b64decode(capture['data']))
             await screenshot('landing')
-            sections = ['Strategic Question','Evidence & Methodology','Brand Contagion Analysis',
-                        'Strategic Recommendations','Research Appendix']
+            sections = ['Strategic Question','Evidence & Methodology','Analysis',
+                        'Insights & Synthesis','Research Appendix']
             for index, label in enumerate(sections):
                 clicked = await evaluate("(()=>{const b=[...document.querySelectorAll('[role=tab]')].find(x=>x.innerText.trim()==="+json.dumps(label)+");if(b)b.click();return !!b})()")
                 await asyncio.sleep(1)
                 visible = await evaluate("[...document.querySelectorAll('[role=tabpanel]')].filter(x=>!x.hidden).map(x=>x.innerText).join('\\n')")
                 if clicked and visible: snapshot['sections_verified'].append(label)
                 if index == 2:
+                    snapshot['real_media_verified'] = 'Real Media Insights' in visible and '14/32' in visible and '0/32 resolved human reviews' in visible
+                    await screenshot('media')
+                    await evaluate("(()=>{const b=[...document.querySelectorAll('[role=tab]')].find(x=>x.innerText.trim()==='Simulated Customer Reaction Analysis');b.click()})()")
+                    await asyncio.sleep(1)
+                    await evaluate("[...document.querySelectorAll('.story-card')].find(x=>x.innerText.startsWith('Reaction A')).scrollIntoView({block:'start'})")
+                    await screenshot('mechanisms')
                     await evaluate("(()=>{const b=[...document.querySelectorAll('[role=tab]')].find(x=>x.innerText.trim()==='Customer voice');b.click()})()")
                     await asyncio.sleep(1)
                     voice = await evaluate('document.body.innerText')
@@ -116,9 +122,6 @@ async def inspect(socket_url, timeout, observe_only, *, story=False, mobile=Fals
                     snapshot['charts_rendered'] = await evaluate("[...document.querySelectorAll('[data-testid=stVegaLiteChart] canvas,[data-testid=stVegaLiteChart] svg')].filter(x=>x.getBoundingClientRect().width>0).length")
                     await evaluate("document.querySelector('[data-testid=stVegaLiteChart]').scrollIntoView({block:'center'})")
                     await screenshot('charts')
-                if index == 0:
-                    await evaluate("[...document.querySelectorAll('.story-card')].find(x=>x.innerText.startsWith('Reaction A')).scrollIntoView({block:'start'})")
-                    await screenshot('mechanisms')
                 if index == 4:
                     await evaluate("(()=>{const b=[...document.querySelectorAll('summary')].find(x=>x.innerText.includes('50 AI-assisted review proposals'));if(b)b.click()})()")
                     await asyncio.sleep(.5)
@@ -183,6 +186,8 @@ def main():
             if args.story:
                 if len(snapshot.get('sections_verified',[])) != 5 or snapshot.get('charts_rendered') != 5:
                     raise SystemExit('Narrative sections or charts did not render.')
+                if not snapshot.get('real_media_verified'):
+                    raise SystemExit('Real media counts or provisional review status did not render.')
                 if any(row['errors'] or row['body']>row['viewport'] for row in snapshot.get('layout_checks',[])):
                     raise SystemExit('Layout overflow or app exception detected.')
             if not args.observe_only and not all(snapshot.get(k) for k in ('overview_verified','customer_voice_verified','review_proposals_verified')):

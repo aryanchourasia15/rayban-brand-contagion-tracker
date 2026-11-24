@@ -295,7 +295,7 @@ def render_contagion(*, force_demo=False):
         .story-card blockquote {margin:1rem 0 .5rem; padding-left:.8rem;
             border-left:2px solid #C62430; font-size:.95rem; line-height:1.6;}
         .story-card small {font-size:.78rem; color:#606060;}
-        .story-process {display:grid; grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+        .story-process {display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
             align-items:start; gap:.65rem; margin:1.5rem 0;}
         .process-step {background:#F5F5F5; padding:1rem; border-radius:5px; min-width:0; overflow-wrap:break-word;}
         .process-step strong {display:block; font-size:1rem; line-height:1.4; margin:.5rem 0;}

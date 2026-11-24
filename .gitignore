@@ -53,6 +53,7 @@ uploads/
 !demo/research_timeline.json
 !demo/case_study_results.json
 !demo/media_sources.json
+!demo/media_analysis.json
 !demo/grounded_scenarios.json
 !demo/grounded_scenarios.csv
 !demo/simulation_generation.json

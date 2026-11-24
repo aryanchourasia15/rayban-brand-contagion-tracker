@@ -13,15 +13,27 @@ design labels and actual classifier outputs are shown separately. See
 reproduction, provenance and evaluation limitations. Nothing is published automatically.
 
 The public view introduces the shareholder dilemma, then separates Strategic Question,
-Evidence & Methodology, Brand Contagion Analysis, Strategic Recommendations and Research
-Appendix. It retains 260 simulations, 32 contextual news sources, 220 historically
+Evidence & Methodology, Analysis, Insights & Synthesis and Research
+Appendix. Analysis has distinct Real Media Analysis and Simulated Customer Reaction
+Analysis components. It retains 260 simulations, 32 contextual news sources, 220 historically
 accepted predictions and 40 rejections. Reaction A/B/C describe customer mechanisms,
 not measured shareholder outcomes. Legacy fixtures remain in the appendix.
 [The 50-case error review](docs/CLASSIFICATION_ERROR_REVIEW.md) provides separate
 AI-assisted proposals, never human-validation labels or replacements for saved
 predictions. Historical prompt versions, benchmarks and the 260-case inputs remain
 unchanged. Evidence rule `context-evidence-2.0` is opt-in; historical replay defaults
-to `legacy-1.0`. Presentation release marker: `hec-copy-2026-11-21-v3`.
+to `legacy-1.0`. Presentation release marker: `hec-analysis-2026-11-24-v4`.
+
+`demo/media_analysis.json` is a read-only, allowlisted snapshot of existing media
+codes and review states, linked to `demo/media_sources.json`. All 32 codes currently
+await human review; counts are provisional, and human-reviewed mode has no included
+records. Source roles and inquiry targets are not established liability. The two
+direct traditional-eyewear references concern favourable comparison/style continuity,
+not demonstrated brand damage. Original data, review events and reviewer identities
+stay local. If real reviews are later saved, explicitly run
+`python scripts/prepare_media_snapshot.py` and review the resulting snapshot before
+publishing it; page refresh does not update that dated snapshot. No inference runs.
+The earlier strategic recommendations remain in Research Appendix.
 
 ## Run locally (Python 3.11+)
 

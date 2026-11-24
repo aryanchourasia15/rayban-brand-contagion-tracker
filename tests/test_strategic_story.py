@@ -20,24 +20,28 @@ class TestStrategicStory(unittest.TestCase):
         self.assertTrue(any(item.value == CONCLUSION for item in sections['Strategic Question'].info))
         dataset, _, _ = load_simulation()
         cards = '\n'.join(item.value for item in sections['Strategic Question'].markdown)
+        reaction_cards = '\n'.join(item.value for item in sections['Analysis'].markdown)
         self.assertEqual(QUESTION, "Can Meta's Privacy Scandals Damage the Ray-Ban Brand?")
         self.assertEqual(re.findall(r'\bH[123]\b', cards), [])
-        for text in ('Reaction A', 'Reaction B', 'Reaction C', 'Shareholder Concern',
+        for text in ('Shareholder Concern', 'Real Media Analysis', 'Simulated Customer Reaction Analysis',
                      'Privacy scandal → Possible customer distrust → Potential brand damage → Shareholder exposure'):
             self.assertIn(text, cards)
+        for text in ('Reaction A', 'Reaction B', 'Reaction C'):
+            self.assertIn(text, reaction_cards)
         self.assertIn('The Dilemma', [item.value for item in sections['Strategic Question'].subheader])
         for record_id in ('SIM-0001', 'SIM-0080', 'SIM-0133'):
             row = next(r for r in dataset['records'] if r['synthetic_id']==record_id)
             from html import escape
-            self.assertIn(escape(row['text']), cards)
-            self.assertIn(record_id, cards)
+            self.assertIn(escape(row['text']), reaction_cards)
+            self.assertIn(record_id, reaction_cards)
         self.assertEqual(len(sections['Strategic Question'].get('json')), 0)
-        self.assertEqual(len(sections['Brand Contagion Analysis'].get('json')), 0)
+        self.assertEqual(len(sections['Analysis'].get('json')), 0)
         self.assertGreater(len(sections['Research Appendix'].get('json')), 0)
         process = '\n'.join(item.value for item in sections['Evidence & Methodology'].markdown)
-        for text in ('32 news sources', '260 generated reactions', '220 accepted, 40 rejected', 'Reactions A/B/C'):
+        for text in ('32 genuine sources', '260 AI-generated scenarios', '220 accepted, 40 rejected', 'Reactions A/B/C'):
             self.assertIn(text, process)
-        analysis = sections['Brand Contagion Analysis']
+        self.assertEqual(process.count('class="process-step"'), 2)
+        analysis = sections['Analysis']
         self.assertEqual(sum(item.value == LABEL_BASIS_GUIDE for item in analysis.markdown), 2)
         self.assertTrue(app.selectbox(key='public_voice_status').proto.help)
         app.radio(key='simulation_basis').set_value('Accepted local AI predictions').run()

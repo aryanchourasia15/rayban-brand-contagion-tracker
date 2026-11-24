@@ -34,6 +34,14 @@ customer comments or model inference are required. Historical source/prediction
 artefacts and prompt versions remain immutable; new evidence wording support is
 opt-in and does not retroactively change historical acceptance or model scores.
 
+Analysis focus (24 November 2026): the presentation separates Real Media Analysis
+from Simulated Customer Reaction Analysis, ending in Insights & Synthesis. A
+public-safe snapshot carries existing media coding without article text or reviewer
+identities; its as-of date and pending review status must stay explicit. All 32
+media classifications currently await human review. Recommendation cards and the
+full earlier strategy report remain archived in Research Appendix. Neither media
+coding nor generated reactions establish real customer attitudes or financial effects.
+
 ---
 
 ## 3. Customer Reaction Mechanisms

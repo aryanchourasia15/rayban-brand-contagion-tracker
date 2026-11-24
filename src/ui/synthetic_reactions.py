@@ -11,7 +11,7 @@ from src.analysis.schema import validate_labels
 from src.analysis.evaluation import evaluate_pairs
 
 ROOT = Path(__file__).resolve().parents[2]
-PUBLIC_RELEASE = 'hec-copy-2026-11-21-v3'
+PUBLIC_RELEASE = 'hec-analysis-2026-11-24-v4'
 
 
 def read(name):
@@ -376,10 +376,10 @@ def render_review_proposals():
 def render_public_dashboard():
     import streamlit as st
     from src.ui.strategic_story import (SECTIONS, render_question, render_methodology,
-                                       render_recommendations)
+                                       render_recommendations, render_mechanisms, render_synthesis)
     dataset, output, manifest = load_simulation()
     st.caption('PUBLIC RELEASE · ' + PUBLIC_RELEASE)
-    st.warning('SYNTHETIC DEMONSTRATION · ' + NOTICE)
+    st.warning('TWO-COMPONENT ANALYSIS · Genuine media evidence is separate from the SYNTHETIC DEMONSTRATION. ' + NOTICE)
     if dataset is None or output is None:
         st.error('The public demonstration assets are unavailable. No substitute findings are generated.')
         return
@@ -392,7 +392,8 @@ def render_public_dashboard():
                                           'Accepted model classifications', 'Rejected model classifications'),
                                      (len(dataset['records']), len(manifest['sources']), output['summary']['accepted'], output['summary']['rejected'])):
             col.metric(label, value)
-        st.caption('Read Evidence & Methodology for the source boundary, explore mechanisms in Brand Contagion Analysis, then consider the Strategic Recommendations. Full diagnostics are in Research Appendix.')
+        st.caption('Read Evidence & Methodology, compare Real Media Analysis with Simulated Customer Reaction Analysis, '
+                   'then read Insights & Synthesis. Full diagnostics and earlier recommendations are in Research Appendix.')
     from src.ui.research_evidence import render_timeline, render_strategy, render_case_study
     with tabs[1]:
         render_methodology()
@@ -400,19 +401,36 @@ def render_public_dashboard():
         with st.expander('All 32 genuine contextual news references'):
             render_public_sources()
     with tabs[2]:
-        st.caption('Reaction A: product criticism · Reaction B: wider-brand contagion · Reaction C: brand insulation. '
-                   'These customer mechanisms illustrate possible shareholder exposure; they do not establish financial or brand damage.')
-        analysis_tabs = st.tabs(['Mechanisms & charts', 'Customer voice'])
+        analysis_tabs = st.tabs(['Real Media Analysis', 'Simulated Customer Reaction Analysis'])
         with analysis_tabs[0]:
-            render_simulation(include_details=False, show_mechanisms=False)
+            from src.ui.media_insights import render_media_insights
+            render_media_insights()
         with analysis_tabs[1]:
-            render_customer_voice()
+            st.subheader('Simulated Customer Reaction Analysis')
+            st.caption('Reaction A: product criticism · Reaction B: wider-brand contagion · Reaction C: brand insulation. '
+                       'These customer mechanisms illustrate possibilities, not measured attitudes or shareholder outcomes.')
+            render_mechanisms(dataset['records'])
+            simulation_tabs = st.tabs(['Mechanisms & charts', 'Customer voice'])
+            with simulation_tabs[0]:
+                render_simulation(include_details=False, show_mechanisms=False)
+            with simulation_tabs[1]:
+                render_customer_voice()
     with tabs[3]:
-        render_recommendations()
-        with st.expander('Full sourced strategic discussion and evidence boundaries'):
-            render_strategy()
+        render_synthesis()
     with tabs[4]:
         st.subheader('Research Appendix')
+        with st.expander('Archived strategic recommendations and full sourced discussion'):
+            st.caption('Earlier proposed recommendations are retained for reference; the main artefact now focuses on analysis and insights.')
+            render_recommendations()
+            render_strategy()
+        with st.expander('Research limitations and evidence boundaries'):
+            st.write('The purposive 32-source corpus is not a census of news or a customer sample. Company statements, '
+                     'independent reporting and official inquiries have different evidential status. Provisional analytical coding '
+                     'is not human validation; naming a brand is not adverse spillover, and attributed roles are not legal liability.')
+            st.write('The 260 customer scenarios are AI-generated with prescribed design quotas. Simulated years do not measure '
+                     'historical sentiment trends. Generation and classification use the same model; reference labels are not '
+                     'independent ground truth. Accepted outputs passed safeguards, not a test of empirical correctness. '
+                     'No causal brand damage, sales reduction, pricing effect or shareholder loss is established.')
         st.write('Historical run: 260 attempts, 220 accepted, 40 rejected. Raw spillover agreement is 52.3% against unvalidated scenario-design labels. No explicit-spillover output passed the historical safeguards.')
         st.caption('A zero accepted explicit count is a model limitation, not evidence that brand contagion is absent. Rejected predictions are preserved as abstentions.')
         with st.expander('Model evaluation, confusion matrices and saved metrics'):

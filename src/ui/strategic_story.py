@@ -4,8 +4,8 @@ from html import escape
 QUESTION = "Can Meta's Privacy Scandals Damage the Ray-Ban Brand?"
 CONCLUSION = ('Brand contagion is a plausible strategic risk, '
               'but actual wider-brand damage has not been established.')
-SECTIONS = ['Strategic Question', 'Evidence & Methodology', 'Brand Contagion Analysis',
-            'Strategic Recommendations', 'Research Appendix']
+SECTIONS = ['Strategic Question', 'Evidence & Methodology', 'Analysis',
+            'Insights & Synthesis', 'Research Appendix']
 LABEL_BASIS_GUIDE = (
     'Explore four dimensions: sentiment (tone), responsibility (who is blamed), '
     'brand spillover (whether distrust reaches traditional Ray-Ban), and purchase intention. '
@@ -46,20 +46,20 @@ def render_mechanisms(records):
     definitions = [
         ('Reaction A', 'Product Criticism', '#777777', 'SIM-0001',
          'Privacy concerns lead someone to reject the smart glasses. Traditional eyewear is not rejected.',
-         'Address product safeguards and explain how recording and data use work.'),
+         'Product rejection can occur without wider-brand distrust.'),
         ('Reaction B', 'Brand Contagion', '#C62430', 'SIM-0080',
          'Distrust crosses from smart glasses to ordinary Ray-Ban eyewear. Product criticism alone is insufficient.',
-         'Treat brand endorsement as a trust obligation extending beyond the device.'),
+         'Distrust could spread when the partnership changes perceptions of ordinary eyewear.'),
         ('Reaction C', 'Brand Insulation', '#171717', 'SIM-0133',
          'Someone attributes privacy responsibility to Meta while retaining trust in traditional Ray-Ban.',
-         'Clarify accountability while keeping Ray-Ban accountable for its own commitments.'),
+         'Meta-focused blame can coexist with continued trust in traditional Ray-Ban.'),
     ]
     for column, (code, title, color, record_id, meaning, implication) in zip(st.columns(3), definitions):
         with column:
             row = by_id[record_id]
             extra = (f'<blockquote>{escape(row["text"])}</blockquote>'
                      f'<small>AI-generated illustration · {record_id}</small>'
-                     f'<p><strong>Strategic implication</strong><br>{escape(implication)}</p>')
+                     f'<p><strong>Illustrative insight</strong><br>{escape(implication)}</p>')
             card(code, title, meaning, accent=color, extra=extra)
 
 
@@ -80,18 +80,22 @@ def render_question(records):
              'the intermediate mechanism: lost trust could put brand reputation and future value at risk. '
              'This demonstration establishes neither brand damage, sales reductions nor shareholder losses.')
     st.markdown('**Privacy scandal → Possible customer distrust → Potential brand damage → Shareholder exposure**')
-    render_mechanisms(records)
+    st.subheader('Two components, different kinds of insight')
+    for col, (title, text) in zip(st.columns(2), [
+        ('Real Media Analysis', '32 genuine news, company and official sources document context. Existing coding explores privacy coverage, brand association and attributed roles. Unreviewed classifications remain provisional.'),
+        ('Simulated Customer Reaction Analysis', '260 AI-generated scenarios illustrate product criticism, brand contagion and brand insulation. Constructed distributions and saved AI predictions are separate from empirical customer findings.'),
+    ]):
+        with col: card('ANALYTICAL COMPONENT', title, text)
 
 
 def render_methodology():
     import streamlit as st
-    st.subheader('How the demonstration works')
+    st.subheader('Two stages: real reporting and simulated reactions')
     steps = [
-        ('01 · REAL EVIDENCE', '32 news sources', 'Genuine context, not customer opinion.'),
-        ('02 · SIMULATION', '260 generated reactions', 'AI-generated, not real customer posts.'),
-        ('03 · AI ANALYSIS', '220 accepted, 40 rejected', 'Saved local model outputs.'),
-        ('04 · INTERPRETATION', 'Reactions A/B/C', 'Product criticism, contagion or insulation.'),
-        ('05 · STRATEGY', 'Implications through 2030', 'Proposed actions, not forecasts.'),
+        ('01 · REAL MEDIA ANALYSIS', '32 genuine sources',
+         'News, company and official records → privacy coverage, brand association and attributed roles. Analytical labels remain provisional pending human review.'),
+        ('02 · SIMULATED CUSTOMER REACTION ANALYSIS', '260 AI-generated scenarios',
+         'Existing news context → constructed Reactions A/B/C → saved AI analysis: 220 accepted, 40 rejected. Illustrations, not independent customer evidence.'),
     ]
     # CSS grid becomes a vertical process diagram on narrow screens.
     items = []
@@ -101,6 +105,37 @@ def render_methodology():
         if index < len(steps)-1: items.append('<span class="process-arrow" aria-hidden="true">→</span>')
     st.markdown('<div class="story-process" role="group" aria-label="Research process">'+''.join(items)+'</div>', unsafe_allow_html=True)
     st.warning('Real sources provide context. Synthetic reactions illustrate possibilities. Model agreement is a diagnostic against unvalidated design labels, not independent evidence of customer attitudes.')
+
+
+def render_synthesis():
+    import streamlit as st
+    from src.ui.media_insights import load_media_snapshot, media_totals
+    st.subheader('What we can—and cannot—conclude')
+    st.info(CONCLUSION)
+    try:
+        report = load_media_snapshot()
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        st.error(f'Media synthesis is unavailable until its snapshot passes provenance checks: {exc}')
+        return
+    totals = media_totals(report['records'])
+    n = totals['denominator']
+    st.caption('This synthesis uses the full frozen corpus, independent of the Analysis filters. Media coding is provisional; simulations are deliberately constructed.')
+    points = [
+        ('REAL MEDIA', 'What the sources establish',
+         f"The {n} traceable sources document announcements, reporting, company responses and official scrutiny—not customer sentiment. "
+         f"Provisional coding identifies privacy coverage in {totals['privacy_related_yes']}/{n} records and "
+         f"direct traditional-brand references in {totals['wider_brand_association_explicit']}/{n}. The latter concern favourable comparison/style continuity, not demonstrated damage."),
+        ('SIMULATIONS', 'What the reactions illustrate',
+         'The 260 generated scenarios make three possible mechanisms visible: product criticism (Reaction A), wider-brand distrust (Reaction B), and brand insulation (Reaction C). Scenario frequencies were designed; model agreement is not independent validation.'),
+        ('EVIDENCE BOUNDARY', 'What remains unknown',
+         'We have not measured actual customer trust, spillover prevalence, sales reductions, pricing effects or shareholder losses. Media naming, official inquiries and simulated reactions cannot establish causal brand damage or financial exposure.'),
+    ]
+    for col, (kind, title, text) in zip(st.columns(3), points):
+        with col: card(kind, title, text)
+    st.write('For shareholders, customer trust is a possible link between a privacy controversy and brand value. '
+             'The media analysis documents the context; the simulations illustrate how reactions might differ. '
+             'Whether those reactions occur among real customers, and whether they affect shareholder value, remains an empirical question.')
+    st.caption('Detailed model diagnostics, research limitations and the earlier strategic recommendations remain in Research Appendix.')
 
 
 def render_recommendations():
